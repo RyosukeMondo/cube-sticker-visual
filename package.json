@@ -12,6 +12,7 @@
     "generate-data": "node scripts/generate-algorithm-data.js"
   },
   "dependencies": {
+    "@react-three/drei": "^10.6.1",
     "@react-three/fiber": "^9.3.0",
     "@tweenjs/tween.js": "^25.0.0",
     "@types/three": "^0.179.0",
