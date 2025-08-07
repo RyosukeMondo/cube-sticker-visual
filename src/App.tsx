@@ -3,7 +3,9 @@ import { CubeVisualizer } from './components/CubeVisualizer'
 import { AlgorithmSelector } from './components/AlgorithmSelector'
 import { AlgorithmDisplay } from './components/AlgorithmDisplay'
 import { AnimationControls } from './components/AnimationControls'
+import { ColorSettings } from './components/ColorSettings'
 import type { Algorithm } from './types/Algorithm'
+import type { CubeColors } from './types/CubeColors'
 import { DEFAULT_CUBE_COLORS } from './types/CubeColors'
 import { DEFAULT_BUFFER_CONFIG } from './utils/bufferHighlighting'
 import './App.css'
@@ -18,6 +20,9 @@ function App() {
   const [showArrows, setShowArrows] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
   const [animationKey, setAnimationKey] = useState(0) // Used to trigger replay
+  
+  // Color configuration state
+  const [cubeColors, setCubeColors] = useState<CubeColors>(DEFAULT_CUBE_COLORS)
 
   const handleAlgorithmSelect = (algorithm: Algorithm) => {
     setSelectedAlgorithm(algorithm);
@@ -49,12 +54,26 @@ function App() {
     setIsAnimating(false);
   }, []);
 
+  // Color settings handlers
+  const handleColorChange = useCallback((face: keyof CubeColors, color: string) => {
+    setCubeColors(prev => ({
+      ...prev,
+      [face]: color
+    }));
+  }, []);
+
   return (
     <div style={{ width: '100vw', height: '100vh', padding: '20px', display: 'flex', gap: '20px' }}>
-      <div style={{ flex: '0 0 400px' }}>
+      <div style={{ flex: '0 0 400px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <AlgorithmSelector 
           onAlgorithmSelect={handleAlgorithmSelect}
           selectedAlgorithm={selectedAlgorithm}
+        />
+        
+        <ColorSettings
+          colors={cubeColors}
+          onColorChange={handleColorChange}
+          disabled={isAnimating}
         />
       </div>
       
@@ -96,7 +115,7 @@ function App() {
               border: '1px solid #ccc',
               borderRadius: '8px'
             }}
-            cubeColors={DEFAULT_CUBE_COLORS}
+            cubeColors={cubeColors}
             highlightedStickers={highlightedStickers}
             highlightColor="#ffff00"
             bufferConfig={DEFAULT_BUFFER_CONFIG}
