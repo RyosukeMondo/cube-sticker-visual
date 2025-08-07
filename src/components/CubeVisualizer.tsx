@@ -3,9 +3,11 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Mesh } from 'three';
 import { Sticker } from './Sticker';
+import { ParticleArrowManager } from './ParticleArrowManager';
 import { ALL_STICKERS, type StickerPosition } from '../types/CubeStickers';
 import { type CubeColors, DEFAULT_CUBE_COLORS, type StickerState } from '../types/CubeColors';
 import { type BufferHighlightConfig, DEFAULT_BUFFER_CONFIG, getBufferStickers } from '../utils/bufferHighlighting';
+import { type Algorithm } from '../types/Algorithm';
 
 // Individual cubelet component (now just the black frame)
 function Cubelet({ position }: { position: [number, number, number] }) {
@@ -87,6 +89,18 @@ interface CubeVisualizerProps {
     highlightedStickers?: string[];
     highlightColor?: string;
     bufferConfig?: BufferHighlightConfig;
+    // Particle arrow animation props
+    algorithm?: Algorithm;
+    isAnimationPlaying?: boolean;
+    animationSpeed?: number;
+    arrowColor?: string;
+    particleCount?: number;
+    particleSize?: number;
+    autoTriggerAnimation?: boolean;
+    showMultipleArrows?: boolean;
+    onAnimationComplete?: () => void;
+    onAnimationStart?: () => void;
+    onArrowComplete?: (arrowId: string) => void;
 }
 
 export function CubeVisualizer({
@@ -95,7 +109,19 @@ export function CubeVisualizer({
     cubeColors = DEFAULT_CUBE_COLORS,
     highlightedStickers = [],
     highlightColor = '#ffff00',
-    bufferConfig = DEFAULT_BUFFER_CONFIG
+    bufferConfig = DEFAULT_BUFFER_CONFIG,
+    // Particle arrow animation props
+    algorithm,
+    isAnimationPlaying = false,
+    animationSpeed = 1.0,
+    arrowColor = '#ffff00',
+    particleCount = 20,
+    particleSize = 0.05,
+    autoTriggerAnimation = true,
+    showMultipleArrows = true,
+    onAnimationComplete,
+    onAnimationStart,
+    onArrowComplete
 }: CubeVisualizerProps) {
     const cubeletPositions = generateCubeletPositions();
 
@@ -156,6 +182,21 @@ export function CubeVisualizer({
                         />
                     );
                 })}
+
+                {/* Particle Arrow Animation System */}
+                <ParticleArrowManager
+                    algorithm={algorithm}
+                    isPlaying={isAnimationPlaying}
+                    animationSpeed={animationSpeed}
+                    arrowColor={arrowColor}
+                    particleCount={particleCount}
+                    particleSize={particleSize}
+                    autoTrigger={autoTriggerAnimation}
+                    showMultipleArrows={showMultipleArrows}
+                    onAnimationComplete={onAnimationComplete}
+                    onAnimationStart={onAnimationStart}
+                    onArrowComplete={onArrowComplete}
+                />
 
                 {/* Camera controls */}
                 <OrbitControls
