@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Vector3 } from 'three';
+import { Vector3, CatmullRomCurve3, TubeGeometry, MeshBasicMaterial } from 'three';
 import { ParticleArrow } from './ParticleArrow';
 import { getStickerPosition } from '../utils/stickerPositionLookup';
 import { type Algorithm, type StickerMapping } from '../types/Algorithm';
@@ -12,10 +12,49 @@ interface ArrowAnimation {
   visible: boolean;
   mapping: StickerMapping;
   cycleGroup?: number; // For grouping arrows in 3-cycles
+  cyclePosition?: number; // Position within the 3-cycle (0, 1, 2)
+  isPartOfCycle?: boolean; // Whether this arrow is part of a complete 3-cycle
+}
+
+interface CycleConnectionProps {
+  arrows: ArrowAnimation[];
+  cycleGroup: number;
+  visible: boolean;
+  color: string;
+}
+
+function CycleConnection({ arrows, visible, color }: CycleConnectionProps) {
+  if (!visible || arrows.length !== 3) return null;
+
+  // Sort arrows by cycle position to ensure proper connection order
+  const sortedArrows = [...arrows].sort((a, b) => (a.cyclePosition || 0) - (b.cyclePosition || 0));
+  
+  // Create a curved path connecting all arrows in the cycle
+  const points = [
+    sortedArrows[0].startPosition,
+    sortedArrows[0].endPosition,
+    sortedArrows[1].endPosition,
+    sortedArrows[2].endPosition,
+    sortedArrows[0].startPosition // Complete the cycle
+  ];
+
+  // Create a smooth curve through the points
+  const curve = new CatmullRomCurve3(points);
+  const tubeGeometry = new TubeGeometry(curve, 20, 0.02, 8, false);
+  const material = new MeshBasicMaterial({ 
+    color: color, 
+    transparent: true, 
+    opacity: 0.3,
+    wireframe: false
+  });
+
+  return (
+    <mesh geometry={tubeGeometry} material={material} />
+  );
 }
 
 export interface ParticleArrowManagerProps {
-  algorithm?: Algorithm;
+  algorithm: Algorithm;
   isPlaying?: boolean;
   animationSpeed?: number; // Speed multiplier (1.0 = normal, 0.5 = half speed, 2.0 = double speed)
   arrowColor?: string;
@@ -23,9 +62,15 @@ export interface ParticleArrowManagerProps {
   particleSize?: number;
   autoTrigger?: boolean; // Automatically start animation when algorithm changes
   showMultipleArrows?: boolean; // Show all arrows simultaneously for 3-cycle visualization
-  onAnimationComplete?: () => void;
-  onAnimationStart?: () => void;
-  onArrowComplete?: (arrowId: string) => void;
+  cycleTiming?: 'simultaneous' | 'sequential' | 'staggered'; // How to time arrows within cycles
+  showArrowHelper?: boolean; // Whether to show THREE.ArrowHelper
+  arrowHelperLength?: number | undefined; // Length of the arrow helper
+  arrowHelperHeadLength?: number | undefined; // Head length of arrow helper
+  arrowHelperHeadWidth?: number | undefined; // Head width of arrow helper
+  showCycleConnections?: boolean; // Whether to show connecting lines between cycle arrows
+  onAnimationComplete?: (() => void) | undefined;
+  onAnimationStart?: (() => void) | undefined;
+  onArrowComplete?: ((arrowId: string) => void) | undefined;
 }
 
 export function ParticleArrowManager({
@@ -37,14 +82,20 @@ export function ParticleArrowManager({
   particleSize = 0.05,
   autoTrigger = true,
   showMultipleArrows = true,
+  cycleTiming = 'simultaneous',
+  showArrowHelper = true,
+  arrowHelperLength,
+  arrowHelperHeadLength = 0.2,
+  arrowHelperHeadWidth = 0.1,
+  showCycleConnections = true,
   onAnimationComplete,
   onAnimationStart,
   onArrowComplete
 }: ParticleArrowManagerProps) {
   const [arrows, setArrows] = useState<ArrowAnimation[]>([]);
-  const [completedArrows, setCompletedArrows] = useState<Set<string>>(new Set());
-  const [isAnimating, setIsAnimating] = useState(false);
-  const animationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [, setCompletedArrows] = useState<Set<string>>(new Set());
+  const [, setIsAnimating] = useState(false);
+  const animationTimeoutRef = useRef<number | null>(null);
 
   // Generate arrows from algorithm sticker mappings with 3-cycle grouping
   const generateArrows = useCallback((algo: Algorithm): ArrowAnimation[] => {
@@ -61,9 +112,18 @@ export function ParticleArrowManager({
       cycleGroups.get(cycleGroup)!.push(mapping);
     });
 
-    // Generate arrows for each cycle group
+    // Generate arrows for each cycle group with enhanced 3-cycle visualization
     cycleGroups.forEach((mappings, cycleGroup) => {
-      mappings.forEach((mapping, index) => {
+      // Sort mappings by cyclePosition to ensure proper order
+      const sortedMappings = mappings.sort((a, b) => {
+        const posA = a.cyclePosition !== undefined ? a.cyclePosition % 3 : 0;
+        const posB = b.cyclePosition !== undefined ? b.cyclePosition % 3 : 0;
+        return posA - posB;
+      });
+
+      const isComplete3Cycle = sortedMappings.length === 3;
+
+      sortedMappings.forEach((mapping, index) => {
         const startPos = getStickerPosition(mapping.source);
         const endPos = getStickerPosition(mapping.target);
 
@@ -73,9 +133,23 @@ export function ParticleArrowManager({
           const startOffset = startPos.clone().add(new Vector3(0, offsetDistance, 0));
           const endOffset = endPos.clone().add(new Vector3(0, offsetDistance, 0));
 
-          // Use different colors for different cycle groups
-          const cycleColors = ['#ffff00', '#ff6600', '#00ff66', '#6600ff', '#ff0066'];
-          const cycleColor = cycleColors[cycleGroup % cycleColors.length];
+          // Enhanced color scheme for 3-cycles
+          let cycleColor: string;
+          if (isComplete3Cycle) {
+            // Use consistent colors for complete 3-cycles with slight variations for each arrow
+            const baseColors = ['#ffff00', '#ff6600', '#00ff66', '#6600ff', '#ff0066', '#00ffff'];
+            const baseColor = baseColors[cycleGroup % baseColors.length];
+            
+            // Slightly modify color for each position in the cycle
+            const colorVariations = [baseColor, baseColor + '99', baseColor + 'CC'];
+            cycleColor = colorVariations[index % 3];
+          } else {
+            // Use default color for incomplete cycles
+            const defaultColors = ['#888888', '#999999', '#aaaaaa'];
+            cycleColor = defaultColors[cycleGroup % defaultColors.length];
+          }
+
+          const cyclePosition = mapping.cyclePosition !== undefined ? mapping.cyclePosition % 3 : index;
 
           arrowAnimations.push({
             id: `arrow-${algo.id}-${cycleGroup}-${index}`,
@@ -84,7 +158,9 @@ export function ParticleArrowManager({
             color: arrowColor || cycleColor,
             visible: false,
             mapping,
-            cycleGroup
+            cycleGroup,
+            cyclePosition,
+            isPartOfCycle: isComplete3Cycle
           });
         } else {
           console.warn(`Could not find positions for sticker mapping: ${mapping.source} -> ${mapping.target}`);
@@ -107,10 +183,10 @@ export function ParticleArrowManager({
   }, []);
 
   // Reset function
-  const reset = useCallback(() => {
-    cleanup();
-    setCompletedArrows(new Set());
-  }, [cleanup]);
+  // const reset = useCallback(() => {
+  //   cleanup();
+  //   setCompletedArrows(new Set());
+  // }, [cleanup]);
 
   // Start animation function
   const startAnimation = useCallback(() => {
@@ -125,10 +201,54 @@ export function ParticleArrowManager({
     }
 
     if (showMultipleArrows) {
-      // Show all arrows simultaneously for 3-cycle visualization
-      setArrows(prev => prev.map(arrow => ({ ...arrow, visible: true })));
+      // Enhanced 3-cycle visualization based on timing mode
+      if (cycleTiming === 'simultaneous') {
+        // Show all arrows simultaneously for 3-cycle visualization
+        setArrows(prev => prev.map(arrow => ({ ...arrow, visible: true })));
+      } else if (cycleTiming === 'sequential') {
+        // Show arrows sequentially by cycle group, then by position within cycle
+        let currentArrowIndex = 0;
+        const showNextArrow = () => {
+          if (currentArrowIndex < arrows.length) {
+            setArrows(prev => prev.map((arrow, index) => ({
+              ...arrow,
+              visible: index === currentArrowIndex
+            })));
+            currentArrowIndex++;
+            
+            const animationDuration = Math.max(500, 2000 / animationSpeed);
+            animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
+          }
+        };
+        showNextArrow();
+      } else if (cycleTiming === 'staggered') {
+        // Show arrows with staggered timing within each cycle group
+        const cycleGroups = new Map<number, ArrowAnimation[]>();
+        arrows.forEach(arrow => {
+          const group = arrow.cycleGroup || 0;
+          if (!cycleGroups.has(group)) {
+            cycleGroups.set(group, []);
+          }
+          cycleGroups.get(group)!.push(arrow);
+        });
+
+        // Start each cycle group with internal staggering
+        cycleGroups.forEach((groupArrows, groupIndex) => {
+          groupArrows.forEach((arrow, arrowIndex) => {
+            const groupDelay = groupIndex * 1000; // 1 second between cycle groups
+            const arrowDelay = arrowIndex * 300; // 300ms stagger within group
+            const totalDelay = groupDelay + arrowDelay;
+
+            animationTimeoutRef.current = setTimeout(() => {
+              setArrows(prev => prev.map(a => 
+                a.id === arrow.id ? { ...a, visible: true } : a
+              ));
+            }, totalDelay);
+          });
+        });
+      }
     } else {
-      // Show arrows sequentially
+      // Show arrows sequentially (original behavior)
       let currentArrowIndex = 0;
       const showNextArrow = () => {
         if (currentArrowIndex < arrows.length) {
@@ -138,7 +258,6 @@ export function ParticleArrowManager({
           })));
           currentArrowIndex++;
           
-          // Schedule next arrow after current one completes
           const animationDuration = Math.max(500, 2000 / animationSpeed);
           animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
         }
@@ -149,23 +268,19 @@ export function ParticleArrowManager({
 
   // Update arrows when algorithm changes
   useEffect(() => {
-    if (algorithm) {
-      const newArrows = generateArrows(algorithm);
-      setArrows(newArrows);
-      setCompletedArrows(new Set());
-      
-      // Auto-trigger animation if enabled
-      if (autoTrigger) {
-        // Small delay to ensure arrows are ready
-        const timer = setTimeout(() => {
-          startAnimation();
-        }, 100);
-        return () => clearTimeout(timer);
-      }
-    } else {
-      cleanup();
-      setArrows([]);
+    const newArrows = generateArrows(algorithm);
+    setArrows(newArrows);
+    setCompletedArrows(new Set());
+    
+    // Auto-trigger animation if enabled
+    if (autoTrigger) {
+      // Small delay to ensure arrows are ready
+      const timer = setTimeout(() => {
+        startAnimation();
+      }, 100);
+      return () => clearTimeout(timer);
     }
+    return () => {};
   }, [algorithm, generateArrows, autoTrigger, startAnimation, cleanup]);
 
   // Handle play/pause state changes (manual control)
@@ -216,15 +331,28 @@ export function ParticleArrowManager({
   const animationDuration = Math.max(500, 2000 / animationSpeed);
 
   // Expose control methods (could be used by parent components)
-  const controls = {
-    start: startAnimation,
-    stop: cleanup,
-    reset: reset,
-    isAnimating
-  };
+  // const controls = {
+  //   start: startAnimation,
+  //   stop: cleanup,
+  //   reset: reset,
+  //   isAnimating
+  // };
+
+  // Group arrows by cycle for connection visualization
+  const cycleGroups = new Map<number, ArrowAnimation[]>();
+  arrows.forEach(arrow => {
+    if (arrow.isPartOfCycle && arrow.cycleGroup !== undefined) {
+      const group = arrow.cycleGroup;
+      if (!cycleGroups.has(group)) {
+        cycleGroups.set(group, []);
+      }
+      cycleGroups.get(group)!.push(arrow);
+    }
+  });
 
   return (
     <>
+      {/* Render individual arrows */}
       {arrows.map((arrow) => (
         <ParticleArrow
           key={arrow.id}
@@ -236,9 +364,29 @@ export function ParticleArrowManager({
           animationDuration={animationDuration}
           particleSize={particleSize}
           visible={arrow.visible}
+          showArrowHelper={showArrowHelper}
+          arrowHelperLength={arrowHelperLength}
+          arrowHelperHeadLength={arrowHelperHeadLength}
+          arrowHelperHeadWidth={arrowHelperHeadWidth}
           onAnimationComplete={handleArrowComplete}
         />
       ))}
+
+      {/* Render cycle connections */}
+      {showCycleConnections && Array.from(cycleGroups.entries()).map(([cycleGroup, groupArrows]) => {
+        const isVisible = groupArrows.some(arrow => arrow.visible);
+        const groupColor = groupArrows[0]?.color || '#ffff00';
+        
+        return (
+          <CycleConnection
+            key={`cycle-${cycleGroup}`}
+            arrows={groupArrows}
+            cycleGroup={cycleGroup}
+            visible={isVisible}
+            color={groupColor}
+          />
+        );
+      })}
     </>
   );
 }

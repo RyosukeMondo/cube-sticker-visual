@@ -98,9 +98,15 @@ interface CubeVisualizerProps {
     particleSize?: number;
     autoTriggerAnimation?: boolean;
     showMultipleArrows?: boolean;
-    onAnimationComplete?: () => void;
-    onAnimationStart?: () => void;
-    onArrowComplete?: (arrowId: string) => void;
+    cycleTiming?: 'simultaneous' | 'sequential' | 'staggered';
+    showArrowHelper?: boolean;
+    showCycleConnections?: boolean;
+    arrowHelperLength?: number | undefined;
+    arrowHelperHeadLength?: number | undefined;
+    arrowHelperHeadWidth?: number | undefined;
+    onAnimationComplete?: (() => void) | undefined;
+    onAnimationStart?: (() => void) | undefined;
+    onArrowComplete?: ((arrowId: string) => void) | undefined;
 }
 
 export function CubeVisualizer({
@@ -119,6 +125,12 @@ export function CubeVisualizer({
     particleSize = 0.05,
     autoTriggerAnimation = true,
     showMultipleArrows = true,
+    cycleTiming = 'simultaneous',
+    showArrowHelper = true,
+    showCycleConnections = true,
+    arrowHelperLength,
+    arrowHelperHeadLength = 0.2,
+    arrowHelperHeadWidth = 0.1,
     onAnimationComplete,
     onAnimationStart,
     onArrowComplete
@@ -184,19 +196,27 @@ export function CubeVisualizer({
                 })}
 
                 {/* Particle Arrow Animation System */}
-                <ParticleArrowManager
-                    algorithm={algorithm}
-                    isPlaying={isAnimationPlaying}
-                    animationSpeed={animationSpeed}
-                    arrowColor={arrowColor}
-                    particleCount={particleCount}
-                    particleSize={particleSize}
-                    autoTrigger={autoTriggerAnimation}
-                    showMultipleArrows={showMultipleArrows}
-                    onAnimationComplete={onAnimationComplete}
-                    onAnimationStart={onAnimationStart}
-                    onArrowComplete={onArrowComplete}
-                />
+                {algorithm && (
+                    <ParticleArrowManager
+                        algorithm={algorithm}
+                        isPlaying={isAnimationPlaying}
+                        animationSpeed={animationSpeed}
+                        arrowColor={arrowColor}
+                        particleCount={particleCount}
+                        particleSize={particleSize}
+                        autoTrigger={autoTriggerAnimation}
+                        showMultipleArrows={showMultipleArrows}
+                        cycleTiming={cycleTiming}
+                        showArrowHelper={showArrowHelper}
+                        showCycleConnections={showCycleConnections}
+                        arrowHelperLength={arrowHelperLength}
+                        arrowHelperHeadLength={arrowHelperHeadLength}
+                        arrowHelperHeadWidth={arrowHelperHeadWidth}
+                        onAnimationComplete={onAnimationComplete}
+                        onAnimationStart={onAnimationStart}
+                        onArrowComplete={onArrowComplete}
+                    />
+                )}
 
                 {/* Camera controls */}
                 <OrbitControls

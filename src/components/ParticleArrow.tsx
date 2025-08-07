@@ -1,6 +1,6 @@
 import { useRef, useEffect, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Vector3, BufferGeometry, BufferAttribute, Points, PointsMaterial, Color } from 'three';
+import { Vector3, BufferGeometry, BufferAttribute, Points, PointsMaterial, Color, ArrowHelper, Group } from 'three';
 import * as TWEEN from '@tweenjs/tween.js';
 
 interface ParticleArrowProps {
@@ -12,7 +12,11 @@ interface ParticleArrowProps {
   animationDuration?: number; // in milliseconds
   particleSize?: number;
   visible?: boolean;
-  onAnimationComplete?: (id: string) => void;
+  showArrowHelper?: boolean; // Whether to show THREE.ArrowHelper
+  arrowHelperLength?: number | undefined; // Length of the arrow helper
+  arrowHelperHeadLength?: number | undefined; // Head length of arrow helper
+  arrowHelperHeadWidth?: number | undefined; // Head width of arrow helper
+  onAnimationComplete?: ((id: string) => void) | undefined;
 }
 
 export function ParticleArrow({
@@ -24,9 +28,15 @@ export function ParticleArrow({
   animationDuration = 2000,
   particleSize = 0.05,
   visible = true,
+  showArrowHelper = true,
+  arrowHelperLength,
+  arrowHelperHeadLength = 0.2,
+  arrowHelperHeadWidth = 0.1,
   onAnimationComplete
 }: ParticleArrowProps) {
   const pointsRef = useRef<Points>(null);
+  const arrowGroupRef = useRef<Group>(null);
+  const arrowHelperRef = useRef<ArrowHelper | null>(null);
   const tweenRef = useRef<TWEEN.Tween<{ progress: number }> | null>(null);
   const animationStateRef = useRef({ progress: 0, isAnimating: false });
 
@@ -63,6 +73,36 @@ export function ParticleArrow({
     });
   }, [color, particleSize]);
 
+  // Create ArrowHelper
+  const arrowHelper = useMemo(() => {
+    if (!showArrowHelper) return null;
+
+    const direction = new Vector3().subVectors(endPosition, startPosition).normalize();
+    const length = arrowHelperLength || startPosition.distanceTo(endPosition);
+    const arrowColor = new Color(color);
+
+    const arrow = new ArrowHelper(
+      direction,
+      startPosition,
+      length,
+      arrowColor,
+      arrowHelperHeadLength,
+      arrowHelperHeadWidth
+    );
+
+    // Make arrow slightly transparent
+    if (arrow.line.material) {
+      (arrow.line.material as any).transparent = true;
+      (arrow.line.material as any).opacity = 0.7;
+    }
+    if (arrow.cone.material) {
+      (arrow.cone.material as any).transparent = true;
+      (arrow.cone.material as any).opacity = 0.7;
+    }
+
+    return arrow;
+  }, [startPosition, endPosition, color, showArrowHelper, arrowHelperLength, arrowHelperHeadLength, arrowHelperHeadWidth]);
+
   // Animation function
   const startAnimation = () => {
     if (tweenRef.current) {
@@ -94,7 +134,7 @@ export function ParticleArrow({
   const updateParticlePositions = (progress: number) => {
     if (!pointsRef.current) return;
 
-    const positions = pointsRef.current.geometry.attributes.position;
+    const positions = pointsRef.current.geometry.attributes['position'] as BufferAttribute;
     const direction = new Vector3().subVectors(endPosition, startPosition);
 
     for (let i = 0; i < particleCount; i++) {
@@ -123,7 +163,7 @@ export function ParticleArrow({
   const resetParticles = () => {
     if (!pointsRef.current) return;
 
-    const positions = pointsRef.current.geometry.attributes.position;
+    const positions = pointsRef.current.geometry.attributes['position'] as BufferAttribute;
     for (let i = 0; i < particleCount; i++) {
       const index = i * 3;
       positions.array[index] = initialPositions[index];
@@ -132,6 +172,30 @@ export function ParticleArrow({
     }
     positions.needsUpdate = true;
   };
+
+  // Manage ArrowHelper in the group
+  useEffect(() => {
+    if (!arrowGroupRef.current) return () => {};
+
+    // Clear existing arrow helper
+    if (arrowHelperRef.current) {
+      arrowGroupRef.current.remove(arrowHelperRef.current);
+      arrowHelperRef.current = null;
+    }
+
+    // Add new arrow helper if visible and enabled
+    if (visible && arrowHelper) {
+      arrowGroupRef.current.add(arrowHelper);
+      arrowHelperRef.current = arrowHelper;
+    }
+
+    return () => {
+      if (arrowHelperRef.current && arrowGroupRef.current) {
+        arrowGroupRef.current.remove(arrowHelperRef.current);
+        arrowHelperRef.current = null;
+      }
+    };
+  }, [visible, arrowHelper]);
 
   // Start animation when component becomes visible
   useEffect(() => {
@@ -148,6 +212,7 @@ export function ParticleArrow({
       }
       animationStateRef.current.isAnimating = false;
       resetParticles();
+      return () => {};
     }
   }, [visible, startPosition, endPosition]);
 
@@ -170,6 +235,8 @@ export function ParticleArrow({
   }
 
   return (
-    <points ref={pointsRef} geometry={geometry} material={material} />
+    <group ref={arrowGroupRef}>
+      <points ref={pointsRef} geometry={geometry} material={material} />
+    </group>
   );
 }
