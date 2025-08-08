@@ -11,20 +11,21 @@ interface OptimizedStickerProps {
     rotation: [number, number, number];
     size: number;
   }>;
+  stickerSize?: number; // Dynamic sticker size
 }
 
 /**
  * Optimized sticker component using geometry instancing and material sharing
  * Groups stickers by material properties to minimize draw calls
  */
-export function OptimizedSticker({ stickers }: OptimizedStickerProps) {
+export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStickerProps) {
   const mainMeshRef = useRef<InstancedMesh>(null);
   const bufferBorderMeshRef = useRef<InstancedMesh>(null);
   
   // Shared geometries (created once, reused for all instances)
   // Made stickers as thin 3D cubes (rectangular prisms) for better realism
-  const mainGeometry = useMemo(() => new BoxGeometry(0.45, 0.45, 0.05), []); // Thin cube: width, height, depth
-  const borderGeometry = useMemo(() => new BoxGeometry(0.5, 0.5, 0.04), []); // Slightly thinner border
+  const mainGeometry = useMemo(() => new BoxGeometry(stickerSize, stickerSize, 0.05), [stickerSize]); // Thin cube: width, height, depth
+  const borderGeometry = useMemo(() => new BoxGeometry(stickerSize + 0.05, stickerSize + 0.05, 0.04), [stickerSize]); // Slightly larger border
   
   // Shared materials for different sticker types
   const materials = useMemo(() => ({

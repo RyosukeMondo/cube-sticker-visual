@@ -4,6 +4,7 @@ import { AlgorithmSelector } from './components/AlgorithmSelector'
 import { AlgorithmDisplay } from './components/AlgorithmDisplay'
 import { AnimationControls } from './components/AnimationControls'
 import { ColorSettings } from './components/ColorSettings'
+import { StickerSettings } from './components/StickerSettings'
 import { ResponsiveLayout } from './components/ResponsiveLayout'
 import { useViewport } from './hooks/useViewport'
 import type { Algorithm } from './types/Algorithm'
@@ -29,6 +30,9 @@ function App() {
   
   // Color configuration state
   const [cubeColors, setCubeColors] = useState<CubeColors>(DEFAULT_CUBE_COLORS)
+  
+  // Sticker size configuration state
+  const [stickerSize, setStickerSize] = useState(0.45)
   
   // Refs for cleanup and coordination
   const animationCleanupRef = useRef<(() => void) | null>(null)
@@ -132,10 +136,21 @@ function App() {
         ...prev,
         [face]: color
       }));
-      setError(null); // Clear any errors when color change succeeds
+      setError(null); // Clear any previous errors when color change succeeds
     } catch (err) {
       console.error('Error changing color:', err);
-      setError('Failed to update cube colors.');
+      setError('Failed to change cube color. Please try again.');
+    }
+  }, []);
+
+  // Sticker size change handler
+  const handleStickerSizeChange = useCallback((size: number) => {
+    try {
+      setStickerSize(size);
+      setError(null); // Clear any previous errors when size change succeeds
+    } catch (err) {
+      console.error('Error changing sticker size:', err);
+      setError('Failed to change sticker size. Please try again.');
     }
   }, []);
   
@@ -170,6 +185,12 @@ function App() {
       <ColorSettings
         colors={cubeColors}
         onColorChange={handleColorChange}
+        disabled={isAnimating}
+      />
+      
+      <StickerSettings
+        stickerSize={stickerSize}
+        onStickerSizeChange={handleStickerSizeChange}
         disabled={isAnimating}
       />
     </div>
@@ -258,6 +279,7 @@ function App() {
             highlightedStickers={highlightedStickers}
             highlightColor="#ffff00"
             bufferConfig={DEFAULT_BUFFER_CONFIG}
+            stickerSize={stickerSize}
             {...(selectedAlgorithm && {
               algorithm: selectedAlgorithm,
               animationSpeed: animationSpeed,
