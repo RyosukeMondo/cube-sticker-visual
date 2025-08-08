@@ -14,6 +14,9 @@ export interface StickerSettings {
   thickness: number;
   transparency: number;
   chamfer: number;
+  showEdges: boolean;
+  edgeThickness: number;
+  edgeColor: string;
 }
 
 /**

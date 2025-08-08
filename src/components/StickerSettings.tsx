@@ -7,11 +7,17 @@ interface StickerSettingsProps {
   stickerThickness: number;   // Sticker thickness (0.01 - 0.1)
   stickerTransparency: number; // Transparency level (0.0 - 1.0)
   stickerChamfer: number;     // Chamfer/bevel amount (0.0 - 0.1)
+  showEdges: boolean;         // Show edge lines on stickers
+  edgeThickness: number;      // Edge line thickness (1.0 - 5.0)
+  edgeColor: string;          // Edge line color (hex)
   onStickerSizeChange: (size: number) => void;
   onStickerSpacingChange: (spacing: number) => void;
   onStickerThicknessChange: (thickness: number) => void;
   onStickerTransparencyChange: (transparency: number) => void;
   onStickerChamferChange: (chamfer: number) => void;
+  onShowEdgesChange: (showEdges: boolean) => void;
+  onEdgeThicknessChange: (edgeThickness: number) => void;
+  onEdgeColorChange: (edgeColor: string) => void;
   disabled?: boolean;
 }
 
@@ -21,11 +27,17 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
   stickerThickness,
   stickerTransparency,
   stickerChamfer,
+  showEdges,
+  edgeThickness,
+  edgeColor,
   onStickerSizeChange,
   onStickerSpacingChange,
   onStickerThicknessChange,
   onStickerTransparencyChange,
   onStickerChamferChange,
+  onShowEdgesChange,
+  onEdgeThicknessChange,
+  onEdgeColorChange,
   disabled = false
 }) => {
   // Event handlers for each control
@@ -54,12 +66,30 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
     onStickerChamferChange(newChamfer);
   };
 
+  const handleShowEdgesChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newShowEdges = event.target.checked;
+    onShowEdgesChange(newShowEdges);
+  };
+
+  const handleEdgeThicknessChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newEdgeThickness = parseFloat(event.target.value);
+    onEdgeThicknessChange(newEdgeThickness);
+  };
+
+  const handleEdgeColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newEdgeColor = event.target.value;
+    onEdgeColorChange(newEdgeColor);
+  };
+
   const resetToDefaults = () => {
     onStickerSizeChange(0.45);        // Default size
     onStickerSpacingChange(0.0);      // Default spacing (no gap)
     onStickerThicknessChange(0.05);   // Default thickness
     onStickerTransparencyChange(1.0); // Default fully opaque
     onStickerChamferChange(0.02);     // Default chamfer amount
+    onShowEdgesChange(false);         // Default edge visibility
+    onEdgeThicknessChange(2.0);       // Default edge thickness
+    onEdgeColorChange('#000000');     // Default edge color
   };
 
   // Convert values to percentages for display
@@ -198,6 +228,69 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
             <span className="sticker-setting__max-label">Rounded</span>
           </div>
         </div>
+
+        {/* Edge Lines Section */}
+        <div className="sticker-setting" style={{ borderTop: '1px solid #e0e0e0', paddingTop: '15px', marginTop: '15px' }}>
+          <div className="sticker-setting__checkbox-group">
+            <input
+              id="show-edges-checkbox"
+              type="checkbox"
+              checked={showEdges}
+              onChange={handleShowEdgesChange}
+              disabled={disabled}
+              className="sticker-setting__checkbox"
+            />
+            <label className="sticker-setting__checkbox-label" htmlFor="show-edges-checkbox">
+              Show Edge Lines
+            </label>
+          </div>
+        </div>
+
+        {/* Edge Thickness Control - only show when edges are enabled */}
+        {showEdges && (
+          <div className="sticker-setting">
+            <label className="sticker-setting__label" htmlFor="edge-thickness-slider">
+              Edge Thickness: {edgeThickness.toFixed(1)}
+            </label>
+            <div className="sticker-setting__slider-group">
+              <span className="sticker-setting__min-label">Thin</span>
+              <input
+                id="edge-thickness-slider"
+                type="range"
+                min="1.0"
+                max="5.0"
+                step="0.5"
+                value={edgeThickness}
+                onChange={handleEdgeThicknessChange}
+                disabled={disabled}
+                className="sticker-setting__slider"
+                title={`Edge thickness: ${edgeThickness.toFixed(1)}`}
+              />
+              <span className="sticker-setting__max-label">Thick</span>
+            </div>
+          </div>
+        )}
+
+        {/* Edge Color Control - only show when edges are enabled */}
+        {showEdges && (
+          <div className="sticker-setting">
+            <label className="sticker-setting__label" htmlFor="edge-color-picker">
+              Edge Color
+            </label>
+            <div className="sticker-setting__color-group">
+              <input
+                id="edge-color-picker"
+                type="color"
+                value={edgeColor}
+                onChange={handleEdgeColorChange}
+                disabled={disabled}
+                className="sticker-setting__color-picker"
+                title={`Edge color: ${edgeColor}`}
+              />
+              <span className="sticker-setting__color-value">{edgeColor}</span>
+            </div>
+          </div>
+        )}
       </div>
       
       <div className="sticker-settings__info">

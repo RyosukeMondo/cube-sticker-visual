@@ -87,6 +87,9 @@ interface CubeVisualizerProps {
     stickerThickness?: number;   // Sticker thickness (0.01 - 0.1)
     stickerTransparency?: number; // Transparency level (0.0 - 1.0)
     stickerChamfer?: number;     // Chamfer/bevel amount (0.0 - 0.1)
+    showEdges?: boolean;         // Show edge lines on stickers
+    edgeThickness?: number;      // Edge line thickness (1.0 - 5.0)
+    edgeColor?: string;          // Edge line color (hex)
     // Particle arrow animation props
     algorithm?: Algorithm;
     isAnimationPlaying?: boolean;
@@ -121,6 +124,9 @@ export function CubeVisualizer({
     stickerThickness = 0.05,     // Default thickness
     stickerTransparency = 1.0,   // Default fully opaque
     stickerChamfer = 0.02,       // Default chamfer amount
+    showEdges = false,           // Default edge visibility
+    edgeThickness = 2.0,         // Default edge thickness
+    edgeColor = '#000000',       // Default edge color
     // Particle arrow animation props
     algorithm,
     isAnimationPlaying = false,
@@ -290,7 +296,10 @@ export function CubeVisualizer({
                         spacing: stickerSpacing,
                         thickness: stickerThickness,
                         transparency: stickerTransparency,
-                        chamfer: stickerChamfer
+                        chamfer: stickerChamfer,
+                        showEdges: showEdges,
+                        edgeThickness: edgeThickness,
+                        edgeColor: edgeColor
                     }}
                 />
 

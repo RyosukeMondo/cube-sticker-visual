@@ -36,7 +36,10 @@ function App() {
     spacing: 0.0,
     thickness: 0.05,
     transparency: 1.0,
-    chamfer: 0.02
+    chamfer: 0.02,
+    showEdges: true,  // Temporarily enabled for testing
+    edgeThickness: 2.0,
+    edgeColor: '#000000'
   };
 
   // Color configuration state with local storage persistence
@@ -220,6 +223,42 @@ function App() {
       setError('Failed to change sticker chamfer. Please try again.');
     }
   }, [stickerSettings]);
+
+  const handleShowEdgesChange = useCallback((showEdges: boolean) => {
+    try {
+      const newSettings = { ...stickerSettings, showEdges };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing edge visibility:', err);
+      setError('Failed to change edge visibility. Please try again.');
+    }
+  }, [stickerSettings]);
+
+  const handleEdgeThicknessChange = useCallback((edgeThickness: number) => {
+    try {
+      const newSettings = { ...stickerSettings, edgeThickness };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing edge thickness:', err);
+      setError('Failed to change edge thickness. Please try again.');
+    }
+  }, [stickerSettings]);
+
+  const handleEdgeColorChange = useCallback((edgeColor: string) => {
+    try {
+      const newSettings = { ...stickerSettings, edgeColor };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing edge color:', err);
+      setError('Failed to change edge color. Please try again.');
+    }
+  }, [stickerSettings]);
   
   // Cleanup effect for component unmount
   useEffect(() => {
@@ -275,11 +314,17 @@ function App() {
           stickerThickness={stickerSettings.thickness}
           stickerTransparency={stickerSettings.transparency}
           stickerChamfer={stickerSettings.chamfer}
+          showEdges={stickerSettings.showEdges}
+          edgeThickness={stickerSettings.edgeThickness}
+          edgeColor={stickerSettings.edgeColor}
           onStickerSizeChange={handleStickerSizeChange}
           onStickerSpacingChange={handleStickerSpacingChange}
           onStickerThicknessChange={handleStickerThicknessChange}
           onStickerTransparencyChange={handleStickerTransparencyChange}
           onStickerChamferChange={handleStickerChamferChange}
+          onShowEdgesChange={handleShowEdgesChange}
+          onEdgeThicknessChange={handleEdgeThicknessChange}
+          onEdgeColorChange={handleEdgeColorChange}
           disabled={false}
         />
       </CollapsibleSection>
@@ -374,6 +419,9 @@ function App() {
             stickerThickness={stickerSettings.thickness}
             stickerTransparency={stickerSettings.transparency}
             stickerChamfer={stickerSettings.chamfer}
+            showEdges={stickerSettings.showEdges}
+            edgeThickness={stickerSettings.edgeThickness}
+            edgeColor={stickerSettings.edgeColor}
             {...(selectedAlgorithm && {
               algorithm: selectedAlgorithm,
               animationSpeed: animationSpeed,

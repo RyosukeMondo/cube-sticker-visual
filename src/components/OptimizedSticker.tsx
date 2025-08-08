@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react';
-import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Color, Shape, ExtrudeGeometry } from 'three';
+import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Color, Shape, ExtrudeGeometry, EdgesGeometry, LineBasicMaterial } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { type StickerState } from '../types/CubeColors';
 import { isBufferSticker } from '../utils/bufferHighlighting';
@@ -10,6 +10,9 @@ interface StickerControlSettings {
   thickness: number;      // Sticker thickness (0.01 - 0.1)
   transparency: number;   // Transparency level (0.0 - 1.0)
   chamfer: number;        // Chamfer/bevel amount (0.0 - 0.1)
+  showEdges: boolean;     // Show edge lines on stickers
+  edgeThickness: number;  // Edge line thickness (1.0 - 5.0)
+  edgeColor: string;      // Edge line color (hex)
 }
 
 interface OptimizedStickerProps {
@@ -75,10 +78,17 @@ export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) 
   }), [controls.size, controls.thickness, controls.chamfer]);
   
   // Create geometries based on control settings
-  const geometries = useMemo(() => ({
-    main: createChamferedShape(stickerDimensions.size, stickerDimensions.chamfer),
-    border: createChamferedShape(stickerDimensions.borderSize, stickerDimensions.borderChamfer)
-  }), [createChamferedShape, stickerDimensions]);
+  const geometries = useMemo(() => {
+    const mainGeometry = createChamferedShape(stickerDimensions.size, stickerDimensions.chamfer);
+    const borderGeometry = createChamferedShape(stickerDimensions.borderSize, stickerDimensions.borderChamfer);
+    
+    return {
+      main: mainGeometry,
+      border: borderGeometry,
+      mainEdges: controls.showEdges ? new EdgesGeometry(mainGeometry) : null,
+      borderEdges: controls.showEdges ? new EdgesGeometry(borderGeometry) : null
+    };
+  }, [createChamferedShape, stickerDimensions, controls.showEdges]);
   
   // Create materials with transparency support
   const materials = useMemo(() => ({
@@ -98,8 +108,20 @@ export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) 
       color: '#000000',
       transparent: true,
       opacity: Math.min(0.4, controls.transparency * 0.6)
+    }),
+    edges: new LineBasicMaterial({
+      color: controls.edgeColor,
+      linewidth: controls.edgeThickness,
+      transparent: controls.transparency < 1.0,
+      opacity: controls.transparency
+    }),
+    borderEdges: new LineBasicMaterial({
+      color: controls.edgeColor,
+      linewidth: controls.edgeThickness * 0.8, // Slightly thinner for borders
+      transparent: true,
+      opacity: Math.min(0.6, controls.transparency * 0.8)
     })
-  }), [controls.transparency]);
+  }), [controls.transparency, controls.edgeColor, controls.edgeThickness]);
   
   // Calculate adjusted positions based on spacing
   const adjustedStickers = useMemo(() => {
@@ -238,6 +260,7 @@ export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) 
       
       bufferBorderMeshRef.current.instanceMatrix.needsUpdate = true;
     }
+
   });
   
   const totalMainStickers = stickers.length - stickerGroups.bufferBorders.length;
@@ -262,6 +285,37 @@ export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) 
           frustumCulled={true}
         />
       )}
+      
+      {/* Main sticker edges */}
+      {controls.showEdges && geometries.mainEdges && adjustedStickers.map((item) => {
+        const bufferInfo = isBufferSticker(item.sticker.id);
+        if (bufferInfo.isBuffer) return null; // Skip buffer stickers, they have their own edges
+        
+        return (
+          <lineSegments
+            key={`edge-${item.sticker.id}`}
+            position={item.adjustedPosition}
+            rotation={item.rotation}
+            geometry={geometries.mainEdges!}
+            material={materials.edges}
+          />
+        );
+      })}
+      
+      {/* Buffer border edges */}
+      {controls.showEdges && geometries.borderEdges && stickerGroups.bufferBorders.map((item) => (
+        <lineSegments
+          key={`border-edge-${item.sticker.id}`}
+          position={[
+            item.adjustedPosition[0],
+            item.adjustedPosition[1],
+            item.adjustedPosition[2] + (item.adjustedPosition[2] > 0 ? 0.0015 : -0.0015)
+          ]}
+          rotation={item.rotation}
+          geometry={geometries.borderEdges!}
+          material={materials.borderEdges}
+        />
+      ))}
     </group>
   );
 }
