@@ -12,6 +12,7 @@ import type { Algorithm } from './types/Algorithm'
 import type { CubeColors } from './types/CubeColors'
 import { DEFAULT_CUBE_COLORS } from './types/CubeColors'
 import { DEFAULT_BUFFER_CONFIG } from './utils/bufferHighlighting'
+import { LocalStorageManager, type StickerSettings as StickerSettingsType } from './utils/localStorage'
 import './App.css'
 
 function App() {
@@ -29,15 +30,24 @@ function App() {
   const [isAnimating, setIsAnimating] = useState(false)
   const [animationKey, setAnimationKey] = useState(0) // Used to trigger replay
   
-  // Color configuration state
-  const [cubeColors, setCubeColors] = useState<CubeColors>(DEFAULT_CUBE_COLORS)
+  // Default sticker settings
+  const defaultStickerSettings: StickerSettingsType = {
+    size: 0.45,
+    spacing: 0.0,
+    thickness: 0.05,
+    transparency: 1.0,
+    chamfer: 0.02
+  };
+
+  // Color configuration state with local storage persistence
+  const [cubeColors, setCubeColors] = useState<CubeColors>(() => 
+    LocalStorageManager.loadCubeColors(DEFAULT_CUBE_COLORS)
+  )
   
-  // Sticker configuration state
-  const [stickerSize, setStickerSize] = useState(0.45)
-  const [stickerSpacing, setStickerSpacing] = useState(0.0)
-  const [stickerThickness, setStickerThickness] = useState(0.05)
-  const [stickerTransparency, setStickerTransparency] = useState(1.0)
-  const [stickerChamfer, setStickerChamfer] = useState(0.02)
+  // Sticker configuration state with local storage persistence
+  const [stickerSettings, setStickerSettings] = useState<StickerSettingsType>(() =>
+    LocalStorageManager.loadStickerSettings(defaultStickerSettings)
+  )
   
   // Refs for cleanup and coordination
   const animationCleanupRef = useRef<(() => void) | null>(null)
@@ -134,70 +144,82 @@ function App() {
     }
   }, []);
 
-  // Color settings handlers
+  // Color settings handlers with local storage persistence
   const handleColorChange = useCallback((face: keyof CubeColors, color: string) => {
     try {
-      setCubeColors(prev => ({
-        ...prev,
+      const newColors = {
+        ...cubeColors,
         [face]: color
-      }));
+      };
+      setCubeColors(newColors);
+      LocalStorageManager.saveCubeColors(newColors);
       setError(null); // Clear any previous errors when color change succeeds
     } catch (err) {
       console.error('Error changing color:', err);
       setError('Failed to change cube color. Please try again.');
     }
-  }, []);
+  }, [cubeColors]);
 
-  // Sticker control change handlers
+  // Sticker control change handlers with local storage persistence
   const handleStickerSizeChange = useCallback((size: number) => {
     try {
-      setStickerSize(size);
+      const newSettings = { ...stickerSettings, size };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
       setError(null);
     } catch (err) {
       console.error('Error changing sticker size:', err);
       setError('Failed to change sticker size. Please try again.');
     }
-  }, []);
+  }, [stickerSettings]);
 
   const handleStickerSpacingChange = useCallback((spacing: number) => {
     try {
-      setStickerSpacing(spacing);
+      const newSettings = { ...stickerSettings, spacing };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
       setError(null);
     } catch (err) {
       console.error('Error changing sticker spacing:', err);
       setError('Failed to change sticker spacing. Please try again.');
     }
-  }, []);
+  }, [stickerSettings]);
 
   const handleStickerThicknessChange = useCallback((thickness: number) => {
     try {
-      setStickerThickness(thickness);
+      const newSettings = { ...stickerSettings, thickness };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
       setError(null);
     } catch (err) {
       console.error('Error changing sticker thickness:', err);
       setError('Failed to change sticker thickness. Please try again.');
     }
-  }, []);
+  }, [stickerSettings]);
 
   const handleStickerTransparencyChange = useCallback((transparency: number) => {
     try {
-      setStickerTransparency(transparency);
+      const newSettings = { ...stickerSettings, transparency };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
       setError(null);
     } catch (err) {
       console.error('Error changing sticker transparency:', err);
       setError('Failed to change sticker transparency. Please try again.');
     }
-  }, []);
+  }, [stickerSettings]);
 
   const handleStickerChamferChange = useCallback((chamfer: number) => {
     try {
-      setStickerChamfer(chamfer);
+      const newSettings = { ...stickerSettings, chamfer };
+      setStickerSettings(newSettings);
+      LocalStorageManager.saveStickerSettings(newSettings);
       setError(null);
     } catch (err) {
       console.error('Error changing sticker chamfer:', err);
       setError('Failed to change sticker chamfer. Please try again.');
     }
-  }, []);
+  }, [stickerSettings]);
   
   // Cleanup effect for component unmount
   useEffect(() => {
@@ -248,11 +270,11 @@ function App() {
         defaultExpanded={false}
       >
         <StickerSettings
-          stickerSize={stickerSize}
-          stickerSpacing={stickerSpacing}
-          stickerThickness={stickerThickness}
-          stickerTransparency={stickerTransparency}
-          stickerChamfer={stickerChamfer}
+          stickerSize={stickerSettings.size}
+          stickerSpacing={stickerSettings.spacing}
+          stickerThickness={stickerSettings.thickness}
+          stickerTransparency={stickerSettings.transparency}
+          stickerChamfer={stickerSettings.chamfer}
           onStickerSizeChange={handleStickerSizeChange}
           onStickerSpacingChange={handleStickerSpacingChange}
           onStickerThicknessChange={handleStickerThicknessChange}
@@ -347,11 +369,11 @@ function App() {
             highlightedStickers={highlightedStickers}
             highlightColor="#ffff00"
             bufferConfig={DEFAULT_BUFFER_CONFIG}
-            stickerSize={stickerSize}
-            stickerSpacing={stickerSpacing}
-            stickerThickness={stickerThickness}
-            stickerTransparency={stickerTransparency}
-            stickerChamfer={stickerChamfer}
+            stickerSize={stickerSettings.size}
+            stickerSpacing={stickerSettings.spacing}
+            stickerThickness={stickerSettings.thickness}
+            stickerTransparency={stickerSettings.transparency}
+            stickerChamfer={stickerSettings.chamfer}
             {...(selectedAlgorithm && {
               algorithm: selectedAlgorithm,
               animationSpeed: animationSpeed,
