@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Vector3, CatmullRomCurve3, TubeGeometry, MeshBasicMaterial } from 'three';
+import { Vector3 } from 'three';
 import { ParticleArrow } from './ParticleArrow';
 import { getStickerPosition } from '../utils/stickerPositionLookup';
 import { type Algorithm, type StickerMapping } from '../types/Algorithm';
@@ -16,42 +16,7 @@ interface ArrowAnimation {
   isPartOfCycle?: boolean; // Whether this arrow is part of a complete 3-cycle
 }
 
-interface CycleConnectionProps {
-  arrows: ArrowAnimation[];
-  cycleGroup: number;
-  visible: boolean;
-  color: string;
-}
 
-function CycleConnection({ arrows, visible, color }: CycleConnectionProps) {
-  if (!visible || arrows.length !== 3) return null;
-
-  // Sort arrows by cycle position to ensure proper connection order
-  const sortedArrows = [...arrows].sort((a, b) => (a.cyclePosition || 0) - (b.cyclePosition || 0));
-  
-  // Create a curved path connecting all arrows in the cycle
-  const points = [
-    sortedArrows[0].startPosition,
-    sortedArrows[0].endPosition,
-    sortedArrows[1].endPosition,
-    sortedArrows[2].endPosition,
-    sortedArrows[0].startPosition // Complete the cycle
-  ];
-
-  // Create a smooth curve through the points
-  const curve = new CatmullRomCurve3(points);
-  const tubeGeometry = new TubeGeometry(curve, 20, 0.02, 8, false);
-  const material = new MeshBasicMaterial({ 
-    color: color, 
-    transparent: true, 
-    opacity: 0.3,
-    wireframe: false
-  });
-
-  return (
-    <mesh geometry={tubeGeometry} material={material} />
-  );
-}
 
 export interface ParticleArrowManagerProps {
   algorithm: Algorithm;
@@ -67,7 +32,10 @@ export interface ParticleArrowManagerProps {
   arrowHelperLength?: number | undefined; // Length of the arrow helper
   arrowHelperHeadLength?: number | undefined; // Head length of arrow helper
   arrowHelperHeadWidth?: number | undefined; // Head width of arrow helper
-  showCycleConnections?: boolean; // Whether to show connecting lines between cycle arrows
+  // New arrow customization properties
+  magnification?: number; // Overall arrow size multiplier
+  lineThickness?: number; // Thickness of arrow line
+  coneSize?: number; // Size of arrow cone/head
   onAnimationComplete?: (() => void) | undefined;
   onAnimationStart?: (() => void) | undefined;
   onArrowComplete?: ((arrowId: string) => void) | undefined;
@@ -86,9 +54,9 @@ export function ParticleArrowManager({
   cycleTiming = 'simultaneous',
   showArrowHelper = true,
   arrowHelperLength,
-  arrowHelperHeadLength = 0.2,
-  arrowHelperHeadWidth = 0.1,
-  showCycleConnections = true,
+  magnification = 1.0,
+  lineThickness = 0.02,
+  coneSize = 0.2,
   onAnimationComplete,
   onAnimationStart,
   onArrowComplete,
@@ -114,79 +82,49 @@ export function ParticleArrowManager({
     }
   }, [onRegisterCleanup]);
 
-  // Generate arrows from algorithm sticker mappings with 3-cycle grouping
+  // Generate single direct arrow showing point1 -> point2 movement
   const generateArrows = useCallback((algo: Algorithm): ArrowAnimation[] => {
     const arrowAnimations: ArrowAnimation[] = [];
 
-    // Group sticker mappings into 3-cycles based on cyclePosition
-    const cycleGroups = new Map<number, StickerMapping[]>();
-    
-    algo.stickerMappings.forEach((mapping) => {
-      const cycleGroup = mapping.cyclePosition !== undefined ? Math.floor(mapping.cyclePosition / 3) : 0;
-      if (!cycleGroups.has(cycleGroup)) {
-        cycleGroups.set(cycleGroup, []);
-      }
-      cycleGroups.get(cycleGroup)!.push(mapping);
-    });
+    // Show the second sticker mapping (point1 -> point2), not buffer -> point1
+    if (algo.stickerMappings.length > 1) {
+      const mapping = algo.stickerMappings[1]; // Take the second mapping (point1 -> point2)
+      const startPos = getStickerPosition(mapping.source);
+      const endPos = getStickerPosition(mapping.target);
 
-    // Generate arrows for each cycle group with enhanced 3-cycle visualization
-    cycleGroups.forEach((mappings, cycleGroup) => {
-      // Sort mappings by cyclePosition to ensure proper order
-      const sortedMappings = mappings.sort((a, b) => {
-        const posA = a.cyclePosition !== undefined ? a.cyclePosition % 3 : 0;
-        const posB = b.cyclePosition !== undefined ? b.cyclePosition % 3 : 0;
-        return posA - posB;
-      });
-
-      const isComplete3Cycle = sortedMappings.length === 3;
-
-      sortedMappings.forEach((mapping, index) => {
-        const startPos = getStickerPosition(mapping.source);
-        const endPos = getStickerPosition(mapping.target);
-
-        if (startPos && endPos) {
-          // Offset arrow positions slightly above the sticker surface to make them visible
-          const offsetDistance = 0.1;
-          const startOffset = startPos.clone().add(new Vector3(0, offsetDistance, 0));
-          const endOffset = endPos.clone().add(new Vector3(0, offsetDistance, 0));
-
-          // Enhanced color scheme for 3-cycles
-          let cycleColor: string;
-          if (isComplete3Cycle) {
-            // Use consistent colors for complete 3-cycles with slight variations for each arrow
-            const baseColors = ['#ffff00', '#ff6600', '#00ff66', '#6600ff', '#ff0066', '#00ffff'];
-            const baseColor = baseColors[cycleGroup % baseColors.length];
-            
-            // Slightly modify color for each position in the cycle
-            const colorVariations = [baseColor, baseColor + '99', baseColor + 'CC'];
-            cycleColor = colorVariations[index % 3];
-          } else {
-            // Use default color for incomplete cycles
-            const defaultColors = ['#888888', '#999999', '#aaaaaa'];
-            cycleColor = defaultColors[cycleGroup % defaultColors.length];
-          }
-
-          const cyclePosition = mapping.cyclePosition !== undefined ? mapping.cyclePosition % 3 : index;
-
-          arrowAnimations.push({
-            id: `arrow-${algo.id}-${cycleGroup}-${index}`,
-            startPosition: startOffset,
-            endPosition: endOffset,
-            color: arrowColor || cycleColor,
-            visible: false,
-            mapping,
-            cycleGroup,
-            cyclePosition,
-            isPartOfCycle: isComplete3Cycle
-          });
-        } else {
-          console.warn(`Could not find positions for sticker mapping: ${mapping.source} -> ${mapping.target}`);
+      if (startPos && endPos) {
+        // Position arrows slightly above sticker surfaces to avoid intersection
+        const surfaceOffset = 0.1; // Small offset above sticker surface
+        const startNormal = startPos.clone().normalize().multiplyScalar(surfaceOffset);
+        const endNormal = endPos.clone().normalize().multiplyScalar(surfaceOffset);
+        
+        // Calculate base arrow positions at sticker centers with surface offset
+        const startOffset = startPos.clone().add(startNormal);
+        const endOffset = endPos.clone().add(endNormal);
+        
+        // Apply magnification to arrow length while keeping it sticker-to-sticker
+        if (magnification !== 1.0) {
+          const direction = endOffset.clone().sub(startOffset);
+          const scaledDirection = direction.multiplyScalar(magnification);
+          endOffset.copy(startOffset.clone().add(scaledDirection));
         }
-      });
-    });
+
+        arrowAnimations.push({
+          id: `arrow-${algo.id}-1`,
+          startPosition: startOffset,
+          endPosition: endOffset,
+          color: arrowColor,
+          visible: false,
+          mapping,
+          isPartOfCycle: false
+        });
+      } else {
+        console.warn(`Could not find positions for sticker mapping: ${mapping.source} -> ${mapping.target}`);
+      }
+    }
 
     return arrowAnimations;
-  }, [arrowColor]);
+  }, [arrowColor, magnification]);
 
   // Cleanup function
   const cleanup = useCallback(() => {
@@ -371,18 +309,6 @@ export function ParticleArrowManager({
   //   isAnimating
   // };
 
-  // Group arrows by cycle for connection visualization
-  const cycleGroups = new Map<number, ArrowAnimation[]>();
-  arrows.forEach(arrow => {
-    if (arrow.isPartOfCycle && arrow.cycleGroup !== undefined) {
-      const group = arrow.cycleGroup;
-      if (!cycleGroups.has(group)) {
-        cycleGroups.set(group, []);
-      }
-      cycleGroups.get(group)!.push(arrow);
-    }
-  });
-
   return (
     <>
       {/* Render individual arrows */}
@@ -399,27 +325,12 @@ export function ParticleArrowManager({
           visible={arrow.visible}
           showArrowHelper={showArrowHelper}
           arrowHelperLength={arrowHelperLength}
-          arrowHelperHeadLength={arrowHelperHeadLength}
-          arrowHelperHeadWidth={arrowHelperHeadWidth}
+          arrowHelperHeadLength={coneSize}
+          arrowHelperHeadWidth={coneSize * 0.5}
+          lineThickness={lineThickness}
           onAnimationComplete={handleArrowComplete}
         />
       ))}
-
-      {/* Render cycle connections */}
-      {showCycleConnections && Array.from(cycleGroups.entries()).map(([cycleGroup, groupArrows]) => {
-        const isVisible = groupArrows.some(arrow => arrow.visible);
-        const groupColor = groupArrows[0]?.color || '#ffff00';
-        
-        return (
-          <CycleConnection
-            key={`cycle-${cycleGroup}`}
-            arrows={groupArrows}
-            cycleGroup={cycleGroup}
-            visible={isVisible}
-            color={groupColor}
-          />
-        );
-      })}
     </>
   );
 }

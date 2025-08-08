@@ -109,6 +109,10 @@ interface CubeVisualizerProps {
     onAnimationStart?: (() => void) | undefined;
     onArrowComplete?: ((arrowId: string) => void) | undefined;
     onRegisterCleanup?: ((cleanupFn: () => void) => void) | undefined;
+    // Arrow customization parameters
+    arrowMagnification?: number;
+    arrowLineThickness?: number;
+    arrowConeSize?: number;
 }
 
 export function CubeVisualizer({
@@ -145,7 +149,11 @@ export function CubeVisualizer({
     onAnimationComplete,
     onAnimationStart,
     onArrowComplete,
-    onRegisterCleanup
+    onRegisterCleanup,
+    // Arrow customization parameters
+    arrowMagnification = 1.0,
+    arrowLineThickness = 0.05,
+    arrowConeSize = 0.2
 }: CubeVisualizerProps) {
     const viewport = useViewport();
     const cubeletPositions = generateCubeletPositions();
@@ -316,10 +324,12 @@ export function CubeVisualizer({
                         showMultipleArrows={showMultipleArrows}
                         cycleTiming={cycleTiming}
                         showArrowHelper={showArrowHelper && !viewport.isMobile} // Hide arrow helpers on mobile
-                        showCycleConnections={showCycleConnections}
                         arrowHelperLength={arrowHelperLength}
                         arrowHelperHeadLength={arrowHelperHeadLength}
                         arrowHelperHeadWidth={arrowHelperHeadWidth}
+                        magnification={arrowMagnification}
+                        lineThickness={arrowLineThickness}
+                        coneSize={arrowConeSize}
                         onAnimationComplete={onAnimationComplete}
                         onAnimationStart={onAnimationStart}
                         onArrowComplete={onArrowComplete}

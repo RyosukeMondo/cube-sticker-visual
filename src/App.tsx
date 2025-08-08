@@ -5,6 +5,7 @@ import { AlgorithmDisplay } from './components/AlgorithmDisplay'
 import { AnimationControls } from './components/AnimationControls'
 import { ColorSettings } from './components/ColorSettings'
 import { StickerSettings } from './components/StickerSettings'
+import { ArrowSettings } from './components/ArrowSettings'
 import { ResponsiveLayout } from './components/ResponsiveLayout'
 import { CollapsibleSection } from './components/CollapsibleSection'
 import { useViewport } from './hooks/useViewport'
@@ -29,6 +30,12 @@ function App() {
   const [showArrows, setShowArrows] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
   const [animationKey, setAnimationKey] = useState(0) // Used to trigger replay
+  
+  // Arrow customization state
+  const [arrowMagnification, setArrowMagnification] = useState(1.0)
+  const [arrowLineThickness, setArrowLineThickness] = useState(0.05)
+  const [arrowConeSize, setArrowConeSize] = useState(0.2)
+  const [arrowColor, setArrowColor] = useState('#ffff00')
   
   // Default sticker settings
   const defaultStickerSettings: StickerSettingsType = {
@@ -260,6 +267,23 @@ function App() {
     }
   }, [stickerSettings]);
   
+  // Arrow customization handlers
+  const handleArrowMagnificationChange = (magnification: number) => {
+    setArrowMagnification(magnification)
+  }
+  
+  const handleArrowThicknessChange = useCallback((thickness: number) => {
+    setArrowLineThickness(thickness)
+  }, [])
+  
+  const handleArrowConeSizeChange = useCallback((size: number) => {
+    setArrowConeSize(size)
+  }, [])
+  
+  const handleArrowColorChange = useCallback((color: string) => {
+    setArrowColor(color)
+  }, [])
+  
   // Cleanup effect for component unmount
   useEffect(() => {
     return () => {
@@ -326,6 +350,23 @@ function App() {
           onEdgeThicknessChange={handleEdgeThicknessChange}
           onEdgeColorChange={handleEdgeColorChange}
           disabled={false}
+        />
+      </CollapsibleSection>
+      
+      <CollapsibleSection 
+        title="Arrow Settings" 
+        defaultExpanded={false}
+      >
+        <ArrowSettings
+          magnification={arrowMagnification}
+          lineThickness={arrowLineThickness}
+          coneSize={arrowConeSize}
+          arrowColor={arrowColor}
+          onMagnificationChange={handleArrowMagnificationChange}
+          onThicknessChange={handleArrowThicknessChange}
+          onConeSizeChange={handleArrowConeSizeChange}
+          onColorChange={handleArrowColorChange}
+          disabled={!selectedAlgorithm || !showArrows}
         />
       </CollapsibleSection>
     </div>
@@ -430,7 +471,11 @@ function App() {
               autoTriggerAnimation: true,
               onAnimationStart: handleAnimationStart,
               onAnimationComplete: handleAnimationComplete,
-              onRegisterCleanup: registerAnimationCleanup
+              onRegisterCleanup: registerAnimationCleanup,
+              arrowMagnification: arrowMagnification,
+              arrowLineThickness: arrowLineThickness,
+              arrowConeSize: arrowConeSize,
+              arrowColor: arrowColor
             })}
           />
         </div>

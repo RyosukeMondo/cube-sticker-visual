@@ -16,6 +16,7 @@ interface ParticleArrowProps {
   arrowHelperLength?: number | undefined; // Length of the arrow helper
   arrowHelperHeadLength?: number | undefined; // Head length of arrow helper
   arrowHelperHeadWidth?: number | undefined; // Head width of arrow helper
+  lineThickness?: number; // Thickness of the arrow line
   onAnimationComplete?: ((id: string) => void) | undefined;
 }
 
@@ -32,6 +33,7 @@ export function ParticleArrow({
   arrowHelperLength,
   arrowHelperHeadLength = 0.2,
   arrowHelperHeadWidth = 0.1,
+  lineThickness = 0.02,
   onAnimationComplete
 }: ParticleArrowProps) {
   const pointsRef = useRef<Points>(null);
@@ -90,10 +92,11 @@ export function ParticleArrow({
       arrowHelperHeadWidth
     );
 
-    // Make arrow more visible with higher opacity
+    // Make arrow more visible with higher opacity and custom thickness
     if (arrow.line.material) {
       (arrow.line.material as any).transparent = true;
       (arrow.line.material as any).opacity = 0.9; // Increased opacity for better visibility
+      (arrow.line.material as any).linewidth = lineThickness * 100; // Scale lineThickness for visibility
     }
     if (arrow.cone.material) {
       (arrow.cone.material as any).transparent = true;
