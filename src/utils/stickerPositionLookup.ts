@@ -1,7 +1,7 @@
 import { Vector3 } from 'three';
 import { getStaticCubeState } from './cubeState';
-import { StickerInfo, PieceInfo } from '../types/CubeState';
-import { FaceType } from '../types/CubeStickers';
+import type { StickerInfo, PieceInfo } from '../types/CubeState';
+import type { FaceType } from '../types/CubeStickers';
 
 /**
  * Gets the 3D coordinates for a specific sticker ID

@@ -1,6 +1,6 @@
 import { Vector3, Euler } from 'three';
-import { StaticCubeState, StickerInfo, PieceInfo } from '../types/CubeState';
-import { ALL_STICKERS, FaceType } from '../types/CubeStickers';
+import type { StaticCubeState, StickerInfo, PieceInfo } from '../types/CubeState';
+import { ALL_STICKERS } from '../types/CubeStickers';
 
 /**
  * Creates the static cube state with fixed sticker positions and piece information

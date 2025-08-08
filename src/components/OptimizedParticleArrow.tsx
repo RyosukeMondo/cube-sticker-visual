@@ -146,7 +146,7 @@ export function OptimizedParticleArrow({
     }
 
     const currentTime = state.clock.elapsedTime;
-    const { startTime, totalDuration } = animationStateRef.current;
+    const { startTime } = animationStateRef.current;
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / animationData.totalDuration, 1);
 
@@ -162,8 +162,8 @@ export function OptimizedParticleArrow({
     }
 
     // Update particle positions and alpha values efficiently
-    const positions = particlesRef.current.geometry.attributes.position;
-    const alphas = particlesRef.current.geometry.attributes.alpha;
+    const positions = particlesRef.current.geometry.attributes['position'];
+    const alphas = particlesRef.current.geometry.attributes['alpha'];
     
     for (let i = 0; i < particleCount; i++) {
       const particleStartTime = animationData.particleLifetimes[i];

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { Algorithm } from '../../types/Algorithm';
+import type { Algorithm } from '../../types/Algorithm';
 
 // Mock the sticker position lookup
 vi.mock('../../utils/stickerPositionLookup', () => ({
@@ -81,7 +81,7 @@ describe('3-Cycle Visualization Logic', () => {
       cycleGroups.get(cycleGroup)!.push(mapping);
     });
 
-    cycleGroups.forEach((mappings, cycleGroup) => {
+    cycleGroups.forEach((mappings) => {
       const isComplete3Cycle = mappings.length === 3;
       expect(isComplete3Cycle).toBe(true);
     });
