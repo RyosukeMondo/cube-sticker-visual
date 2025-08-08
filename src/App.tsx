@@ -37,6 +37,7 @@ function App() {
   const [stickerSpacing, setStickerSpacing] = useState(0.0)
   const [stickerThickness, setStickerThickness] = useState(0.05)
   const [stickerTransparency, setStickerTransparency] = useState(1.0)
+  const [stickerChamfer, setStickerChamfer] = useState(0.02)
   
   // Refs for cleanup and coordination
   const animationCleanupRef = useRef<(() => void) | null>(null)
@@ -187,6 +188,16 @@ function App() {
       setError('Failed to change sticker transparency. Please try again.');
     }
   }, []);
+
+  const handleStickerChamferChange = useCallback((chamfer: number) => {
+    try {
+      setStickerChamfer(chamfer);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing sticker chamfer:', err);
+      setError('Failed to change sticker chamfer. Please try again.');
+    }
+  }, []);
   
   // Cleanup effect for component unmount
   useEffect(() => {
@@ -243,10 +254,12 @@ function App() {
           stickerSpacing={stickerSpacing}
           stickerThickness={stickerThickness}
           stickerTransparency={stickerTransparency}
+          stickerChamfer={stickerChamfer}
           onStickerSizeChange={handleStickerSizeChange}
           onStickerSpacingChange={handleStickerSpacingChange}
           onStickerThicknessChange={handleStickerThicknessChange}
           onStickerTransparencyChange={handleStickerTransparencyChange}
+          onStickerChamferChange={handleStickerChamferChange}
           disabled={isAnimating}
         />
       </CollapsibleSection>
@@ -340,6 +353,7 @@ function App() {
             stickerSpacing={stickerSpacing}
             stickerThickness={stickerThickness}
             stickerTransparency={stickerTransparency}
+            stickerChamfer={stickerChamfer}
             {...(selectedAlgorithm && {
               algorithm: selectedAlgorithm,
               animationSpeed: animationSpeed,

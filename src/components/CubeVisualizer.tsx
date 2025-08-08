@@ -86,6 +86,7 @@ interface CubeVisualizerProps {
     stickerSpacing?: number;     // Distance between stickers (0.0 - 3.0)
     stickerThickness?: number;   // Sticker thickness (0.01 - 0.1)
     stickerTransparency?: number; // Transparency level (0.0 - 1.0)
+    stickerChamfer?: number;     // Chamfer/bevel amount (0.0 - 0.1)
     // Particle arrow animation props
     algorithm?: Algorithm;
     isAnimationPlaying?: boolean;
@@ -119,6 +120,7 @@ export function CubeVisualizer({
     stickerSpacing = 0.0,        // Default spacing (no gap)
     stickerThickness = 0.05,     // Default thickness
     stickerTransparency = 1.0,   // Default fully opaque
+    stickerChamfer = 0.02,       // Default chamfer amount
     // Particle arrow animation props
     algorithm,
     isAnimationPlaying = false,
@@ -287,7 +289,8 @@ export function CubeVisualizer({
                         size: stickerSize,
                         spacing: stickerSpacing,
                         thickness: stickerThickness,
-                        transparency: stickerTransparency
+                        transparency: stickerTransparency,
+                        chamfer: stickerChamfer
                     }}
                 />
 

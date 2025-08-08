@@ -1,14 +1,15 @@
 import { useRef, useMemo } from 'react';
-import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Color } from 'three';
+import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Color, Shape, ExtrudeGeometry } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { type StickerState } from '../types/CubeColors';
 import { isBufferSticker } from '../utils/bufferHighlighting';
 
 interface StickerControlSettings {
   size: number;           // Sticker size (0.1 - 0.8)
-  spacing: number;        // Distance between stickers (0.0 - 0.3)
+  spacing: number;        // Distance between stickers (0.0 - 3.0)
   thickness: number;      // Sticker thickness (0.01 - 0.1)
   transparency: number;   // Transparency level (0.0 - 1.0)
+  chamfer: number;        // Chamfer/bevel amount (0.0 - 0.1)
 }
 
 interface OptimizedStickerProps {
@@ -29,27 +30,55 @@ export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) 
   const mainMeshRef = useRef<InstancedMesh>(null);
   const bufferBorderMeshRef = useRef<InstancedMesh>(null);
   
+  // Create chamfered sticker shape
+  const createChamferedShape = useMemo(() => {
+    return (size: number, chamferAmount: number) => {
+      if (chamferAmount === 0) {
+        // No chamfer - use regular box geometry
+        return new BoxGeometry(size, size, controls.thickness);
+      }
+      
+      // Create rounded rectangle shape for chamfered edges
+      const shape = new Shape();
+      const halfSize = size / 2;
+      const chamfer = Math.min(chamferAmount, halfSize * 0.4); // Limit chamfer to reasonable size
+      
+      // Start from bottom-left, going clockwise
+      shape.moveTo(-halfSize + chamfer, -halfSize);
+      shape.lineTo(halfSize - chamfer, -halfSize);
+      shape.quadraticCurveTo(halfSize, -halfSize, halfSize, -halfSize + chamfer);
+      shape.lineTo(halfSize, halfSize - chamfer);
+      shape.quadraticCurveTo(halfSize, halfSize, halfSize - chamfer, halfSize);
+      shape.lineTo(-halfSize + chamfer, halfSize);
+      shape.quadraticCurveTo(-halfSize, halfSize, -halfSize, halfSize - chamfer);
+      shape.lineTo(-halfSize, -halfSize + chamfer);
+      shape.quadraticCurveTo(-halfSize, -halfSize, -halfSize + chamfer, -halfSize);
+      
+      // Extrude the shape to create 3D geometry
+      const extrudeSettings = {
+        depth: controls.thickness,
+        bevelEnabled: false
+      };
+      
+      return new ExtrudeGeometry(shape, extrudeSettings);
+    };
+  }, [controls.thickness]);
+  
   // Calculate derived values from controls
   const stickerDimensions = useMemo(() => ({
     size: controls.size,
     thickness: controls.thickness,
+    chamfer: controls.chamfer,
     borderSize: controls.size + 0.02, // Slightly larger for border
-    borderThickness: controls.thickness * 0.8 // Slightly thinner border
-  }), [controls.size, controls.thickness]);
+    borderThickness: controls.thickness * 0.8, // Slightly thinner border
+    borderChamfer: controls.chamfer * 1.2 // Slightly more chamfer for border
+  }), [controls.size, controls.thickness, controls.chamfer]);
   
   // Create geometries based on control settings
   const geometries = useMemo(() => ({
-    main: new BoxGeometry(
-      stickerDimensions.size, 
-      stickerDimensions.size, 
-      stickerDimensions.thickness
-    ),
-    border: new BoxGeometry(
-      stickerDimensions.borderSize,
-      stickerDimensions.borderSize,
-      stickerDimensions.borderThickness
-    )
-  }), [stickerDimensions]);
+    main: createChamferedShape(stickerDimensions.size, stickerDimensions.chamfer),
+    border: createChamferedShape(stickerDimensions.borderSize, stickerDimensions.borderChamfer)
+  }), [createChamferedShape, stickerDimensions]);
   
   // Create materials with transparency support
   const materials = useMemo(() => ({

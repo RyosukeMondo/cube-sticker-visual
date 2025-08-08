@@ -6,10 +6,12 @@ interface StickerSettingsProps {
   stickerSpacing: number;     // Distance between stickers (0.0 - 3.0)
   stickerThickness: number;   // Sticker thickness (0.01 - 0.1)
   stickerTransparency: number; // Transparency level (0.0 - 1.0)
+  stickerChamfer: number;     // Chamfer/bevel amount (0.0 - 0.1)
   onStickerSizeChange: (size: number) => void;
   onStickerSpacingChange: (spacing: number) => void;
   onStickerThicknessChange: (thickness: number) => void;
   onStickerTransparencyChange: (transparency: number) => void;
+  onStickerChamferChange: (chamfer: number) => void;
   disabled?: boolean;
 }
 
@@ -18,10 +20,12 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
   stickerSpacing,
   stickerThickness,
   stickerTransparency,
+  stickerChamfer,
   onStickerSizeChange,
   onStickerSpacingChange,
   onStickerThicknessChange,
   onStickerTransparencyChange,
+  onStickerChamferChange,
   disabled = false
 }) => {
   // Event handlers for each control
@@ -45,11 +49,17 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
     onStickerTransparencyChange(newTransparency);
   };
 
+  const handleChamferChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newChamfer = parseFloat(event.target.value);
+    onStickerChamferChange(newChamfer);
+  };
+
   const resetToDefaults = () => {
     onStickerSizeChange(0.45);        // Default size
     onStickerSpacingChange(0.0);      // Default spacing (no gap)
     onStickerThicknessChange(0.05);   // Default thickness
     onStickerTransparencyChange(1.0); // Default fully opaque
+    onStickerChamferChange(0.02);     // Default chamfer amount
   };
 
   // Convert values to percentages for display
@@ -57,6 +67,7 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
   const spacingPercentage = Math.round(stickerSpacing * 100);
   const thicknessPercentage = Math.round(stickerThickness * 100);
   const transparencyPercentage = Math.round(stickerTransparency * 100);
+  const chamferPercentage = Math.round(stickerChamfer * 100);
 
   return (
     <div className="sticker-settings">
@@ -164,11 +175,34 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
             <span className="sticker-setting__max-label">Solid</span>
           </div>
         </div>
+
+        {/* Chamfer Control */}
+        <div className="sticker-setting">
+          <label className="sticker-setting__label" htmlFor="sticker-chamfer-slider">
+            Chamfer: {chamferPercentage}%
+          </label>
+          <div className="sticker-setting__slider-group">
+            <span className="sticker-setting__min-label">Sharp</span>
+            <input
+              id="sticker-chamfer-slider"
+              type="range"
+              min="0.0"
+              max="0.1"
+              step="0.005"
+              value={stickerChamfer}
+              onChange={handleChamferChange}
+              disabled={disabled}
+              className="sticker-setting__slider"
+              title={`Sticker chamfer: ${chamferPercentage}%`}
+            />
+            <span className="sticker-setting__max-label">Rounded</span>
+          </div>
+        </div>
       </div>
       
       <div className="sticker-settings__info">
         <p className="sticker-settings__description">
-          Adjust sticker appearance: size, spacing between stickers, thickness, and transparency. 
+          Adjust sticker appearance: size, spacing between stickers, thickness, transparency, and chamfer (面取り). 
           Changes apply immediately to the visualization.
         </p>
       </div>
