@@ -123,8 +123,8 @@ function parseCSV(csvContent, algorithmType) {
       
       const bufferPieces = algorithmType === 'edge' ? ['UF'] : ['UFR_U'];
       
-      // Create algorithm ID from source and target
-      const algorithmId = `${sourceSticker}-${targetSticker}`;
+      // Create algorithm ID from target and source (target-source order)
+      const algorithmId = `${targetSticker}-${sourceSticker}`;
       
       // Create 3-cycle sticker mappings for blindfolded solving
       const stickerMappings = generate3CycleMappings(sourceSticker, targetSticker, algorithmType);

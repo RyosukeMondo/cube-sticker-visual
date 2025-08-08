@@ -1,10 +1,10 @@
 // Auto-generated algorithm data from algo_edge.csv and algo_corner.csv
-// Generated on: 2025-08-08T01:52:08.651Z
+// Generated on: 2025-08-08T06:03:29.951Z
 
 export const ALGORITHM_DATA = {
   "algorithms": [
     {
-      "id": "UB-UR",
+      "id": "UR-UB",
       "type": "edge",
       "notation": "[R2 U': [R2, S]]",
       "stickerMappings": [
@@ -29,7 +29,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-UL",
+      "id": "UL-UB",
       "type": "edge",
       "notation": "[L2 U: [L2, S']]",
       "stickerMappings": [
@@ -54,7 +54,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-FR",
+      "id": "FR-UB",
       "type": "edge",
       "notation": "[R' U': [R2, S]]",
       "stickerMappings": [
@@ -79,7 +79,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-FD",
+      "id": "FD-UB",
       "type": "edge",
       "notation": "[R' F': [E, R U R']]",
       "stickerMappings": [
@@ -104,7 +104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-FL",
+      "id": "FL-UB",
       "type": "edge",
       "notation": "[L U: [L2, S']]",
       "stickerMappings": [
@@ -129,7 +129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-LU",
+      "id": "LU-UB",
       "type": "edge",
       "notation": "[U' M U': [U2, M']]",
       "stickerMappings": [
@@ -154,7 +154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-LF",
+      "id": "LF-UB",
       "type": "edge",
       "notation": "[U: [R' E R, U2]]",
       "stickerMappings": [
@@ -179,7 +179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-LD",
+      "id": "LD-UB",
       "type": "edge",
       "notation": "[U': [L' E' L, U2]]",
       "stickerMappings": [
@@ -204,7 +204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-LB",
+      "id": "LB-UB",
       "type": "edge",
       "notation": "[U: [R E' R', U2]]",
       "stickerMappings": [
@@ -229,7 +229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-BD",
+      "id": "BD-UB",
       "type": "edge",
       "notation": "[U' M' U: [M', U2]]",
       "stickerMappings": [
@@ -254,7 +254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-BR",
+      "id": "BR-UB",
       "type": "edge",
       "notation": "[R U': [R2, S]]",
       "stickerMappings": [
@@ -279,7 +279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-BL",
+      "id": "BL-UB",
       "type": "edge",
       "notation": "Rw' F Rw2 E Rw2 E F' Rw",
       "stickerMappings": [
@@ -304,7 +304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-RU",
+      "id": "RU-UB",
       "type": "edge",
       "notation": "[U M U': [M', U2]]",
       "stickerMappings": [
@@ -329,7 +329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-RB",
+      "id": "RB-UB",
       "type": "edge",
       "notation": "[U': [L' E L, U2]]",
       "stickerMappings": [
@@ -354,7 +354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-RD",
+      "id": "RD-UB",
       "type": "edge",
       "notation": "[U: [R E R', U2]]",
       "stickerMappings": [
@@ -379,7 +379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-RF",
+      "id": "RF-UB",
       "type": "edge",
       "notation": "[U': [L E' L', U2]]",
       "stickerMappings": [
@@ -404,7 +404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-DF",
+      "id": "DF-UB",
       "type": "edge",
       "notation": "[M', U2]",
       "stickerMappings": [
@@ -429,7 +429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-DR",
+      "id": "DR-UB",
       "type": "edge",
       "notation": "[U': [R2, S]]",
       "stickerMappings": [
@@ -454,7 +454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UB-DB",
+      "id": "DB-UB",
       "type": "edge",
       "notation": "[U2, M]",
       "stickerMappings": [
@@ -479,7 +479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-UB",
+      "id": "UB-UR",
       "type": "edge",
       "notation": "[R2 U': [S, R2]]",
       "stickerMappings": [
@@ -504,7 +504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-UL",
+      "id": "UL-UR",
       "type": "edge",
       "notation": "[M2 U': [M, U2]]",
       "stickerMappings": [
@@ -529,7 +529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-FR",
+      "id": "FR-UR",
       "type": "edge",
       "notation": "[E': [R' E R, U']]",
       "stickerMappings": [
@@ -554,7 +554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-FD",
+      "id": "FD-UR",
       "type": "edge",
       "notation": "[R: [U' R' U, M']]",
       "stickerMappings": [
@@ -579,7 +579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-FL",
+      "id": "FL-UR",
       "type": "edge",
       "notation": "[R E2 R', U']",
       "stickerMappings": [
@@ -604,7 +604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-LU",
+      "id": "LU-UR",
       "type": "edge",
       "notation": "[L F' L', S']",
       "stickerMappings": [
@@ -629,7 +629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-LF",
+      "id": "LF-UR",
       "type": "edge",
       "notation": "[R' E R, U']",
       "stickerMappings": [
@@ -654,7 +654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-LD",
+      "id": "LD-UR",
       "type": "edge",
       "notation": "[U2: [L' E' L, U']]",
       "stickerMappings": [
@@ -679,7 +679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-LB",
+      "id": "LB-UR",
       "type": "edge",
       "notation": "[R E' R', U']",
       "stickerMappings": [
@@ -704,7 +704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-BD",
+      "id": "BD-UR",
       "type": "edge",
       "notation": "M U' M' U' M U' M' U'",
       "stickerMappings": [
@@ -729,7 +729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-BR",
+      "id": "BR-UR",
       "type": "edge",
       "notation": "[E: [R E' R', U']]",
       "stickerMappings": [
@@ -754,7 +754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-BU",
+      "id": "BU-UR",
       "type": "edge",
       "notation": "[U: [S, R' F R]]",
       "stickerMappings": [
@@ -779,7 +779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-BL",
+      "id": "BL-UR",
       "type": "edge",
       "notation": "[R' E2 R, U']",
       "stickerMappings": [
@@ -804,7 +804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-RB",
+      "id": "RB-UR",
       "type": "edge",
       "notation": "[U2: [L' E L, U']]",
       "stickerMappings": [
@@ -829,7 +829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-RD",
+      "id": "RD-UR",
       "type": "edge",
       "notation": "[R E R', U']",
       "stickerMappings": [
@@ -854,7 +854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-RF",
+      "id": "RF-UR",
       "type": "edge",
       "notation": "[U2: [L E' L', U']]",
       "stickerMappings": [
@@ -879,7 +879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-DF",
+      "id": "DF-UR",
       "type": "edge",
       "notation": "[U, M U2 M]",
       "stickerMappings": [
@@ -904,7 +904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-DR",
+      "id": "DR-UR",
       "type": "edge",
       "notation": "R E' R2 E R U' R' E' R2 E R' U",
       "stickerMappings": [
@@ -929,7 +929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UR-DB",
+      "id": "DB-UR",
       "type": "edge",
       "notation": "[R: [U' R' U, M2]]",
       "stickerMappings": [
@@ -954,7 +954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-UB",
+      "id": "UB-UL",
       "type": "edge",
       "notation": "[L2 U: [S', L2]]",
       "stickerMappings": [
@@ -979,7 +979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-UR",
+      "id": "UR-UL",
       "type": "edge",
       "notation": "[M2 U: [M, U2]]",
       "stickerMappings": [
@@ -1004,7 +1004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-FR",
+      "id": "FR-UL",
       "type": "edge",
       "notation": "[L' E2 L, U]",
       "stickerMappings": [
@@ -1029,7 +1029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-FD",
+      "id": "FD-UL",
       "type": "edge",
       "notation": "[L': [U L U', M']]",
       "stickerMappings": [
@@ -1054,7 +1054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-FL",
+      "id": "FL-UL",
       "type": "edge",
       "notation": "[E: [L E' L', U]]",
       "stickerMappings": [
@@ -1079,7 +1079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-LF",
+      "id": "LF-UL",
       "type": "edge",
       "notation": "[U2: [R' E R, U]]",
       "stickerMappings": [
@@ -1104,7 +1104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-LD",
+      "id": "LD-UL",
       "type": "edge",
       "notation": "[L' E' L, U]",
       "stickerMappings": [
@@ -1129,7 +1129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-LB",
+      "id": "LB-UL",
       "type": "edge",
       "notation": "[U2: [R E' R', U]]",
       "stickerMappings": [
@@ -1154,7 +1154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-BD",
+      "id": "BD-UL",
       "type": "edge",
       "notation": "M U M' U M U M' U",
       "stickerMappings": [
@@ -1179,7 +1179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-BR",
+      "id": "BR-UL",
       "type": "edge",
       "notation": "[L E2 L', U]",
       "stickerMappings": [
@@ -1204,7 +1204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-BU",
+      "id": "BU-UL",
       "type": "edge",
       "notation": "[U': [S', L F' L']]",
       "stickerMappings": [
@@ -1229,7 +1229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-BL",
+      "id": "BL-UL",
       "type": "edge",
       "notation": "[E': [L' E L, U]]",
       "stickerMappings": [
@@ -1254,7 +1254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-RU",
+      "id": "RU-UL",
       "type": "edge",
       "notation": "[R' F R, S]",
       "stickerMappings": [
@@ -1279,7 +1279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-RB",
+      "id": "RB-UL",
       "type": "edge",
       "notation": "[L' E L, U]",
       "stickerMappings": [
@@ -1304,7 +1304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-RD",
+      "id": "RD-UL",
       "type": "edge",
       "notation": "[U2: [R E R', U]]",
       "stickerMappings": [
@@ -1329,7 +1329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-RF",
+      "id": "RF-UL",
       "type": "edge",
       "notation": "[L E' L', U]",
       "stickerMappings": [
@@ -1354,7 +1354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-DF",
+      "id": "DF-UL",
       "type": "edge",
       "notation": "[R' F: [R S R', F2]]",
       "stickerMappings": [
@@ -1379,7 +1379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-DR",
+      "id": "DR-UL",
       "type": "edge",
       "notation": "R' U' R U R U R U' R' U'",
       "stickerMappings": [
@@ -1404,7 +1404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UL-DB",
+      "id": "DB-UL",
       "type": "edge",
       "notation": "D' R' U' R U R U R U' R' U' D",
       "stickerMappings": [
@@ -1429,7 +1429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-UB",
+      "id": "UB-FR",
       "type": "edge",
       "notation": "[R' U': [S, R2]]",
       "stickerMappings": [
@@ -1454,7 +1454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-UR",
+      "id": "UR-FR",
       "type": "edge",
       "notation": "[E': [U', R' E R]]",
       "stickerMappings": [
@@ -1479,7 +1479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-UL",
+      "id": "UL-FR",
       "type": "edge",
       "notation": "[U, L' E2 L]",
       "stickerMappings": [
@@ -1504,7 +1504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-FD",
+      "id": "FD-FR",
       "type": "edge",
       "notation": "[U' R U, M']",
       "stickerMappings": [
@@ -1529,7 +1529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-FL",
+      "id": "FL-FR",
       "type": "edge",
       "notation": "[R' U' R': [E, R2]]",
       "stickerMappings": [
@@ -1554,7 +1554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-LU",
+      "id": "LU-FR",
       "type": "edge",
       "notation": "[S' U L': [E', L2]]",
       "stickerMappings": [
@@ -1579,7 +1579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-LF",
+      "id": "LF-FR",
       "type": "edge",
       "notation": "[E, R U' R']",
       "stickerMappings": [
@@ -1604,7 +1604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-LD",
+      "id": "LD-FR",
       "type": "edge",
       "notation": "[R U2: [R' S R, U']]",
       "stickerMappings": [
@@ -1629,7 +1629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-LB",
+      "id": "LB-FR",
       "type": "edge",
       "notation": "[R: [R E' R', U']]",
       "stickerMappings": [
@@ -1654,7 +1654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-BD",
+      "id": "BD-FR",
       "type": "edge",
       "notation": "[U L B': [L2, E']]",
       "stickerMappings": [
@@ -1679,7 +1679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-BR",
+      "id": "BR-FR",
       "type": "edge",
       "notation": "[U R: [S, R2]]",
       "stickerMappings": [
@@ -1704,7 +1704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-BU",
+      "id": "BU-FR",
       "type": "edge",
       "notation": "[U' R U, M]",
       "stickerMappings": [
@@ -1729,7 +1729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-BL",
+      "id": "BL-FR",
       "type": "edge",
       "notation": "[R' U' R: [E', R2]]",
       "stickerMappings": [
@@ -1754,7 +1754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-RU",
+      "id": "RU-FR",
       "type": "edge",
       "notation": "[R' U' E' R': [E, R2]]",
       "stickerMappings": [
@@ -1779,7 +1779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-RB",
+      "id": "RB-FR",
       "type": "edge",
       "notation": "[E', R U' R']",
       "stickerMappings": [
@@ -1804,7 +1804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-RD",
+      "id": "RD-FR",
       "type": "edge",
       "notation": "[D': [U' R U, M']]",
       "stickerMappings": [
@@ -1829,7 +1829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-DF",
+      "id": "DF-FR",
       "type": "edge",
       "notation": "[U R U': [M', U2]]",
       "stickerMappings": [
@@ -1854,7 +1854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-DR",
+      "id": "DR-FR",
       "type": "edge",
       "notation": "U2 R U' R' U' R' U' R U R U'",
       "stickerMappings": [
@@ -1879,7 +1879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FR-DB",
+      "id": "DB-FR",
       "type": "edge",
       "notation": "[U' R U, M2]",
       "stickerMappings": [
@@ -1904,7 +1904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-UB",
+      "id": "UB-FD",
       "type": "edge",
       "notation": "[R' F': [R U R', E]]",
       "stickerMappings": [
@@ -1929,7 +1929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-UR",
+      "id": "UR-FD",
       "type": "edge",
       "notation": "[M', R U' R' U]",
       "stickerMappings": [
@@ -1954,7 +1954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-UL",
+      "id": "UL-FD",
       "type": "edge",
       "notation": "[M', L' U L U']",
       "stickerMappings": [
@@ -1979,7 +1979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-FR",
+      "id": "FR-FD",
       "type": "edge",
       "notation": "[M', U' R U]",
       "stickerMappings": [
@@ -2004,7 +2004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-FL",
+      "id": "FL-FD",
       "type": "edge",
       "notation": "[M', U L' U']",
       "stickerMappings": [
@@ -2029,7 +2029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-LU",
+      "id": "LU-FD",
       "type": "edge",
       "notation": "[Lw': [M', U' L U]]",
       "stickerMappings": [
@@ -2054,7 +2054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-LF",
+      "id": "LF-FD",
       "type": "edge",
       "notation": "[M2: [U' L' U, M]]",
       "stickerMappings": [
@@ -2079,7 +2079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-LD",
+      "id": "LD-FD",
       "type": "edge",
       "notation": "[U: [S', R' D' R]]",
       "stickerMappings": [
@@ -2104,7 +2104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-LB",
+      "id": "LB-FD",
       "type": "edge",
       "notation": "[U' M': [U', R E' R']]",
       "stickerMappings": [
@@ -2129,7 +2129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-BD",
+      "id": "BD-FD",
       "type": "edge",
       "notation": "[U: [M U M', Dw2]]",
       "stickerMappings": [
@@ -2154,7 +2154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-BR",
+      "id": "BR-FD",
       "type": "edge",
       "notation": "[M', U' R' U]",
       "stickerMappings": [
@@ -2179,7 +2179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-BU",
+      "id": "BU-FD",
       "type": "edge",
       "notation": "[U': [R' F' R, S]]",
       "stickerMappings": [
@@ -2204,7 +2204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-BL",
+      "id": "BL-FD",
       "type": "edge",
       "notation": "[M', U L U']",
       "stickerMappings": [
@@ -2229,7 +2229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-RU",
+      "id": "RU-FD",
       "type": "edge",
       "notation": "[Rw: [M', U R' U']]",
       "stickerMappings": [
@@ -2254,7 +2254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-RB",
+      "id": "RB-FD",
       "type": "edge",
       "notation": "[M2: [U R' U', M]]",
       "stickerMappings": [
@@ -2279,7 +2279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-RD",
+      "id": "RD-FD",
       "type": "edge",
       "notation": "[U': [R' F' R, S']]",
       "stickerMappings": [
@@ -2304,7 +2304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-RF",
+      "id": "RF-FD",
       "type": "edge",
       "notation": "[M2: [U R U', M]]",
       "stickerMappings": [
@@ -2329,7 +2329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-DR",
+      "id": "DR-FD",
       "type": "edge",
       "notation": "[U R' F' R: [S, R2]]",
       "stickerMappings": [
@@ -2354,7 +2354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FD-DB",
+      "id": "DB-FD",
       "type": "edge",
       "notation": "[D: [S', R F R']]",
       "stickerMappings": [
@@ -2379,7 +2379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-UB",
+      "id": "UB-FL",
       "type": "edge",
       "notation": "[L U: [S', L2]]",
       "stickerMappings": [
@@ -2404,7 +2404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-UR",
+      "id": "UR-FL",
       "type": "edge",
       "notation": "[U', R E2 R']",
       "stickerMappings": [
@@ -2429,7 +2429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-UL",
+      "id": "UL-FL",
       "type": "edge",
       "notation": "[E: [U, L E' L']]",
       "stickerMappings": [
@@ -2454,7 +2454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-FR",
+      "id": "FR-FL",
       "type": "edge",
       "notation": "[R' U' R: [E, R2]]",
       "stickerMappings": [
@@ -2479,7 +2479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-FD",
+      "id": "FD-FL",
       "type": "edge",
       "notation": "[U L' U', M']",
       "stickerMappings": [
@@ -2504,7 +2504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-LU",
+      "id": "LU-FL",
       "type": "edge",
       "notation": "[Rw' F2: [Rw S Rw', F]]",
       "stickerMappings": [
@@ -2529,7 +2529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-LD",
+      "id": "LD-FL",
       "type": "edge",
       "notation": "[S' U' R: [E, R2]]",
       "stickerMappings": [
@@ -2554,7 +2554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-LB",
+      "id": "LB-FL",
       "type": "edge",
       "notation": "[E, L' U L]",
       "stickerMappings": [
@@ -2579,7 +2579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-BD",
+      "id": "BD-FL",
       "type": "edge",
       "notation": "[U' R' B: [R2, E]]",
       "stickerMappings": [
@@ -2604,7 +2604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-BR",
+      "id": "BR-FL",
       "type": "edge",
       "notation": "[R U' R: [E, R2]]",
       "stickerMappings": [
@@ -2629,7 +2629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-BU",
+      "id": "BU-FL",
       "type": "edge",
       "notation": "[U': [R' F2 R, S]]",
       "stickerMappings": [
@@ -2654,7 +2654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-BL",
+      "id": "BL-FL",
       "type": "edge",
       "notation": "U' Rw' E' Rw2 E' Rw' U",
       "stickerMappings": [
@@ -2679,7 +2679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-RU",
+      "id": "RU-FL",
       "type": "edge",
       "notation": "[M': [U, Rw' E Rw]]",
       "stickerMappings": [
@@ -2704,7 +2704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-RB",
+      "id": "RB-FL",
       "type": "edge",
       "notation": "[L': [L' E L, U]]",
       "stickerMappings": [
@@ -2729,7 +2729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-RD",
+      "id": "RD-FL",
       "type": "edge",
       "notation": "[R E: [R' U' R, E]]",
       "stickerMappings": [
@@ -2754,7 +2754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-RF",
+      "id": "RF-FL",
       "type": "edge",
       "notation": "[Rw U Rw', E]",
       "stickerMappings": [
@@ -2779,7 +2779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-DF",
+      "id": "DF-FL",
       "type": "edge",
       "notation": "[U' L' U: [M', U2]]",
       "stickerMappings": [
@@ -2804,7 +2804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-DR",
+      "id": "DR-FL",
       "type": "edge",
       "notation": "[U' R: [E, R2]]",
       "stickerMappings": [
@@ -2829,7 +2829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "FL-DB",
+      "id": "DB-FL",
       "type": "edge",
       "notation": "[U L' U', M2]",
       "stickerMappings": [
@@ -2854,7 +2854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-UB",
+      "id": "UB-LU",
       "type": "edge",
       "notation": "[U' M U': [M', U2]]",
       "stickerMappings": [
@@ -2879,7 +2879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-UR",
+      "id": "UR-LU",
       "type": "edge",
       "notation": "[S', L F' L']",
       "stickerMappings": [
@@ -2904,7 +2904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-FR",
+      "id": "FR-LU",
       "type": "edge",
       "notation": "[S' U L: [E', L2]]",
       "stickerMappings": [
@@ -2929,7 +2929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-FD",
+      "id": "FD-LU",
       "type": "edge",
       "notation": "[Lw': [U' L U, M']]",
       "stickerMappings": [
@@ -2954,7 +2954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-FL",
+      "id": "FL-LU",
       "type": "edge",
       "notation": "[Rw' F': [Rw S Rw', F']]",
       "stickerMappings": [
@@ -2979,7 +2979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-LF",
+      "id": "LF-LU",
       "type": "edge",
       "notation": "[S: [R' E R, U']]",
       "stickerMappings": [
@@ -3004,7 +3004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-LD",
+      "id": "LD-LU",
       "type": "edge",
       "notation": "[Lw D L: [S, L2]]",
       "stickerMappings": [
@@ -3029,7 +3029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-LB",
+      "id": "LB-LU",
       "type": "edge",
       "notation": "[S: [R E' R', U']]",
       "stickerMappings": [
@@ -3054,7 +3054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-BD",
+      "id": "BD-LU",
       "type": "edge",
       "notation": "M2 U' M U' M' U' M U' M",
       "stickerMappings": [
@@ -3079,7 +3079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-BR",
+      "id": "BR-LU",
       "type": "edge",
       "notation": "[M': [L' E L, U']]",
       "stickerMappings": [
@@ -3104,7 +3104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-BU",
+      "id": "BU-LU",
       "type": "edge",
       "notation": "[L': [M', U' L U]]",
       "stickerMappings": [
@@ -3129,7 +3129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-BL",
+      "id": "BL-LU",
       "type": "edge",
       "notation": "[L' Uw L: [E, L2]]",
       "stickerMappings": [
@@ -3154,7 +3154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-RU",
+      "id": "RU-LU",
       "type": "edge",
       "notation": "[M U': [M', U2]]",
       "stickerMappings": [
@@ -3179,7 +3179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-RB",
+      "id": "RB-LU",
       "type": "edge",
       "notation": "[F R': [S, R2]]",
       "stickerMappings": [
@@ -3204,7 +3204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-RD",
+      "id": "RD-LU",
       "type": "edge",
       "notation": "[R' F R': [S, R2]]",
       "stickerMappings": [
@@ -3229,7 +3229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-RF",
+      "id": "RF-LU",
       "type": "edge",
       "notation": "[R M U': [M', U2]]",
       "stickerMappings": [
@@ -3254,7 +3254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-DF",
+      "id": "DF-LU",
       "type": "edge",
       "notation": "[L' F': [E', L2]]",
       "stickerMappings": [
@@ -3279,7 +3279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-DR",
+      "id": "DR-LU",
       "type": "edge",
       "notation": "[L: [L S L', F']]",
       "stickerMappings": [
@@ -3304,7 +3304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LU-DB",
+      "id": "DB-LU",
       "type": "edge",
       "notation": "[Lw': [U' L U, M2]]",
       "stickerMappings": [
@@ -3329,7 +3329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-UB",
+      "id": "UB-LF",
       "type": "edge",
       "notation": "[U': [R' E R, U2]]",
       "stickerMappings": [
@@ -3354,7 +3354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-UR",
+      "id": "UR-LF",
       "type": "edge",
       "notation": "[U', R' E R]",
       "stickerMappings": [
@@ -3379,7 +3379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-UL",
+      "id": "UL-LF",
       "type": "edge",
       "notation": "[U': [R' E R, U']]",
       "stickerMappings": [
@@ -3404,7 +3404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-FR",
+      "id": "FR-LF",
       "type": "edge",
       "notation": "[R U' R', E]",
       "stickerMappings": [
@@ -3429,7 +3429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-FD",
+      "id": "FD-LF",
       "type": "edge",
       "notation": "[M': [U' L' U, M']]",
       "stickerMappings": [
@@ -3454,7 +3454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-LU",
+      "id": "LU-LF",
       "type": "edge",
       "notation": "[S: [U', R' E R]]",
       "stickerMappings": [
@@ -3479,7 +3479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-LD",
+      "id": "LD-LF",
       "type": "edge",
       "notation": "[U S' U', L]",
       "stickerMappings": [
@@ -3504,7 +3504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-LB",
+      "id": "LB-LF",
       "type": "edge",
       "notation": "M' U Rw' E' Rw2 E' Rw' U' M",
       "stickerMappings": [
@@ -3529,7 +3529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-BD",
+      "id": "BD-LF",
       "type": "edge",
       "notation": "[U' M: [R' E R, U]]",
       "stickerMappings": [
@@ -3554,7 +3554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-BR",
+      "id": "BR-LF",
       "type": "edge",
       "notation": "[R': [U', R' E R]]",
       "stickerMappings": [
@@ -3579,7 +3579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-BU",
+      "id": "BU-LF",
       "type": "edge",
       "notation": "[M', U' L' U]",
       "stickerMappings": [
@@ -3604,7 +3604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-BL",
+      "id": "BL-LF",
       "type": "edge",
       "notation": "[L U L', E']",
       "stickerMappings": [
@@ -3629,7 +3629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-RU",
+      "id": "RU-LF",
       "type": "edge",
       "notation": "[M L' U': [M', U2]]",
       "stickerMappings": [
@@ -3654,7 +3654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-RB",
+      "id": "RB-LF",
       "type": "edge",
       "notation": "[Rw U R: [E, R2]]",
       "stickerMappings": [
@@ -3679,7 +3679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-RD",
+      "id": "RD-LF",
       "type": "edge",
       "notation": "[M' U R: [E, R2]]",
       "stickerMappings": [
@@ -3704,7 +3704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-RF",
+      "id": "RF-LF",
       "type": "edge",
       "notation": "U' E' Rw E Rw2 E Rw E U",
       "stickerMappings": [
@@ -3729,7 +3729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-DF",
+      "id": "DF-LF",
       "type": "edge",
       "notation": "[U R' F': [R S R', F']]",
       "stickerMappings": [
@@ -3754,7 +3754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-DR",
+      "id": "DR-LF",
       "type": "edge",
       "notation": "[U' E' R': [E', R2]]",
       "stickerMappings": [
@@ -3779,7 +3779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LF-DB",
+      "id": "DB-LF",
       "type": "edge",
       "notation": "[M': [U' L' U, M2]]",
       "stickerMappings": [
@@ -3804,7 +3804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-UB",
+      "id": "UB-LD",
       "type": "edge",
       "notation": "[U: [L' E' L, U2]]",
       "stickerMappings": [
@@ -3829,7 +3829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-UR",
+      "id": "UR-LD",
       "type": "edge",
       "notation": "[U: [L' E' L, U]]",
       "stickerMappings": [
@@ -3854,7 +3854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-UL",
+      "id": "UL-LD",
       "type": "edge",
       "notation": "[U, L' E' L]",
       "stickerMappings": [
@@ -3879,7 +3879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-FR",
+      "id": "FR-LD",
       "type": "edge",
       "notation": "[D: [M', U' R U]]",
       "stickerMappings": [
@@ -3904,7 +3904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-FD",
+      "id": "FD-LD",
       "type": "edge",
       "notation": "[U: [R' D' R, S']]",
       "stickerMappings": [
@@ -3929,7 +3929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-FL",
+      "id": "FL-LD",
       "type": "edge",
       "notation": "[S' U' R': [E, R2]]",
       "stickerMappings": [
@@ -3954,7 +3954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-LU",
+      "id": "LU-LD",
       "type": "edge",
       "notation": "[Lw D L': [S, L2]]",
       "stickerMappings": [
@@ -3979,7 +3979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-LF",
+      "id": "LF-LD",
       "type": "edge",
       "notation": "[L, U S' U']",
       "stickerMappings": [
@@ -4004,7 +4004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-LB",
+      "id": "LB-LD",
       "type": "edge",
       "notation": "[L', U S' U']",
       "stickerMappings": [
@@ -4029,7 +4029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-BD",
+      "id": "BD-LD",
       "type": "edge",
       "notation": "[U' Lw: [R E' R', U]]",
       "stickerMappings": [
@@ -4054,7 +4054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-BR",
+      "id": "BR-LD",
       "type": "edge",
       "notation": "[D: [M', U' R' U]]",
       "stickerMappings": [
@@ -4079,7 +4079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-BU",
+      "id": "BU-LD",
       "type": "edge",
       "notation": "[L': [M', U' L' U]]",
       "stickerMappings": [
@@ -4104,7 +4104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-BL",
+      "id": "BL-LD",
       "type": "edge",
       "notation": "[S' U' R: [E', R2]]",
       "stickerMappings": [
@@ -4129,7 +4129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-RU",
+      "id": "RU-LD",
       "type": "edge",
       "notation": "[U: [S, L F' L']]",
       "stickerMappings": [
@@ -4154,7 +4154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-RB",
+      "id": "RB-LD",
       "type": "edge",
       "notation": "[F R: [S', R2]]",
       "stickerMappings": [
@@ -4179,7 +4179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-RD",
+      "id": "RD-LD",
       "type": "edge",
       "notation": "[R' F R: [S', R2]]",
       "stickerMappings": [
@@ -4204,7 +4204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-RF",
+      "id": "RF-LD",
       "type": "edge",
       "notation": "[M' U' L: [E', L2]]",
       "stickerMappings": [
@@ -4229,7 +4229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-DF",
+      "id": "DF-LD",
       "type": "edge",
       "notation": "[L F: [L2, E']]",
       "stickerMappings": [
@@ -4254,7 +4254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-DR",
+      "id": "DR-LD",
       "type": "edge",
       "notation": "[S, L' F' L]",
       "stickerMappings": [
@@ -4279,7 +4279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LD-DB",
+      "id": "DB-LD",
       "type": "edge",
       "notation": "[U: [L B' L', S']]",
       "stickerMappings": [
@@ -4304,7 +4304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-UB",
+      "id": "UB-LB",
       "type": "edge",
       "notation": "[U': [R E' R', U2]]",
       "stickerMappings": [
@@ -4329,7 +4329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-UR",
+      "id": "UR-LB",
       "type": "edge",
       "notation": "[U', R E' R']",
       "stickerMappings": [
@@ -4354,7 +4354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-UL",
+      "id": "UL-LB",
       "type": "edge",
       "notation": "[U': [R E' R', U']]",
       "stickerMappings": [
@@ -4379,7 +4379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-FR",
+      "id": "FR-LB",
       "type": "edge",
       "notation": "[R: [U', R E' R']]",
       "stickerMappings": [
@@ -4404,7 +4404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-FD",
+      "id": "FD-LB",
       "type": "edge",
       "notation": "[M': [U' L U, M']]",
       "stickerMappings": [
@@ -4429,7 +4429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-FL",
+      "id": "FL-LB",
       "type": "edge",
       "notation": "[R E': [E', R' U' R]]",
       "stickerMappings": [
@@ -4454,7 +4454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-LU",
+      "id": "LU-LB",
       "type": "edge",
       "notation": "[S: [U', R E' R']]",
       "stickerMappings": [
@@ -4479,7 +4479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-LF",
+      "id": "LF-LB",
       "type": "edge",
       "notation": "M' U Rw E Rw2 E Rw U' M",
       "stickerMappings": [
@@ -4504,7 +4504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-LD",
+      "id": "LD-LB",
       "type": "edge",
       "notation": "[U S' U', L']",
       "stickerMappings": [
@@ -4529,7 +4529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-BD",
+      "id": "BD-LB",
       "type": "edge",
       "notation": "[U' M: [R E' R', U]]",
       "stickerMappings": [
@@ -4554,7 +4554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-BR",
+      "id": "BR-LB",
       "type": "edge",
       "notation": "[R' U' R, E']",
       "stickerMappings": [
@@ -4579,7 +4579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-BU",
+      "id": "BU-LB",
       "type": "edge",
       "notation": "[M', U' L U]",
       "stickerMappings": [
@@ -4604,7 +4604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-RU",
+      "id": "RU-LB",
       "type": "edge",
       "notation": "[R F: [E', R2]]",
       "stickerMappings": [
@@ -4629,7 +4629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-RB",
+      "id": "RB-LB",
       "type": "edge",
       "notation": "[Uw R': [S, R2]]",
       "stickerMappings": [
@@ -4654,7 +4654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-RD",
+      "id": "RD-LB",
       "type": "edge",
       "notation": "[M' U R': [E', R2]]",
       "stickerMappings": [
@@ -4679,7 +4679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-RF",
+      "id": "RF-LB",
       "type": "edge",
       "notation": "[E' R U' R: [R2, E]]",
       "stickerMappings": [
@@ -4704,7 +4704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-DF",
+      "id": "DF-LB",
       "type": "edge",
       "notation": "[Lw' U: [L2, S']]",
       "stickerMappings": [
@@ -4729,7 +4729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-DR",
+      "id": "DR-LB",
       "type": "edge",
       "notation": "[Uw' R: [E, R2]]",
       "stickerMappings": [
@@ -4754,7 +4754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "LB-DB",
+      "id": "DB-LB",
       "type": "edge",
       "notation": "[M': [U' L U, M2]]",
       "stickerMappings": [
@@ -4779,7 +4779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-UB",
+      "id": "UB-BD",
       "type": "edge",
       "notation": "[U M' U: [M', U2]]",
       "stickerMappings": [
@@ -4804,7 +4804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-UR",
+      "id": "UR-BD",
       "type": "edge",
       "notation": "U M U M' U M U M'",
       "stickerMappings": [
@@ -4829,7 +4829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-UL",
+      "id": "UL-BD",
       "type": "edge",
       "notation": "U' M U' M' U' M U' M'",
       "stickerMappings": [
@@ -4854,7 +4854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-FR",
+      "id": "FR-BD",
       "type": "edge",
       "notation": "[U L B': [E', L2]]",
       "stickerMappings": [
@@ -4879,7 +4879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-FD",
+      "id": "FD-BD",
       "type": "edge",
       "notation": "U M' U' M U2 M U M' U",
       "stickerMappings": [
@@ -4904,7 +4904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-FL",
+      "id": "FL-BD",
       "type": "edge",
       "notation": "[U' R' B: [E, R2]]",
       "stickerMappings": [
@@ -4929,7 +4929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-LU",
+      "id": "LU-BD",
       "type": "edge",
       "notation": "M' U M' U M U M' U M2",
       "stickerMappings": [
@@ -4954,7 +4954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-LF",
+      "id": "LF-BD",
       "type": "edge",
       "notation": "[U' M: [U, R' E R]]",
       "stickerMappings": [
@@ -4979,7 +4979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-LD",
+      "id": "LD-BD",
       "type": "edge",
       "notation": "[U' Lw: [U, R E' R']]",
       "stickerMappings": [
@@ -5004,7 +5004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-LB",
+      "id": "LB-BD",
       "type": "edge",
       "notation": "[U' M: [U, R E' R']]",
       "stickerMappings": [
@@ -5029,7 +5029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-BR",
+      "id": "BR-BD",
       "type": "edge",
       "notation": "[U2: [M, U R' U']]",
       "stickerMappings": [
@@ -5054,7 +5054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-BU",
+      "id": "BU-BD",
       "type": "edge",
       "notation": "[U': [Lw U Lw', S]]",
       "stickerMappings": [
@@ -5079,7 +5079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-BL",
+      "id": "BL-BD",
       "type": "edge",
       "notation": "[U2: [M, U' L U]]",
       "stickerMappings": [
@@ -5104,7 +5104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-RU",
+      "id": "RU-BD",
       "type": "edge",
       "notation": "M' U' M' U' M U' M' U' M2",
       "stickerMappings": [
@@ -5129,7 +5129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-RB",
+      "id": "RB-BD",
       "type": "edge",
       "notation": "[U M: [U', Lw' E Lw]]",
       "stickerMappings": [
@@ -5154,7 +5154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-RD",
+      "id": "RD-BD",
       "type": "edge",
       "notation": "[U' Rw': [R U R', E']]",
       "stickerMappings": [
@@ -5179,7 +5179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-RF",
+      "id": "RF-BD",
       "type": "edge",
       "notation": "[U M: [U', L E' L']]",
       "stickerMappings": [
@@ -5204,7 +5204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-DF",
+      "id": "DF-BD",
       "type": "edge",
       "notation": "[D': [S', R F R']]",
       "stickerMappings": [
@@ -5229,7 +5229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BD-DR",
+      "id": "DR-BD",
       "type": "edge",
       "notation": "[D' R' F': [R2, E]]",
       "stickerMappings": [
@@ -5254,7 +5254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-UB",
+      "id": "UB-BR",
       "type": "edge",
       "notation": "[R U': [S, R2]]",
       "stickerMappings": [
@@ -5279,7 +5279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-UR",
+      "id": "UR-BR",
       "type": "edge",
       "notation": "[Uw': [R E' R', U]]",
       "stickerMappings": [
@@ -5304,7 +5304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-UL",
+      "id": "UL-BR",
       "type": "edge",
       "notation": "[U, L E2 L']",
       "stickerMappings": [
@@ -5329,7 +5329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-FR",
+      "id": "FR-BR",
       "type": "edge",
       "notation": "[U R': [S, R2]]",
       "stickerMappings": [
@@ -5354,7 +5354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-FD",
+      "id": "FD-BR",
       "type": "edge",
       "notation": "[U' R' U, M']",
       "stickerMappings": [
@@ -5379,7 +5379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-FL",
+      "id": "FL-BR",
       "type": "edge",
       "notation": "[R U' R': [E, R2]]",
       "stickerMappings": [
@@ -5404,7 +5404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-LU",
+      "id": "LU-BR",
       "type": "edge",
       "notation": "[M': [U', L' E L]]",
       "stickerMappings": [
@@ -5429,7 +5429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-LF",
+      "id": "LF-BR",
       "type": "edge",
       "notation": "[R': [R' E R, U']]",
       "stickerMappings": [
@@ -5454,7 +5454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-LD",
+      "id": "LD-BR",
       "type": "edge",
       "notation": "[D: [U' R' U, M']]",
       "stickerMappings": [
@@ -5479,7 +5479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-LB",
+      "id": "LB-BR",
       "type": "edge",
       "notation": "[E', R' U' R]",
       "stickerMappings": [
@@ -5504,7 +5504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-BD",
+      "id": "BD-BR",
       "type": "edge",
       "notation": "[U': [R', U' M U]]",
       "stickerMappings": [
@@ -5529,7 +5529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-BU",
+      "id": "BU-BR",
       "type": "edge",
       "notation": "[U' R' U, M]",
       "stickerMappings": [
@@ -5554,7 +5554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-BL",
+      "id": "BL-BR",
       "type": "edge",
       "notation": "[R U' R: [E', R2]]",
       "stickerMappings": [
@@ -5579,7 +5579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-RU",
+      "id": "RU-BR",
       "type": "edge",
       "notation": "[R Uw' R: [E', R2]]",
       "stickerMappings": [
@@ -5604,7 +5604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-RD",
+      "id": "RD-BR",
       "type": "edge",
       "notation": "[D': [U' R' U, M']]",
       "stickerMappings": [
@@ -5629,7 +5629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-RF",
+      "id": "RF-BR",
       "type": "edge",
       "notation": "[E, R' U' R]",
       "stickerMappings": [
@@ -5654,7 +5654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-DF",
+      "id": "DF-BR",
       "type": "edge",
       "notation": "[U R' U': [M', U2]]",
       "stickerMappings": [
@@ -5679,7 +5679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-DR",
+      "id": "DR-BR",
       "type": "edge",
       "notation": "R' U R U R U R' U' R' U'",
       "stickerMappings": [
@@ -5704,7 +5704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BR-DB",
+      "id": "DB-BR",
       "type": "edge",
       "notation": "[U' R' U, M2]",
       "stickerMappings": [
@@ -5729,7 +5729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-UR",
+      "id": "UR-BU",
       "type": "edge",
       "notation": "[U: [R' F R, S]]",
       "stickerMappings": [
@@ -5754,7 +5754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-UL",
+      "id": "UL-BU",
       "type": "edge",
       "notation": "[U': [L F' L', S']]",
       "stickerMappings": [
@@ -5779,7 +5779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-FR",
+      "id": "FR-BU",
       "type": "edge",
       "notation": "[M, U' R U]",
       "stickerMappings": [
@@ -5804,7 +5804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-FD",
+      "id": "FD-BU",
       "type": "edge",
       "notation": "[U': [S, R' F' R]]",
       "stickerMappings": [
@@ -5829,7 +5829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-FL",
+      "id": "FL-BU",
       "type": "edge",
       "notation": "[U': [S, R' F2 R]]",
       "stickerMappings": [
@@ -5854,7 +5854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-LU",
+      "id": "LU-BU",
       "type": "edge",
       "notation": "[L': [U' L U, M']]",
       "stickerMappings": [
@@ -5879,7 +5879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-LF",
+      "id": "LF-BU",
       "type": "edge",
       "notation": "[U' L' U, M']",
       "stickerMappings": [
@@ -5904,7 +5904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-LD",
+      "id": "LD-BU",
       "type": "edge",
       "notation": "[L': [U' L' U, M']]",
       "stickerMappings": [
@@ -5929,7 +5929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-LB",
+      "id": "LB-BU",
       "type": "edge",
       "notation": "[U' L U, M']",
       "stickerMappings": [
@@ -5954,7 +5954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-BD",
+      "id": "BD-BU",
       "type": "edge",
       "notation": "[U': [S, Lw U Lw']]",
       "stickerMappings": [
@@ -5979,7 +5979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-BR",
+      "id": "BR-BU",
       "type": "edge",
       "notation": "[M, U' R' U]",
       "stickerMappings": [
@@ -6004,7 +6004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-BL",
+      "id": "BL-BU",
       "type": "edge",
       "notation": "[M, U L U']",
       "stickerMappings": [
@@ -6029,7 +6029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-RU",
+      "id": "RU-BU",
       "type": "edge",
       "notation": "[R: [U R' U', M']]",
       "stickerMappings": [
@@ -6054,7 +6054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-RB",
+      "id": "RB-BU",
       "type": "edge",
       "notation": "[U R' U', M']",
       "stickerMappings": [
@@ -6079,7 +6079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-RD",
+      "id": "RD-BU",
       "type": "edge",
       "notation": "[R: [U R U', M']]",
       "stickerMappings": [
@@ -6104,7 +6104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-RF",
+      "id": "RF-BU",
       "type": "edge",
       "notation": "[U R U', M']",
       "stickerMappings": [
@@ -6129,7 +6129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-DF",
+      "id": "DF-BU",
       "type": "edge",
       "notation": "[U: [R' F' R, S]]",
       "stickerMappings": [
@@ -6154,7 +6154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-DR",
+      "id": "DR-BU",
       "type": "edge",
       "notation": "[Rw': [U' R' U, M']]",
       "stickerMappings": [
@@ -6179,7 +6179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BU-DB",
+      "id": "DB-BU",
       "type": "edge",
       "notation": "[U: [Lw U Lw', S]]",
       "stickerMappings": [
@@ -6204,7 +6204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-UB",
+      "id": "UB-BL",
       "type": "edge",
       "notation": "[L' U: [S', L2]]",
       "stickerMappings": [
@@ -6229,7 +6229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-UR",
+      "id": "UR-BL",
       "type": "edge",
       "notation": "[U', R' E2 R]",
       "stickerMappings": [
@@ -6254,7 +6254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-UL",
+      "id": "UL-BL",
       "type": "edge",
       "notation": "[Uw: [L' E L, U']]",
       "stickerMappings": [
@@ -6279,7 +6279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-FR",
+      "id": "FR-BL",
       "type": "edge",
       "notation": "[R' U' R': [E', R2]]",
       "stickerMappings": [
@@ -6304,7 +6304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-FD",
+      "id": "FD-BL",
       "type": "edge",
       "notation": "[U L U', M']",
       "stickerMappings": [
@@ -6329,7 +6329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-FL",
+      "id": "FL-BL",
       "type": "edge",
       "notation": "U' Rw E Rw2 E Rw U",
       "stickerMappings": [
@@ -6354,7 +6354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-LU",
+      "id": "LU-BL",
       "type": "edge",
       "notation": "[L' Uw L: [L2, E]]",
       "stickerMappings": [
@@ -6379,7 +6379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-LF",
+      "id": "LF-BL",
       "type": "edge",
       "notation": "[E', L U L']",
       "stickerMappings": [
@@ -6404,7 +6404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-LD",
+      "id": "LD-BL",
       "type": "edge",
       "notation": "[S' U' R': [E', R2]]",
       "stickerMappings": [
@@ -6429,7 +6429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-BD",
+      "id": "BD-BL",
       "type": "edge",
       "notation": "[U: [L, U M U']]",
       "stickerMappings": [
@@ -6454,7 +6454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-BR",
+      "id": "BR-BL",
       "type": "edge",
       "notation": "[R U' R': [E', R2]]",
       "stickerMappings": [
@@ -6479,7 +6479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-BU",
+      "id": "BU-BL",
       "type": "edge",
       "notation": "[U L U', M]",
       "stickerMappings": [
@@ -6504,7 +6504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-RU",
+      "id": "RU-BL",
       "type": "edge",
       "notation": "[M': [U, R E' R']]",
       "stickerMappings": [
@@ -6529,7 +6529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-RB",
+      "id": "RB-BL",
       "type": "edge",
       "notation": "[E, L U L']",
       "stickerMappings": [
@@ -6554,7 +6554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-RD",
+      "id": "RD-BL",
       "type": "edge",
       "notation": "[R' E': [R U' R', E']]",
       "stickerMappings": [
@@ -6579,7 +6579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-RF",
+      "id": "RF-BL",
       "type": "edge",
       "notation": "[L: [L E' L', U]]",
       "stickerMappings": [
@@ -6604,7 +6604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-DF",
+      "id": "DF-BL",
       "type": "edge",
       "notation": "[U' L U: [M', U2]]",
       "stickerMappings": [
@@ -6629,7 +6629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-DR",
+      "id": "DR-BL",
       "type": "edge",
       "notation": "[U' R': [E', R2]]",
       "stickerMappings": [
@@ -6654,7 +6654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "BL-DB",
+      "id": "DB-BL",
       "type": "edge",
       "notation": "[U' D' R': [E', R2]]",
       "stickerMappings": [
@@ -6679,7 +6679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-UB",
+      "id": "UB-RU",
       "type": "edge",
       "notation": "[U M U: [M', U2]]",
       "stickerMappings": [
@@ -6704,7 +6704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-UL",
+      "id": "UL-RU",
       "type": "edge",
       "notation": "[S, R' F R]",
       "stickerMappings": [
@@ -6729,7 +6729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-FR",
+      "id": "FR-RU",
       "type": "edge",
       "notation": "[R' U' E' R: [E, R2]]",
       "stickerMappings": [
@@ -6754,7 +6754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-FD",
+      "id": "FD-RU",
       "type": "edge",
       "notation": "[Rw: [U R' U', M']]",
       "stickerMappings": [
@@ -6779,7 +6779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-FL",
+      "id": "FL-RU",
       "type": "edge",
       "notation": "[S U' R: [R2, E]]",
       "stickerMappings": [
@@ -6804,7 +6804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-LU",
+      "id": "LU-RU",
       "type": "edge",
       "notation": "[M U: [M', U2]]",
       "stickerMappings": [
@@ -6829,7 +6829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-LF",
+      "id": "LF-RU",
       "type": "edge",
       "notation": "[M L' U: [M', U2]]",
       "stickerMappings": [
@@ -6854,7 +6854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-LD",
+      "id": "LD-RU",
       "type": "edge",
       "notation": "[U: [L F' L', S]]",
       "stickerMappings": [
@@ -6879,7 +6879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-LB",
+      "id": "LB-RU",
       "type": "edge",
       "notation": "[R F: [R2, E']]",
       "stickerMappings": [
@@ -6904,7 +6904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-BD",
+      "id": "BD-RU",
       "type": "edge",
       "notation": "M2 U M U M' U M U M",
       "stickerMappings": [
@@ -6929,7 +6929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-BR",
+      "id": "BR-RU",
       "type": "edge",
       "notation": "[R Uw' R': [E', R2]]",
       "stickerMappings": [
@@ -6954,7 +6954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-BU",
+      "id": "BU-RU",
       "type": "edge",
       "notation": "[R: [M', U R' U']]",
       "stickerMappings": [
@@ -6979,7 +6979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-BL",
+      "id": "BL-RU",
       "type": "edge",
       "notation": "[M': [R E' R', U]]",
       "stickerMappings": [
@@ -7004,7 +7004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-RB",
+      "id": "RB-RU",
       "type": "edge",
       "notation": "[S': [L' E L, U]]",
       "stickerMappings": [
@@ -7029,7 +7029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-RD",
+      "id": "RD-RU",
       "type": "edge",
       "notation": "[Rw' D' R': [S', R2]]",
       "stickerMappings": [
@@ -7054,7 +7054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-RF",
+      "id": "RF-RU",
       "type": "edge",
       "notation": "[S': [L E' L', U]]",
       "stickerMappings": [
@@ -7079,7 +7079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-DF",
+      "id": "DF-RU",
       "type": "edge",
       "notation": "[R F: [E, R2]]",
       "stickerMappings": [
@@ -7104,7 +7104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-DR",
+      "id": "DR-RU",
       "type": "edge",
       "notation": "[S', R' F R]",
       "stickerMappings": [
@@ -7129,7 +7129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RU-DB",
+      "id": "DB-RU",
       "type": "edge",
       "notation": "[Rw: [U R' U', M2]]",
       "stickerMappings": [
@@ -7154,7 +7154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-UB",
+      "id": "UB-RB",
       "type": "edge",
       "notation": "[U: [L' E L, U2]]",
       "stickerMappings": [
@@ -7179,7 +7179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-UR",
+      "id": "UR-RB",
       "type": "edge",
       "notation": "[U: [L' E L, U]]",
       "stickerMappings": [
@@ -7204,7 +7204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-UL",
+      "id": "UL-RB",
       "type": "edge",
       "notation": "[U, L' E L]",
       "stickerMappings": [
@@ -7229,7 +7229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-FR",
+      "id": "FR-RB",
       "type": "edge",
       "notation": "[R U' R', E']",
       "stickerMappings": [
@@ -7254,7 +7254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-FD",
+      "id": "FD-RB",
       "type": "edge",
       "notation": "[M': [U R' U', M']]",
       "stickerMappings": [
@@ -7279,7 +7279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-FL",
+      "id": "FL-RB",
       "type": "edge",
       "notation": "[L': [U, L' E L]]",
       "stickerMappings": [
@@ -7304,7 +7304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-LU",
+      "id": "LU-RB",
       "type": "edge",
       "notation": "[L' F': [E, L2]]",
       "stickerMappings": [
@@ -7329,7 +7329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-LF",
+      "id": "LF-RB",
       "type": "edge",
       "notation": "[Rw U R': [E, R2]]",
       "stickerMappings": [
@@ -7354,7 +7354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-LD",
+      "id": "LD-RB",
       "type": "edge",
       "notation": "[F R': [S', R2]]",
       "stickerMappings": [
@@ -7379,7 +7379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-LB",
+      "id": "LB-RB",
       "type": "edge",
       "notation": "[Uw' L: [S', L2]]",
       "stickerMappings": [
@@ -7404,7 +7404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-BD",
+      "id": "BD-RB",
       "type": "edge",
       "notation": "[U M: [Lw' E Lw, U']]",
       "stickerMappings": [
@@ -7429,7 +7429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-BU",
+      "id": "BU-RB",
       "type": "edge",
       "notation": "[M', U R' U']",
       "stickerMappings": [
@@ -7454,7 +7454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-BL",
+      "id": "BL-RB",
       "type": "edge",
       "notation": "[L U L', E]",
       "stickerMappings": [
@@ -7479,7 +7479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-RU",
+      "id": "RU-RB",
       "type": "edge",
       "notation": "[S': [U, L' E L]]",
       "stickerMappings": [
@@ -7504,7 +7504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-RD",
+      "id": "RD-RB",
       "type": "edge",
       "notation": "[U' S U, R]",
       "stickerMappings": [
@@ -7529,7 +7529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-RF",
+      "id": "RF-RB",
       "type": "edge",
       "notation": "[M' U' R': [S, R2]]",
       "stickerMappings": [
@@ -7554,7 +7554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-DF",
+      "id": "DF-RB",
       "type": "edge",
       "notation": "[Rw U': [R2, S]]",
       "stickerMappings": [
@@ -7579,7 +7579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-DR",
+      "id": "DR-RB",
       "type": "edge",
       "notation": "[Uw' R': [E', R2]]",
       "stickerMappings": [
@@ -7604,7 +7604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RB-DB",
+      "id": "DB-RB",
       "type": "edge",
       "notation": "[M': [U R' U', M2]]",
       "stickerMappings": [
@@ -7629,7 +7629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-UB",
+      "id": "UB-RD",
       "type": "edge",
       "notation": "[U': [R E R', U2]]",
       "stickerMappings": [
@@ -7654,7 +7654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-UR",
+      "id": "UR-RD",
       "type": "edge",
       "notation": "[U', R E R']",
       "stickerMappings": [
@@ -7679,7 +7679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-UL",
+      "id": "UL-RD",
       "type": "edge",
       "notation": "[U': [R E R', U']]",
       "stickerMappings": [
@@ -7704,7 +7704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-FR",
+      "id": "FR-RD",
       "type": "edge",
       "notation": "[R' Fw R': [S', R2]]",
       "stickerMappings": [
@@ -7729,7 +7729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-FD",
+      "id": "FD-RD",
       "type": "edge",
       "notation": "[U': [S', R' F' R]]",
       "stickerMappings": [
@@ -7754,7 +7754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-FL",
+      "id": "FL-RD",
       "type": "edge",
       "notation": "[U': [S', R' F2 R]]",
       "stickerMappings": [
@@ -7779,7 +7779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-LU",
+      "id": "LU-RD",
       "type": "edge",
       "notation": "[R' F R: [S, R2]]",
       "stickerMappings": [
@@ -7804,7 +7804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-LF",
+      "id": "LF-RD",
       "type": "edge",
       "notation": "[M' U R': [E, R2]]",
       "stickerMappings": [
@@ -7829,7 +7829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-LD",
+      "id": "LD-RD",
       "type": "edge",
       "notation": "[R' F R': [S', R2]]",
       "stickerMappings": [
@@ -7854,7 +7854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-LB",
+      "id": "LB-RD",
       "type": "edge",
       "notation": "[M' U R: [E', R2]]",
       "stickerMappings": [
@@ -7879,7 +7879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-BD",
+      "id": "BD-RD",
       "type": "edge",
       "notation": "[U' Rw': [E', R U R']]",
       "stickerMappings": [
@@ -7904,7 +7904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-BR",
+      "id": "BR-RD",
       "type": "edge",
       "notation": "[D': [M', U' R' U]]",
       "stickerMappings": [
@@ -7929,7 +7929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-BU",
+      "id": "BU-RD",
       "type": "edge",
       "notation": "[R: [M', U R U']]",
       "stickerMappings": [
@@ -7954,7 +7954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-BL",
+      "id": "BL-RD",
       "type": "edge",
       "notation": "[R' E2: [R U' R', E]]",
       "stickerMappings": [
@@ -7979,7 +7979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-RU",
+      "id": "RU-RD",
       "type": "edge",
       "notation": "[Rw' D' R: [S', R2]]",
       "stickerMappings": [
@@ -8004,7 +8004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-RB",
+      "id": "RB-RD",
       "type": "edge",
       "notation": "[R, U' S U]",
       "stickerMappings": [
@@ -8029,7 +8029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-RF",
+      "id": "RF-RD",
       "type": "edge",
       "notation": "[R', U' S U]",
       "stickerMappings": [
@@ -8054,7 +8054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-DF",
+      "id": "DF-RD",
       "type": "edge",
       "notation": "[R' F': [R2, E]]",
       "stickerMappings": [
@@ -8079,7 +8079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RD-DB",
+      "id": "DB-RD",
       "type": "edge",
       "notation": "[U': [R' B R, S]]",
       "stickerMappings": [
@@ -8104,7 +8104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-UB",
+      "id": "UB-RF",
       "type": "edge",
       "notation": "[U: [L E' L', U2]]",
       "stickerMappings": [
@@ -8129,7 +8129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-UR",
+      "id": "UR-RF",
       "type": "edge",
       "notation": "[U: [L E' L', U]]",
       "stickerMappings": [
@@ -8154,7 +8154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-UL",
+      "id": "UL-RF",
       "type": "edge",
       "notation": "[U, L E' L']",
       "stickerMappings": [
@@ -8179,7 +8179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-FD",
+      "id": "FD-RF",
       "type": "edge",
       "notation": "[M': [U R U', M']]",
       "stickerMappings": [
@@ -8204,7 +8204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-FL",
+      "id": "FL-RF",
       "type": "edge",
       "notation": "[E, Rw U Rw']",
       "stickerMappings": [
@@ -8229,7 +8229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-LU",
+      "id": "LU-RF",
       "type": "edge",
       "notation": "[R M U: [M', U2]]",
       "stickerMappings": [
@@ -8254,7 +8254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-LF",
+      "id": "LF-RF",
       "type": "edge",
       "notation": "[U E R': [S, R2]]",
       "stickerMappings": [
@@ -8279,7 +8279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-LD",
+      "id": "LD-RF",
       "type": "edge",
       "notation": "[M' U' L': [E', L2]]",
       "stickerMappings": [
@@ -8304,7 +8304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-LB",
+      "id": "LB-RF",
       "type": "edge",
       "notation": "[E' R U' R: [E, R2]]",
       "stickerMappings": [
@@ -8329,7 +8329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-BD",
+      "id": "BD-RF",
       "type": "edge",
       "notation": "[U Lw: [E', L' U' L]]",
       "stickerMappings": [
@@ -8354,7 +8354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-BR",
+      "id": "BR-RF",
       "type": "edge",
       "notation": "[R' U' R, E]",
       "stickerMappings": [
@@ -8379,7 +8379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-BU",
+      "id": "BU-RF",
       "type": "edge",
       "notation": "[M', U R U']",
       "stickerMappings": [
@@ -8404,7 +8404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-BL",
+      "id": "BL-RF",
       "type": "edge",
       "notation": "[L: [U, L E' L']]",
       "stickerMappings": [
@@ -8429,7 +8429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-RU",
+      "id": "RU-RF",
       "type": "edge",
       "notation": "[S': [U, L E' L']]",
       "stickerMappings": [
@@ -8454,7 +8454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-RB",
+      "id": "RB-RF",
       "type": "edge",
       "notation": "[E R U' R: [E', R2]]",
       "stickerMappings": [
@@ -8479,7 +8479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-RD",
+      "id": "RD-RF",
       "type": "edge",
       "notation": "[U' S U, R']",
       "stickerMappings": [
@@ -8504,7 +8504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-DF",
+      "id": "DF-RF",
       "type": "edge",
       "notation": "[R2 F: [E, R2]]",
       "stickerMappings": [
@@ -8529,7 +8529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-DR",
+      "id": "DR-RF",
       "type": "edge",
       "notation": "[U' E' R: [E, R2]]",
       "stickerMappings": [
@@ -8554,7 +8554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "RF-DB",
+      "id": "DB-RF",
       "type": "edge",
       "notation": "[M': [U R U', M2]]",
       "stickerMappings": [
@@ -8579,7 +8579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-UB",
+      "id": "UB-DF",
       "type": "edge",
       "notation": "[U2, M']",
       "stickerMappings": [
@@ -8604,7 +8604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-UR",
+      "id": "UR-DF",
       "type": "edge",
       "notation": "[M U2 M, U]",
       "stickerMappings": [
@@ -8629,7 +8629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-UL",
+      "id": "UL-DF",
       "type": "edge",
       "notation": "[R' F': [R S R', F2]]",
       "stickerMappings": [
@@ -8654,7 +8654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-FR",
+      "id": "FR-DF",
       "type": "edge",
       "notation": "R' Fw2 R2 U' R2 Fw2 R2 U' R'",
       "stickerMappings": [
@@ -8679,7 +8679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-FL",
+      "id": "FL-DF",
       "type": "edge",
       "notation": "U' L' U' M' U2 M U' L U",
       "stickerMappings": [
@@ -8704,7 +8704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-LU",
+      "id": "LU-DF",
       "type": "edge",
       "notation": "[L' F': [L2, E']]",
       "stickerMappings": [
@@ -8729,7 +8729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-LF",
+      "id": "LF-DF",
       "type": "edge",
       "notation": "[U R' F2: [R S R', F]]",
       "stickerMappings": [
@@ -8754,7 +8754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-LD",
+      "id": "LD-DF",
       "type": "edge",
       "notation": "[L F: [E', L2]]",
       "stickerMappings": [
@@ -8779,7 +8779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-LB",
+      "id": "LB-DF",
       "type": "edge",
       "notation": "[Lw' U: [S', L2]]",
       "stickerMappings": [
@@ -8804,7 +8804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-BD",
+      "id": "BD-DF",
       "type": "edge",
       "notation": "[D': [R F R', S']]",
       "stickerMappings": [
@@ -8829,7 +8829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-BR",
+      "id": "BR-DF",
       "type": "edge",
       "notation": "[U R' U: [M', U2]]",
       "stickerMappings": [
@@ -8854,7 +8854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-BU",
+      "id": "BU-DF",
       "type": "edge",
       "notation": "[U: [S, R' F' R]]",
       "stickerMappings": [
@@ -8879,7 +8879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-BL",
+      "id": "BL-DF",
       "type": "edge",
       "notation": "[U' L U': [M', U2]]",
       "stickerMappings": [
@@ -8904,7 +8904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-RU",
+      "id": "RU-DF",
       "type": "edge",
       "notation": "[R F: [R2, E]]",
       "stickerMappings": [
@@ -8929,7 +8929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-RB",
+      "id": "RB-DF",
       "type": "edge",
       "notation": "[Rw U': [S, R2]]",
       "stickerMappings": [
@@ -8954,7 +8954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-RD",
+      "id": "RD-DF",
       "type": "edge",
       "notation": "[R' F': [E, R2]]",
       "stickerMappings": [
@@ -8979,7 +8979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-RF",
+      "id": "RF-DF",
       "type": "edge",
       "notation": "[R2 F: [R2, E]]",
       "stickerMappings": [
@@ -9004,7 +9004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-DR",
+      "id": "DR-DF",
       "type": "edge",
       "notation": "[R' F': [R S' R', F2]]",
       "stickerMappings": [
@@ -9029,7 +9029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DF-DB",
+      "id": "DB-DF",
       "type": "edge",
       "notation": "[M': [U2, M']]",
       "stickerMappings": [
@@ -9054,7 +9054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-UB",
+      "id": "UB-DR",
       "type": "edge",
       "notation": "[U': [S, R2]]",
       "stickerMappings": [
@@ -9079,7 +9079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-UR",
+      "id": "UR-DR",
       "type": "edge",
       "notation": "U' R E' R2 E R U R' E' R2 E R'",
       "stickerMappings": [
@@ -9104,7 +9104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-UL",
+      "id": "UL-DR",
       "type": "edge",
       "notation": "U R U R' U' R' U' R' U R",
       "stickerMappings": [
@@ -9129,7 +9129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-FR",
+      "id": "FR-DR",
       "type": "edge",
       "notation": "U R' U' R' U R U R U R' U2",
       "stickerMappings": [
@@ -9154,7 +9154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-FD",
+      "id": "FD-DR",
       "type": "edge",
       "notation": "[U R' F' R: [R2, S]]",
       "stickerMappings": [
@@ -9179,7 +9179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-FL",
+      "id": "FL-DR",
       "type": "edge",
       "notation": "[U' R': [E, R2]]",
       "stickerMappings": [
@@ -9204,7 +9204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-LU",
+      "id": "LU-DR",
       "type": "edge",
       "notation": "[L: [F', L S L']]",
       "stickerMappings": [
@@ -9229,7 +9229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-LF",
+      "id": "LF-DR",
       "type": "edge",
       "notation": "[U' E' R: [E', R2]]",
       "stickerMappings": [
@@ -9254,7 +9254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-LD",
+      "id": "LD-DR",
       "type": "edge",
       "notation": "[L' F' L, S]",
       "stickerMappings": [
@@ -9279,7 +9279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-LB",
+      "id": "LB-DR",
       "type": "edge",
       "notation": "[Uw' R': [E, R2]]",
       "stickerMappings": [
@@ -9304,7 +9304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-BD",
+      "id": "BD-DR",
       "type": "edge",
       "notation": "[D' R' F': [E, R2]]",
       "stickerMappings": [
@@ -9329,7 +9329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-BR",
+      "id": "BR-DR",
       "type": "edge",
       "notation": "U R U R U' R' U' R' U' R",
       "stickerMappings": [
@@ -9354,7 +9354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-BU",
+      "id": "BU-DR",
       "type": "edge",
       "notation": "[R': [U' R' U, M]]",
       "stickerMappings": [
@@ -9379,7 +9379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-BL",
+      "id": "BL-DR",
       "type": "edge",
       "notation": "[U' R: [E', R2]]",
       "stickerMappings": [
@@ -9404,7 +9404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-RU",
+      "id": "RU-DR",
       "type": "edge",
       "notation": "[R' F R, S']",
       "stickerMappings": [
@@ -9429,7 +9429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-RB",
+      "id": "RB-DR",
       "type": "edge",
       "notation": "[Uw' R: [E', R2]]",
       "stickerMappings": [
@@ -9454,7 +9454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-RF",
+      "id": "RF-DR",
       "type": "edge",
       "notation": "[U' E' R': [E, R2]]",
       "stickerMappings": [
@@ -9479,7 +9479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-DF",
+      "id": "DF-DR",
       "type": "edge",
       "notation": "[R' F: [R S' R', F2]]",
       "stickerMappings": [
@@ -9504,7 +9504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DR-DB",
+      "id": "DB-DR",
       "type": "edge",
       "notation": "[S' Rw: [U R' U', M2]]",
       "stickerMappings": [
@@ -9529,7 +9529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-UB",
+      "id": "UB-DB",
       "type": "edge",
       "notation": "[M, U2]",
       "stickerMappings": [
@@ -9554,7 +9554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-UR",
+      "id": "UR-DB",
       "type": "edge",
       "notation": "[Rw M': [U' R' U, M2]]",
       "stickerMappings": [
@@ -9579,7 +9579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-UL",
+      "id": "UL-DB",
       "type": "edge",
       "notation": "D' U R U R' U' R' U' R' U R D",
       "stickerMappings": [
@@ -9604,7 +9604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-FR",
+      "id": "FR-DB",
       "type": "edge",
       "notation": "[M2, U' R U]",
       "stickerMappings": [
@@ -9629,7 +9629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-FD",
+      "id": "FD-DB",
       "type": "edge",
       "notation": "[D: [R F R', S']]",
       "stickerMappings": [
@@ -9654,7 +9654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-FL",
+      "id": "FL-DB",
       "type": "edge",
       "notation": "[D' U' R': [E, R2]]",
       "stickerMappings": [
@@ -9679,7 +9679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-LU",
+      "id": "LU-DB",
       "type": "edge",
       "notation": "[L' M: [U' L U, M2]]",
       "stickerMappings": [
@@ -9704,7 +9704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-LF",
+      "id": "LF-DB",
       "type": "edge",
       "notation": "[M: [U' L' U, M2]]",
       "stickerMappings": [
@@ -9729,7 +9729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-LD",
+      "id": "LD-DB",
       "type": "edge",
       "notation": "[U: [S', L B' L']]",
       "stickerMappings": [
@@ -9754,7 +9754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-LB",
+      "id": "LB-DB",
       "type": "edge",
       "notation": "[M: [U' L U, M2]]",
       "stickerMappings": [
@@ -9779,7 +9779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-BR",
+      "id": "BR-DB",
       "type": "edge",
       "notation": "[M2, U' R' U]",
       "stickerMappings": [
@@ -9804,7 +9804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-BU",
+      "id": "BU-DB",
       "type": "edge",
       "notation": "[U: [S, Lw U Lw']]",
       "stickerMappings": [
@@ -9829,7 +9829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-BL",
+      "id": "BL-DB",
       "type": "edge",
       "notation": "[U' D' R': [R2, E']]",
       "stickerMappings": [
@@ -9854,7 +9854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-RU",
+      "id": "RU-DB",
       "type": "edge",
       "notation": "[R M: [U R' U', M2]]",
       "stickerMappings": [
@@ -9879,7 +9879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-RB",
+      "id": "RB-DB",
       "type": "edge",
       "notation": "[M: [U R' U', M2]]",
       "stickerMappings": [
@@ -9904,7 +9904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-RD",
+      "id": "RD-DB",
       "type": "edge",
       "notation": "[U': [S, R' B R]]",
       "stickerMappings": [
@@ -9929,7 +9929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-RF",
+      "id": "RF-DB",
       "type": "edge",
       "notation": "[M: [U R U', M2]]",
       "stickerMappings": [
@@ -9954,7 +9954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-DF",
+      "id": "DF-DB",
       "type": "edge",
       "notation": "Uw2 M' Uw2 M'",
       "stickerMappings": [
@@ -9979,7 +9979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DB-DR",
+      "id": "DR-DB",
       "type": "edge",
       "notation": "[D' R' F: [R S' R', F2]]",
       "stickerMappings": [
@@ -10004,7 +10004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-UB",
+      "id": "UB-DL",
       "type": "edge",
       "notation": "[U: [S', L2]]",
       "stickerMappings": [
@@ -10029,7 +10029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-UR",
+      "id": "UR-DL",
       "type": "edge",
       "notation": "[S' R' F R: [S, R2]]",
       "stickerMappings": [
@@ -10054,7 +10054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-UL",
+      "id": "UL-DL",
       "type": "edge",
       "notation": "L U' Rw E Rw2 E Rw U L'",
       "stickerMappings": [
@@ -10079,7 +10079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-FR",
+      "id": "FR-DL",
       "type": "edge",
       "notation": "[U L: [E', L2]]",
       "stickerMappings": [
@@ -10104,7 +10104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-FD",
+      "id": "FD-DL",
       "type": "edge",
       "notation": "[U' L F L': [L2, S']]",
       "stickerMappings": [
@@ -10129,7 +10129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-FL",
+      "id": "FL-DL",
       "type": "edge",
       "notation": "D U' L' U' M' U2 M U' L U D'",
       "stickerMappings": [
@@ -10154,7 +10154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-LU",
+      "id": "LU-DL",
       "type": "edge",
       "notation": "[L F' L', S]",
       "stickerMappings": [
@@ -10179,7 +10179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-LF",
+      "id": "LF-DL",
       "type": "edge",
       "notation": "[U E L: [E', L2]]",
       "stickerMappings": [
@@ -10204,7 +10204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-LB",
+      "id": "LB-DL",
       "type": "edge",
       "notation": "[Uw L': [E, L2]]",
       "stickerMappings": [
@@ -10229,7 +10229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-BD",
+      "id": "BD-DL",
       "type": "edge",
       "notation": "[U' R' B R: [S', R2]]",
       "stickerMappings": [
@@ -10254,7 +10254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-BR",
+      "id": "BR-DL",
       "type": "edge",
       "notation": "[U L': [E, L2]]",
       "stickerMappings": [
@@ -10279,7 +10279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-BU",
+      "id": "BU-DL",
       "type": "edge",
       "notation": "[L: [U L U', M]]",
       "stickerMappings": [
@@ -10304,7 +10304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-BL",
+      "id": "BL-DL",
       "type": "edge",
       "notation": "U' L' U' L' U L U L U L'",
       "stickerMappings": [
@@ -10329,7 +10329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-RU",
+      "id": "RU-DL",
       "type": "edge",
       "notation": "[R': [F, R' S' R]]",
       "stickerMappings": [
@@ -10354,7 +10354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-RB",
+      "id": "RB-DL",
       "type": "edge",
       "notation": "[Uw L': [L2, E']]",
       "stickerMappings": [
@@ -10379,7 +10379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-RD",
+      "id": "RD-DL",
       "type": "edge",
       "notation": "[R F R', S']",
       "stickerMappings": [
@@ -10404,7 +10404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-RF",
+      "id": "RF-DL",
       "type": "edge",
       "notation": "[U E L': [E, L2]]",
       "stickerMappings": [
@@ -10429,7 +10429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-DF",
+      "id": "DF-DL",
       "type": "edge",
       "notation": "[R' F: [R' S' R, F2]]",
       "stickerMappings": [
@@ -10454,7 +10454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-DR",
+      "id": "DR-DL",
       "type": "edge",
       "notation": "[U: [L2, S]]",
       "stickerMappings": [
@@ -10479,7 +10479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DL-DB",
+      "id": "DB-DL",
       "type": "edge",
       "notation": "U' D R D R' D' R' D' R' D R U",
       "stickerMappings": [
@@ -10504,7 +10504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UBR_U",
+      "id": "UBR_U-UBL_U",
       "type": "corner",
       "notation": "[Lw': [R' D2 R, U]]",
       "stickerMappings": [
@@ -10529,7 +10529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UFL_U",
+      "id": "UFL_U-UBL_U",
       "type": "corner",
       "notation": "[R' D' R U': [R' D R, U']]",
       "stickerMappings": [
@@ -10554,7 +10554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UFL_F",
+      "id": "UFL_F-UBL_U",
       "type": "corner",
       "notation": "[Lw' U' D': [R D R', U2]]",
       "stickerMappings": [
@@ -10579,7 +10579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFR_F",
+      "id": "DFR_F-UBL_U",
       "type": "corner",
       "notation": "[U D: [R D R', U2]]",
       "stickerMappings": [
@@ -10604,7 +10604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFL_F",
+      "id": "DFL_F-UBL_U",
       "type": "corner",
       "notation": "[D' U: [R D' R', U2]]",
       "stickerMappings": [
@@ -10629,7 +10629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UFL_L",
+      "id": "UFL_L-UBL_U",
       "type": "corner",
       "notation": "[R' U R' U': [U2, R D R']]",
       "stickerMappings": [
@@ -10654,7 +10654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFL_L",
+      "id": "DFL_L-UBL_U",
       "type": "corner",
       "notation": "[U2, R' D R]",
       "stickerMappings": [
@@ -10679,7 +10679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DBL_L",
+      "id": "DBL_L-UBL_U",
       "type": "corner",
       "notation": "[U: [R D' R', U2]]",
       "stickerMappings": [
@@ -10704,7 +10704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DBL_B",
+      "id": "DBL_B-UBL_U",
       "type": "corner",
       "notation": "[U D': [R D R', U2]]",
       "stickerMappings": [
@@ -10729,7 +10729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DBR_B",
+      "id": "DBR_B-UBL_U",
       "type": "corner",
       "notation": "[U D: [R D' R', U2]]",
       "stickerMappings": [
@@ -10754,7 +10754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UBR_B",
+      "id": "UBR_B-UBL_U",
       "type": "corner",
       "notation": "[R' U' D: [R D R', U2]]",
       "stickerMappings": [
@@ -10779,7 +10779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-UBR_R",
+      "id": "UBR_R-UBL_U",
       "type": "corner",
       "notation": "[R' U D R: [D', R U' R']]",
       "stickerMappings": [
@@ -10804,7 +10804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DBR_R",
+      "id": "DBR_R-UBL_U",
       "type": "corner",
       "notation": "[U: [R D R', U2]]",
       "stickerMappings": [
@@ -10829,7 +10829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFR_R",
+      "id": "DFR_R-UBL_U",
       "type": "corner",
       "notation": "[U2, R' D' R]",
       "stickerMappings": [
@@ -10854,7 +10854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFL_D",
+      "id": "DFL_D-UBL_U",
       "type": "corner",
       "notation": "[R F' R' U': [U2, R D R']]",
       "stickerMappings": [
@@ -10879,7 +10879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DFR_D",
+      "id": "DFR_D-UBL_U",
       "type": "corner",
       "notation": "[R2: [R2 D R2 D' R2, U]]",
       "stickerMappings": [
@@ -10904,7 +10904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_U-DBR_D",
+      "id": "DBR_D-UBL_U",
       "type": "corner",
       "notation": "[R D' R': [U2, R' D R]]",
       "stickerMappings": [
@@ -10929,7 +10929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UBL_U",
+      "id": "UBL_U-UBR_U",
       "type": "corner",
       "notation": "[Lw': [U, R' D2 R]]",
       "stickerMappings": [
@@ -10954,7 +10954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UFL_U",
+      "id": "UFL_U-UBR_U",
       "type": "corner",
       "notation": "[R F R': [U, R' D' R]]",
       "stickerMappings": [
@@ -10979,7 +10979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UFL_F",
+      "id": "UFL_F-UBR_U",
       "type": "corner",
       "notation": "[R: [R D R', U2]]",
       "stickerMappings": [
@@ -11004,7 +11004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFR_F",
+      "id": "DFR_F-UBR_U",
       "type": "corner",
       "notation": "[D': [U, R' D R]]",
       "stickerMappings": [
@@ -11029,7 +11029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFL_F",
+      "id": "DFL_F-UBR_U",
       "type": "corner",
       "notation": "[D: [U, R' D' R]]",
       "stickerMappings": [
@@ -11054,7 +11054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UBL_L",
+      "id": "UBL_L-UBR_U",
       "type": "corner",
       "notation": "[R: [R D R', U]]",
       "stickerMappings": [
@@ -11079,7 +11079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UFL_L",
+      "id": "UFL_L-UBR_U",
       "type": "corner",
       "notation": "[R': [U', R' D' R]]",
       "stickerMappings": [
@@ -11104,7 +11104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFL_L",
+      "id": "DFL_L-UBR_U",
       "type": "corner",
       "notation": "[U, R' D R]",
       "stickerMappings": [
@@ -11129,7 +11129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DBL_L",
+      "id": "DBL_L-UBR_U",
       "type": "corner",
       "notation": "[R D' R', U']",
       "stickerMappings": [
@@ -11154,7 +11154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DBL_B",
+      "id": "DBL_B-UBR_U",
       "type": "corner",
       "notation": "[D: [U, R' D R]]",
       "stickerMappings": [
@@ -11179,7 +11179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DBR_B",
+      "id": "DBR_B-UBR_U",
       "type": "corner",
       "notation": "[D: [R D' R', U']]",
       "stickerMappings": [
@@ -11204,7 +11204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-UBL_B",
+      "id": "UBL_B-UBR_U",
       "type": "corner",
       "notation": "[R': [U2, R' D' R]]",
       "stickerMappings": [
@@ -11229,7 +11229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DBR_R",
+      "id": "DBR_R-UBR_U",
       "type": "corner",
       "notation": "[R D R', U']",
       "stickerMappings": [
@@ -11254,7 +11254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFR_R",
+      "id": "DFR_R-UBR_U",
       "type": "corner",
       "notation": "[U, R' D' R]",
       "stickerMappings": [
@@ -11279,7 +11279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFL_D",
+      "id": "DFL_D-UBR_U",
       "type": "corner",
       "notation": "[R F': [D, R' U' R]]",
       "stickerMappings": [
@@ -11304,7 +11304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DFR_D",
+      "id": "DFR_D-UBR_U",
       "type": "corner",
       "notation": "[U, R' D R U' R D' R']",
       "stickerMappings": [
@@ -11329,7 +11329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_U-DBR_D",
+      "id": "DBR_D-UBR_U",
       "type": "corner",
       "notation": "[R D' R' U R' D R, U']",
       "stickerMappings": [
@@ -11354,7 +11354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBL_U",
+      "id": "UBL_U-UFL_U",
       "type": "corner",
       "notation": "[R' D' R U2: [R' D R, U]]",
       "stickerMappings": [
@@ -11379,7 +11379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBR_U",
+      "id": "UBR_U-UFL_U",
       "type": "corner",
       "notation": "[R F R': [R' D' R, U]]",
       "stickerMappings": [
@@ -11404,7 +11404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFR_F",
+      "id": "DFR_F-UFL_U",
       "type": "corner",
       "notation": "[D': [U', R' D R]]",
       "stickerMappings": [
@@ -11429,7 +11429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFL_F",
+      "id": "DFL_F-UFL_U",
       "type": "corner",
       "notation": "[D: [U', R' D' R]]",
       "stickerMappings": [
@@ -11454,7 +11454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBL_L",
+      "id": "UBL_L-UFL_U",
       "type": "corner",
       "notation": "[U' R: [U2, R D R']]",
       "stickerMappings": [
@@ -11479,7 +11479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFL_L",
+      "id": "DFL_L-UFL_U",
       "type": "corner",
       "notation": "[U', R' D R]",
       "stickerMappings": [
@@ -11504,7 +11504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DBL_L",
+      "id": "DBL_L-UFL_U",
       "type": "corner",
       "notation": "[U2: [R D' R', U]]",
       "stickerMappings": [
@@ -11529,7 +11529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DBL_B",
+      "id": "DBL_B-UFL_U",
       "type": "corner",
       "notation": "[D: [U', R' D R]]",
       "stickerMappings": [
@@ -11554,7 +11554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DBR_B",
+      "id": "DBR_B-UFL_U",
       "type": "corner",
       "notation": "[D': [U', R' D' R]]",
       "stickerMappings": [
@@ -11579,7 +11579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBR_B",
+      "id": "UBR_B-UFL_U",
       "type": "corner",
       "notation": "[R' D': [R' D R, U']]",
       "stickerMappings": [
@@ -11604,7 +11604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBL_B",
+      "id": "UBL_B-UFL_U",
       "type": "corner",
       "notation": "[U' R': [R' D' R, U']]",
       "stickerMappings": [
@@ -11629,7 +11629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-UBR_R",
+      "id": "UBR_R-UFL_U",
       "type": "corner",
       "notation": "[U' R': [R' D' R, U2]]",
       "stickerMappings": [
@@ -11654,7 +11654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DBR_R",
+      "id": "DBR_R-UFL_U",
       "type": "corner",
       "notation": "[U2: [R D R', U]]",
       "stickerMappings": [
@@ -11679,7 +11679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFR_R",
+      "id": "DFR_R-UFL_U",
       "type": "corner",
       "notation": "[U', R' D' R]",
       "stickerMappings": [
@@ -11704,7 +11704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFL_D",
+      "id": "DFL_D-UFL_U",
       "type": "corner",
       "notation": "[U' x': [D2, R U R']]",
       "stickerMappings": [
@@ -11729,7 +11729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DFR_D",
+      "id": "DFR_D-UFL_U",
       "type": "corner",
       "notation": "[U', R' D R U' R D' R']",
       "stickerMappings": [
@@ -11754,7 +11754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_U-DBR_D",
+      "id": "DBR_D-UFL_U",
       "type": "corner",
       "notation": "[R D' R': [U', R' D R]]",
       "stickerMappings": [
@@ -11779,7 +11779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBL_U",
+      "id": "UBL_U-UFL_F",
       "type": "corner",
       "notation": "[Lw' D' U: [R D R', U2]]",
       "stickerMappings": [
@@ -11804,7 +11804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBR_U",
+      "id": "UBR_U-UFL_F",
       "type": "corner",
       "notation": "[R: [U2, R D R']]",
       "stickerMappings": [
@@ -11829,7 +11829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFR_F",
+      "id": "DFR_F-UFL_F",
       "type": "corner",
       "notation": "[R': [F2, R D' R' D]]",
       "stickerMappings": [
@@ -11854,7 +11854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFL_F",
+      "id": "DFL_F-UFL_F",
       "type": "corner",
       "notation": "[R U': [R' D R, U2]]",
       "stickerMappings": [
@@ -11879,7 +11879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBL_L",
+      "id": "UBL_L-UFL_F",
       "type": "corner",
       "notation": "[Lw' U: [R D' R', U2]]",
       "stickerMappings": [
@@ -11904,7 +11904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFL_L",
+      "id": "DFL_L-UFL_F",
       "type": "corner",
       "notation": "[D R': [F2, R D' R' D]]",
       "stickerMappings": [
@@ -11929,7 +11929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DBL_L",
+      "id": "DBL_L-UFL_F",
       "type": "corner",
       "notation": "[D R U': [R' D R, U2]]",
       "stickerMappings": [
@@ -11954,7 +11954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DBL_B",
+      "id": "DBL_B-UFL_F",
       "type": "corner",
       "notation": "[D' R D' U': [R' D R, U2]]",
       "stickerMappings": [
@@ -11979,7 +11979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DBR_B",
+      "id": "DBR_B-UFL_F",
       "type": "corner",
       "notation": "[R U': [R' D' R, U2]]",
       "stickerMappings": [
@@ -12004,7 +12004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBR_B",
+      "id": "UBR_B-UFL_F",
       "type": "corner",
       "notation": "[R D' U': [R' D' R, U2]]",
       "stickerMappings": [
@@ -12029,7 +12029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBL_B",
+      "id": "UBL_B-UFL_F",
       "type": "corner",
       "notation": "[R U R' D': [R' D R, U2]]",
       "stickerMappings": [
@@ -12054,7 +12054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-UBR_R",
+      "id": "UBR_R-UFL_F",
       "type": "corner",
       "notation": "[R': [R2 D' R2 D R2, U']]",
       "stickerMappings": [
@@ -12079,7 +12079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DBR_R",
+      "id": "DBR_R-UFL_F",
       "type": "corner",
       "notation": "[R D' U': [R' D R, U2]]",
       "stickerMappings": [
@@ -12104,7 +12104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFR_R",
+      "id": "DFR_R-UFL_F",
       "type": "corner",
       "notation": "[D R U': [R' D' R, U2]]",
       "stickerMappings": [
@@ -12129,7 +12129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFL_D",
+      "id": "DFL_D-UFL_F",
       "type": "corner",
       "notation": "[R U D: [U2, R' D' R]]",
       "stickerMappings": [
@@ -12154,7 +12154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DFR_D",
+      "id": "DFR_D-UFL_F",
       "type": "corner",
       "notation": "[D' R U D: [U2, R' D' R]]",
       "stickerMappings": [
@@ -12179,7 +12179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_F-DBR_D",
+      "id": "DBR_D-UFL_F",
       "type": "corner",
       "notation": "[D R: [U2, R D' R']]",
       "stickerMappings": [
@@ -12204,7 +12204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBL_U",
+      "id": "UBL_U-DFR_F",
       "type": "corner",
       "notation": "[D U': [R D R', U2]]",
       "stickerMappings": [
@@ -12229,7 +12229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBR_U",
+      "id": "UBR_U-DFR_F",
       "type": "corner",
       "notation": "[D': [R' D R, U]]",
       "stickerMappings": [
@@ -12254,7 +12254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UFL_U",
+      "id": "UFL_U-DFR_F",
       "type": "corner",
       "notation": "[D': [R' D R, U']]",
       "stickerMappings": [
@@ -12279,7 +12279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UFL_F",
+      "id": "UFL_F-DFR_F",
       "type": "corner",
       "notation": "[R': [R D' R' D, F2]]",
       "stickerMappings": [
@@ -12304,7 +12304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DFL_F",
+      "id": "DFL_F-DFR_F",
       "type": "corner",
       "notation": "[D' R' D: [F', D' R D R']]",
       "stickerMappings": [
@@ -12329,7 +12329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBL_L",
+      "id": "UBL_L-DFR_F",
       "type": "corner",
       "notation": "R U' R' F R U R' U' R' F' R U",
       "stickerMappings": [
@@ -12354,7 +12354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UFL_L",
+      "id": "UFL_L-DFR_F",
       "type": "corner",
       "notation": "[R: [F, R' U R U']]",
       "stickerMappings": [
@@ -12379,7 +12379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DFL_L",
+      "id": "DFL_L-DFR_F",
       "type": "corner",
       "notation": "[U: [D, R U' R']]",
       "stickerMappings": [
@@ -12404,7 +12404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DBL_L",
+      "id": "DBL_L-DFR_F",
       "type": "corner",
       "notation": "[U R U': [R D' R', U']]",
       "stickerMappings": [
@@ -12429,7 +12429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DBL_B",
+      "id": "DBL_B-DFR_F",
       "type": "corner",
       "notation": "[U D2: [R U' R', D2]]",
       "stickerMappings": [
@@ -12454,7 +12454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DBR_B",
+      "id": "DBR_B-DFR_F",
       "type": "corner",
       "notation": "[D R D': [R' U' R, D2]]",
       "stickerMappings": [
@@ -12479,7 +12479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBR_B",
+      "id": "UBR_B-DFR_F",
       "type": "corner",
       "notation": "[D' R' U: [D, R U' R']]",
       "stickerMappings": [
@@ -12504,7 +12504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBL_B",
+      "id": "UBL_B-DFR_F",
       "type": "corner",
       "notation": "[D R' U2: [R' D' R, U']]",
       "stickerMappings": [
@@ -12529,7 +12529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-UBR_R",
+      "id": "UBR_R-DFR_F",
       "type": "corner",
       "notation": "[U' R' U': [R D R', U2]]",
       "stickerMappings": [
@@ -12554,7 +12554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DBR_R",
+      "id": "DBR_R-DFR_F",
       "type": "corner",
       "notation": "[U: [D', R U' R']]",
       "stickerMappings": [
@@ -12579,7 +12579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DFL_D",
+      "id": "DFL_D-DFR_F",
       "type": "corner",
       "notation": "[R: [F2, R' U R U']]",
       "stickerMappings": [
@@ -12604,7 +12604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_F-DBR_D",
+      "id": "DBR_D-DFR_F",
       "type": "corner",
       "notation": "[U R D': [R' D R, U']]",
       "stickerMappings": [
@@ -12629,7 +12629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBL_U",
+      "id": "UBL_U-DFL_F",
       "type": "corner",
       "notation": "[D' U': [R D' R', U2]]",
       "stickerMappings": [
@@ -12654,7 +12654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBR_U",
+      "id": "UBR_U-DFL_F",
       "type": "corner",
       "notation": "[D: [R' D' R, U]]",
       "stickerMappings": [
@@ -12679,7 +12679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UFL_U",
+      "id": "UFL_U-DFL_F",
       "type": "corner",
       "notation": "[D: [R' D' R, U']]",
       "stickerMappings": [
@@ -12704,7 +12704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UFL_F",
+      "id": "UFL_F-DFL_F",
       "type": "corner",
       "notation": "[R U: [R' D R, U2]]",
       "stickerMappings": [
@@ -12729,7 +12729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DFR_F",
+      "id": "DFR_F-DFL_F",
       "type": "corner",
       "notation": "[R': [F', R D' R' D]]",
       "stickerMappings": [
@@ -12754,7 +12754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBL_L",
+      "id": "UBL_L-DFL_F",
       "type": "corner",
       "notation": "[R U: [R' D R, U]]",
       "stickerMappings": [
@@ -12779,7 +12779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UFL_L",
+      "id": "UFL_L-DFL_F",
       "type": "corner",
       "notation": "[D R' U': [D', R U R']]",
       "stickerMappings": [
@@ -12804,7 +12804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DBL_L",
+      "id": "DBL_L-DFL_F",
       "type": "corner",
       "notation": "[D2: [R U R', D']]",
       "stickerMappings": [
@@ -12829,7 +12829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DBL_B",
+      "id": "DBL_B-DFL_F",
       "type": "corner",
       "notation": "[D' R D: [R' U' R, D2]]",
       "stickerMappings": [
@@ -12854,7 +12854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DBR_B",
+      "id": "DBR_B-DFL_F",
       "type": "corner",
       "notation": "[D': [R U R', D2]]",
       "stickerMappings": [
@@ -12879,7 +12879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBR_B",
+      "id": "UBR_B-DFL_F",
       "type": "corner",
       "notation": "[R' F: [D, R U' R']]",
       "stickerMappings": [
@@ -12904,7 +12904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBL_B",
+      "id": "UBL_B-DFL_F",
       "type": "corner",
       "notation": "[D R': [R' U R, D]]",
       "stickerMappings": [
@@ -12929,7 +12929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-UBR_R",
+      "id": "UBR_R-DFL_F",
       "type": "corner",
       "notation": "[U R U' D: [R' D' R, U2]]",
       "stickerMappings": [
@@ -12954,7 +12954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DBR_R",
+      "id": "DBR_R-DFL_F",
       "type": "corner",
       "notation": "[R D: [R' U' R, D]]",
       "stickerMappings": [
@@ -12979,7 +12979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DFR_R",
+      "id": "DFR_R-DFL_F",
       "type": "corner",
       "notation": "[R U R', D]",
       "stickerMappings": [
@@ -13004,7 +13004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DFR_D",
+      "id": "DFR_D-DFL_F",
       "type": "corner",
       "notation": "[R U' R': [U2, R' D R]]",
       "stickerMappings": [
@@ -13029,7 +13029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_F-DBR_D",
+      "id": "DBR_D-DFL_F",
       "type": "corner",
       "notation": "[D R: [U', R D' R']]",
       "stickerMappings": [
@@ -13054,7 +13054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UBR_U",
+      "id": "UBR_U-UBL_L",
       "type": "corner",
       "notation": "[R: [U, R D R']]",
       "stickerMappings": [
@@ -13079,7 +13079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UFL_U",
+      "id": "UFL_U-UBL_L",
       "type": "corner",
       "notation": "[U' R: [R D R', U2]]",
       "stickerMappings": [
@@ -13104,7 +13104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UFL_F",
+      "id": "UFL_F-UBL_L",
       "type": "corner",
       "notation": "[Lw' U': [R D' R', U2]]",
       "stickerMappings": [
@@ -13129,7 +13129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFR_F",
+      "id": "DFR_F-UBL_L",
       "type": "corner",
       "notation": "U' R' F R U R U' R' F' R U R'",
       "stickerMappings": [
@@ -13154,7 +13154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFL_F",
+      "id": "DFL_F-UBL_L",
       "type": "corner",
       "notation": "[R U: [U, R' D R]]",
       "stickerMappings": [
@@ -13179,7 +13179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UFL_L",
+      "id": "UFL_L-UBL_L",
       "type": "corner",
       "notation": "[U' R' U, L]",
       "stickerMappings": [
@@ -13204,7 +13204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFL_L",
+      "id": "DFL_L-UBL_L",
       "type": "corner",
       "notation": "[U R': [R' D R, U']]",
       "stickerMappings": [
@@ -13229,7 +13229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DBL_L",
+      "id": "DBL_L-UBL_L",
       "type": "corner",
       "notation": "[R D': [U, R D R']]",
       "stickerMappings": [
@@ -13254,7 +13254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DBL_B",
+      "id": "DBL_B-UBL_L",
       "type": "corner",
       "notation": "[U D R': [R' D R, U']]",
       "stickerMappings": [
@@ -13279,7 +13279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DBR_B",
+      "id": "DBR_B-UBL_L",
       "type": "corner",
       "notation": "[R U: [U, R' D' R]]",
       "stickerMappings": [
@@ -13304,7 +13304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UBR_B",
+      "id": "UBR_B-UBL_L",
       "type": "corner",
       "notation": "[F' L F, R']",
       "stickerMappings": [
@@ -13329,7 +13329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-UBR_R",
+      "id": "UBR_R-UBL_L",
       "type": "corner",
       "notation": "[R: [U, R2 D R2 D' R2]]",
       "stickerMappings": [
@@ -13354,7 +13354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DBR_R",
+      "id": "DBR_R-UBL_L",
       "type": "corner",
       "notation": "[R D: [U, R D R']]",
       "stickerMappings": [
@@ -13379,7 +13379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFR_R",
+      "id": "DFR_R-UBL_L",
       "type": "corner",
       "notation": "[U R' U': [R D R', U']]",
       "stickerMappings": [
@@ -13404,7 +13404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFL_D",
+      "id": "DFL_D-UBL_L",
       "type": "corner",
       "notation": "[D' R: [U, R D' R']]",
       "stickerMappings": [
@@ -13429,7 +13429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DFR_D",
+      "id": "DFR_D-UBL_L",
       "type": "corner",
       "notation": "[U R' D': [R' D' R, U']]",
       "stickerMappings": [
@@ -13454,7 +13454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_L-DBR_D",
+      "id": "DBR_D-UBL_L",
       "type": "corner",
       "notation": "[D R: [U, R D' R']]",
       "stickerMappings": [
@@ -13479,7 +13479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBL_U",
+      "id": "UBL_U-UFL_L",
       "type": "corner",
       "notation": "[R' U R' U': [R D R', U2]]",
       "stickerMappings": [
@@ -13504,7 +13504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBR_U",
+      "id": "UBR_U-UFL_L",
       "type": "corner",
       "notation": "[R': [R' D' R, U']]",
       "stickerMappings": [
@@ -13529,7 +13529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFR_F",
+      "id": "DFR_F-UFL_L",
       "type": "corner",
       "notation": "[R: [R' U R U', F]]",
       "stickerMappings": [
@@ -13554,7 +13554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFL_F",
+      "id": "DFL_F-UFL_L",
       "type": "corner",
       "notation": "[D R' U': [R U R', D']]",
       "stickerMappings": [
@@ -13579,7 +13579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBL_L",
+      "id": "UBL_L-UFL_L",
       "type": "corner",
       "notation": "[L, U' R' U]",
       "stickerMappings": [
@@ -13604,7 +13604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFL_L",
+      "id": "DFL_L-UFL_L",
       "type": "corner",
       "notation": "[R' U': [R U R', D]]",
       "stickerMappings": [
@@ -13629,7 +13629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DBL_L",
+      "id": "DBL_L-UFL_L",
       "type": "corner",
       "notation": "[U' R U': [R' U R, D']]",
       "stickerMappings": [
@@ -13654,7 +13654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DBL_B",
+      "id": "DBL_B-UFL_L",
       "type": "corner",
       "notation": "[D R' U': [R U R', D]]",
       "stickerMappings": [
@@ -13679,7 +13679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DBR_B",
+      "id": "DBR_B-UFL_L",
       "type": "corner",
       "notation": "[D' R' U': [R U R', D']]",
       "stickerMappings": [
@@ -13704,7 +13704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBR_B",
+      "id": "UBR_B-UFL_L",
       "type": "corner",
       "notation": "[R' F: [D, R U R']]",
       "stickerMappings": [
@@ -13729,7 +13729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBL_B",
+      "id": "UBL_B-UFL_L",
       "type": "corner",
       "notation": "[x': [D, R U' R']]",
       "stickerMappings": [
@@ -13754,7 +13754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-UBR_R",
+      "id": "UBR_R-UFL_L",
       "type": "corner",
       "notation": "[R U' D' R': [R' U R, D]]",
       "stickerMappings": [
@@ -13779,7 +13779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DBR_R",
+      "id": "DBR_R-UFL_L",
       "type": "corner",
       "notation": "[R' U': [U2, R' D' R]]",
       "stickerMappings": [
@@ -13804,7 +13804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFR_R",
+      "id": "DFR_R-UFL_L",
       "type": "corner",
       "notation": "[R' U': [R U R', D']]",
       "stickerMappings": [
@@ -13829,7 +13829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFL_D",
+      "id": "DFL_D-UFL_L",
       "type": "corner",
       "notation": "[U' R' U: [D, R U' R']]",
       "stickerMappings": [
@@ -13854,7 +13854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DFR_D",
+      "id": "DFR_D-UFL_L",
       "type": "corner",
       "notation": "[R U' R': [U2, R' D' R]]",
       "stickerMappings": [
@@ -13879,7 +13879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UFL_L-DBR_D",
+      "id": "DBR_D-UFL_L",
       "type": "corner",
       "notation": "[R U' R': [R' U R, D]]",
       "stickerMappings": [
@@ -13904,7 +13904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBL_U",
+      "id": "UBL_U-DFL_L",
       "type": "corner",
       "notation": "[R' D R, U2]",
       "stickerMappings": [
@@ -13929,7 +13929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBR_U",
+      "id": "UBR_U-DFL_L",
       "type": "corner",
       "notation": "[R' D R, U]",
       "stickerMappings": [
@@ -13954,7 +13954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UFL_U",
+      "id": "UFL_U-DFL_L",
       "type": "corner",
       "notation": "[R' D R, U']",
       "stickerMappings": [
@@ -13979,7 +13979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UFL_F",
+      "id": "UFL_F-DFL_L",
       "type": "corner",
       "notation": "[D R': [R D' R' D, F2]]",
       "stickerMappings": [
@@ -14004,7 +14004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DFR_F",
+      "id": "DFR_F-DFL_L",
       "type": "corner",
       "notation": "[U: [R U' R', D]]",
       "stickerMappings": [
@@ -14029,7 +14029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBL_L",
+      "id": "UBL_L-DFL_L",
       "type": "corner",
       "notation": "[U R': [U', R' D R]]",
       "stickerMappings": [
@@ -14054,7 +14054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UFL_L",
+      "id": "UFL_L-DFL_L",
       "type": "corner",
       "notation": "[R' U': [D, R U R']]",
       "stickerMappings": [
@@ -14079,7 +14079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DBL_L",
+      "id": "DBL_L-DFL_L",
       "type": "corner",
       "notation": "[D R': [R D' R' D, F']]",
       "stickerMappings": [
@@ -14104,7 +14104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DBL_B",
+      "id": "DBL_B-DFL_L",
       "type": "corner",
       "notation": "[U D: [D, R U' R']]",
       "stickerMappings": [
@@ -14129,7 +14129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DBR_B",
+      "id": "DBR_B-DFL_L",
       "type": "corner",
       "notation": "[R' D R: [R U R', D']]",
       "stickerMappings": [
@@ -14154,7 +14154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBR_B",
+      "id": "UBR_B-DFL_L",
       "type": "corner",
       "notation": "[R' U: [D, R U' R']]",
       "stickerMappings": [
@@ -14179,7 +14179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBL_B",
+      "id": "UBL_B-DFL_L",
       "type": "corner",
       "notation": "[U' R' D: [R' D' R, U']]",
       "stickerMappings": [
@@ -14204,7 +14204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-UBR_R",
+      "id": "UBR_R-DFL_L",
       "type": "corner",
       "notation": "[U R U': [R' D R, U2]]",
       "stickerMappings": [
@@ -14229,7 +14229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DBR_R",
+      "id": "DBR_R-DFL_L",
       "type": "corner",
       "notation": "[U D': [R U' R', D2]]",
       "stickerMappings": [
@@ -14254,7 +14254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DFR_R",
+      "id": "DFR_R-DFL_L",
       "type": "corner",
       "notation": "[U R' D': [R U' R', D2]]",
       "stickerMappings": [
@@ -14279,7 +14279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DFR_D",
+      "id": "DFR_D-DFL_L",
       "type": "corner",
       "notation": "[U D R D': [R' D R, U']]",
       "stickerMappings": [
@@ -14304,7 +14304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_L-DBR_D",
+      "id": "DBR_D-DFL_L",
       "type": "corner",
       "notation": "[U R: [R U' R', D]]",
       "stickerMappings": [
@@ -14329,7 +14329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBL_U",
+      "id": "UBL_U-DBL_L",
       "type": "corner",
       "notation": "[U': [R D' R', U2]]",
       "stickerMappings": [
@@ -14354,7 +14354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBR_U",
+      "id": "UBR_U-DBL_L",
       "type": "corner",
       "notation": "[U', R D' R']",
       "stickerMappings": [
@@ -14379,7 +14379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UFL_U",
+      "id": "UFL_U-DBL_L",
       "type": "corner",
       "notation": "[U': [R D' R', U']]",
       "stickerMappings": [
@@ -14404,7 +14404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UFL_F",
+      "id": "UFL_F-DBL_L",
       "type": "corner",
       "notation": "[D R U: [R' D R, U2]]",
       "stickerMappings": [
@@ -14429,7 +14429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFR_F",
+      "id": "DFR_F-DBL_L",
       "type": "corner",
       "notation": "[U R U2: [R D' R', U]]",
       "stickerMappings": [
@@ -14454,7 +14454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFL_F",
+      "id": "DFL_F-DBL_L",
       "type": "corner",
       "notation": "[D: [R U R', D]]",
       "stickerMappings": [
@@ -14479,7 +14479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBL_L",
+      "id": "UBL_L-DBL_L",
       "type": "corner",
       "notation": "[R D': [R D R', U]]",
       "stickerMappings": [
@@ -14504,7 +14504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UFL_L",
+      "id": "UFL_L-DBL_L",
       "type": "corner",
       "notation": "[U' R U': [D', R' U R]]",
       "stickerMappings": [
@@ -14529,7 +14529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFL_L",
+      "id": "DFL_L-DBL_L",
       "type": "corner",
       "notation": "[D R': [F', R D' R' D]]",
       "stickerMappings": [
@@ -14554,7 +14554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DBR_B",
+      "id": "DBR_B-DBL_L",
       "type": "corner",
       "notation": "[D': [R U R', D']]",
       "stickerMappings": [
@@ -14579,7 +14579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBR_B",
+      "id": "UBR_B-DBL_L",
       "type": "corner",
       "notation": "[R, U' L U]",
       "stickerMappings": [
@@ -14604,7 +14604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBL_B",
+      "id": "UBL_B-DBL_L",
       "type": "corner",
       "notation": "[U2 R: [U, R D' R']]",
       "stickerMappings": [
@@ -14629,7 +14629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-UBR_R",
+      "id": "UBR_R-DBL_L",
       "type": "corner",
       "notation": "[U R: [U2, R D' R']]",
       "stickerMappings": [
@@ -14654,7 +14654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DBR_R",
+      "id": "DBR_R-DBL_L",
       "type": "corner",
       "notation": "[R D: [R' U' R, D2]]",
       "stickerMappings": [
@@ -14679,7 +14679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFR_R",
+      "id": "DFR_R-DBL_L",
       "type": "corner",
       "notation": "[R U R', D2]",
       "stickerMappings": [
@@ -14704,7 +14704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFL_D",
+      "id": "DFL_D-DBL_L",
       "type": "corner",
       "notation": "[R D R' D: [D2, R U R']]",
       "stickerMappings": [
@@ -14729,7 +14729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DFR_D",
+      "id": "DFR_D-DBL_L",
       "type": "corner",
       "notation": "[D2 R: [U', R D' R']]",
       "stickerMappings": [
@@ -14754,7 +14754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_L-DBR_D",
+      "id": "DBR_D-DBL_L",
       "type": "corner",
       "notation": "[R D' R': [U, R' D R]]",
       "stickerMappings": [
@@ -14779,7 +14779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBL_U",
+      "id": "UBL_U-DBL_B",
       "type": "corner",
       "notation": "[D' U': [R D R', U2]]",
       "stickerMappings": [
@@ -14804,7 +14804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBR_U",
+      "id": "UBR_U-DBL_B",
       "type": "corner",
       "notation": "[D: [R' D R, U]]",
       "stickerMappings": [
@@ -14829,7 +14829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UFL_U",
+      "id": "UFL_U-DBL_B",
       "type": "corner",
       "notation": "[D: [R' D R, U']]",
       "stickerMappings": [
@@ -14854,7 +14854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UFL_F",
+      "id": "UFL_F-DBL_B",
       "type": "corner",
       "notation": "[D R' D: [F2, D' R D R']]",
       "stickerMappings": [
@@ -14879,7 +14879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFR_F",
+      "id": "DFR_F-DBL_B",
       "type": "corner",
       "notation": "[U: [R U' R', D2]]",
       "stickerMappings": [
@@ -14904,7 +14904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFL_F",
+      "id": "DFL_F-DBL_B",
       "type": "corner",
       "notation": "[D' R D': [R' U' R, D2]]",
       "stickerMappings": [
@@ -14929,7 +14929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBL_L",
+      "id": "UBL_L-DBL_B",
       "type": "corner",
       "notation": "[U D R': [U', R' D R]]",
       "stickerMappings": [
@@ -14954,7 +14954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UFL_L",
+      "id": "UFL_L-DBL_B",
       "type": "corner",
       "notation": "[D R' U': [D, R U R']]",
       "stickerMappings": [
@@ -14979,7 +14979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFL_L",
+      "id": "DFL_L-DBL_B",
       "type": "corner",
       "notation": "[U D: [R U' R', D]]",
       "stickerMappings": [
@@ -15004,7 +15004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DBR_B",
+      "id": "DBR_B-DBL_B",
       "type": "corner",
       "notation": "[D' R D': [U, R' D R]]",
       "stickerMappings": [
@@ -15029,7 +15029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBR_B",
+      "id": "UBR_B-DBL_B",
       "type": "corner",
       "notation": "[D R' U: [D, R U' R']]",
       "stickerMappings": [
@@ -15054,7 +15054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBL_B",
+      "id": "UBL_B-DBL_B",
       "type": "corner",
       "notation": "[U' R' U': [R D' R', U']]",
       "stickerMappings": [
@@ -15079,7 +15079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-UBR_R",
+      "id": "UBR_R-DBL_B",
       "type": "corner",
       "notation": "[U' R' U': [R D' R', U2]]",
       "stickerMappings": [
@@ -15104,7 +15104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DBR_R",
+      "id": "DBR_R-DBL_B",
       "type": "corner",
       "notation": "[U': [R' U' R, D']]",
       "stickerMappings": [
@@ -15129,7 +15129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFR_R",
+      "id": "DFR_R-DBL_B",
       "type": "corner",
       "notation": "[U R' D': [R U' R', D']]",
       "stickerMappings": [
@@ -15154,7 +15154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFL_D",
+      "id": "DFL_D-DBL_B",
       "type": "corner",
       "notation": "[U' D' R': [U, R' D2 R]]",
       "stickerMappings": [
@@ -15179,7 +15179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DFR_D",
+      "id": "DFR_D-DBL_B",
       "type": "corner",
       "notation": "[U' D' R': [U, R' D R]]",
       "stickerMappings": [
@@ -15204,7 +15204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_B-DBR_D",
+      "id": "DBR_D-DBL_B",
       "type": "corner",
       "notation": "[U R: [R U' R', D2]]",
       "stickerMappings": [
@@ -15229,7 +15229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBL_U",
+      "id": "UBL_U-DBR_B",
       "type": "corner",
       "notation": "[D U': [R D' R', U2]]",
       "stickerMappings": [
@@ -15254,7 +15254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBR_U",
+      "id": "UBR_U-DBR_B",
       "type": "corner",
       "notation": "[D': [R' D' R, U]]",
       "stickerMappings": [
@@ -15279,7 +15279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UFL_U",
+      "id": "UFL_U-DBR_B",
       "type": "corner",
       "notation": "[D': [R' D' R, U']]",
       "stickerMappings": [
@@ -15304,7 +15304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UFL_F",
+      "id": "UFL_F-DBR_B",
       "type": "corner",
       "notation": "[R U: [R' D' R, U2]]",
       "stickerMappings": [
@@ -15329,7 +15329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFR_F",
+      "id": "DFR_F-DBR_B",
       "type": "corner",
       "notation": "[D R D: [R' U' R, D2]]",
       "stickerMappings": [
@@ -15354,7 +15354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFL_F",
+      "id": "DFL_F-DBR_B",
       "type": "corner",
       "notation": "[D: [R U R', D2]]",
       "stickerMappings": [
@@ -15379,7 +15379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBL_L",
+      "id": "UBL_L-DBR_B",
       "type": "corner",
       "notation": "[R U: [R' D' R, U]]",
       "stickerMappings": [
@@ -15404,7 +15404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UFL_L",
+      "id": "UFL_L-DBR_B",
       "type": "corner",
       "notation": "[D' R' U': [D', R U R']]",
       "stickerMappings": [
@@ -15429,7 +15429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFL_L",
+      "id": "DFL_L-DBR_B",
       "type": "corner",
       "notation": "[R' D R: [D', R U R']]",
       "stickerMappings": [
@@ -15454,7 +15454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DBL_L",
+      "id": "DBL_L-DBR_B",
       "type": "corner",
       "notation": "[D2: [R U R', D]]",
       "stickerMappings": [
@@ -15479,7 +15479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DBL_B",
+      "id": "DBL_B-DBR_B",
       "type": "corner",
       "notation": "[D' R D': [R' D R, U]]",
       "stickerMappings": [
@@ -15504,7 +15504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBR_B",
+      "id": "UBR_B-DBR_B",
       "type": "corner",
       "notation": "[R U': [R' U R, D]]",
       "stickerMappings": [
@@ -15529,7 +15529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBL_B",
+      "id": "UBL_B-DBR_B",
       "type": "corner",
       "notation": "[D' R': [R' U R, D]]",
       "stickerMappings": [
@@ -15554,7 +15554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-UBR_R",
+      "id": "UBR_R-DBR_B",
       "type": "corner",
       "notation": "[U D R: [U2, R D' R']]",
       "stickerMappings": [
@@ -15579,7 +15579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFR_R",
+      "id": "DFR_R-DBR_B",
       "type": "corner",
       "notation": "[R U R', D']",
       "stickerMappings": [
@@ -15604,7 +15604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFL_D",
+      "id": "DFL_D-DBR_B",
       "type": "corner",
       "notation": "[D' R: [U', R D' R']]",
       "stickerMappings": [
@@ -15629,7 +15629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_B-DFR_D",
+      "id": "DFR_D-DBR_B",
       "type": "corner",
       "notation": "[D' R D: [R' D' R, U]]",
       "stickerMappings": [
@@ -15654,7 +15654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UBL_U",
+      "id": "UBL_U-UBR_B",
       "type": "corner",
       "notation": "[R' U D: [R D R', U2]]",
       "stickerMappings": [
@@ -15679,7 +15679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UFL_U",
+      "id": "UFL_U-UBR_B",
       "type": "corner",
       "notation": "[R' D': [U', R' D R]]",
       "stickerMappings": [
@@ -15704,7 +15704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UFL_F",
+      "id": "UFL_F-UBR_B",
       "type": "corner",
       "notation": "[R U D': [R' D' R, U2]]",
       "stickerMappings": [
@@ -15729,7 +15729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFR_F",
+      "id": "DFR_F-UBR_B",
       "type": "corner",
       "notation": "[D' R' U: [R U' R', D]]",
       "stickerMappings": [
@@ -15754,7 +15754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFL_F",
+      "id": "DFL_F-UBR_B",
       "type": "corner",
       "notation": "[R' F: [R U' R', D]]",
       "stickerMappings": [
@@ -15779,7 +15779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UBL_L",
+      "id": "UBL_L-UBR_B",
       "type": "corner",
       "notation": "[R', F' L F]",
       "stickerMappings": [
@@ -15804,7 +15804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UFL_L",
+      "id": "UFL_L-UBR_B",
       "type": "corner",
       "notation": "[R' F: [R U R', D]]",
       "stickerMappings": [
@@ -15829,7 +15829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFL_L",
+      "id": "DFL_L-UBR_B",
       "type": "corner",
       "notation": "[R' U: [R U' R', D]]",
       "stickerMappings": [
@@ -15854,7 +15854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DBL_L",
+      "id": "DBL_L-UBR_B",
       "type": "corner",
       "notation": "[U' L U, R]",
       "stickerMappings": [
@@ -15879,7 +15879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DBL_B",
+      "id": "DBL_B-UBR_B",
       "type": "corner",
       "notation": "[D R' U: [R U' R', D]]",
       "stickerMappings": [
@@ -15904,7 +15904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DBR_B",
+      "id": "DBR_B-UBR_B",
       "type": "corner",
       "notation": "[R U': [D, R' U R]]",
       "stickerMappings": [
@@ -15929,7 +15929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-UBL_B",
+      "id": "UBL_B-UBR_B",
       "type": "corner",
       "notation": "[U' L' U, R]",
       "stickerMappings": [
@@ -15954,7 +15954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DBR_R",
+      "id": "DBR_R-UBR_B",
       "type": "corner",
       "notation": "[U' R U: [R' U' R, D]]",
       "stickerMappings": [
@@ -15979,7 +15979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFR_R",
+      "id": "DFR_R-UBR_B",
       "type": "corner",
       "notation": "[R' U: [R U' R', D']]",
       "stickerMappings": [
@@ -16004,7 +16004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFL_D",
+      "id": "DFL_D-UBR_B",
       "type": "corner",
       "notation": "[D' R U': [D', R' U R]]",
       "stickerMappings": [
@@ -16029,7 +16029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DFR_D",
+      "id": "DFR_D-UBR_B",
       "type": "corner",
       "notation": "[U R' U': [D', R U R']]",
       "stickerMappings": [
@@ -16054,7 +16054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_B-DBR_D",
+      "id": "DBR_D-UBR_B",
       "type": "corner",
       "notation": "[D R U': [D', R' U R]]",
       "stickerMappings": [
@@ -16079,7 +16079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UBR_U",
+      "id": "UBR_U-UBL_B",
       "type": "corner",
       "notation": "[R2: [D', R U2 R']]",
       "stickerMappings": [
@@ -16104,7 +16104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UFL_U",
+      "id": "UFL_U-UBL_B",
       "type": "corner",
       "notation": "[U' R': [U', R' D' R]]",
       "stickerMappings": [
@@ -16129,7 +16129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UFL_F",
+      "id": "UFL_F-UBL_B",
       "type": "corner",
       "notation": "[R U R' D': [U2, R' D R]]",
       "stickerMappings": [
@@ -16154,7 +16154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFR_F",
+      "id": "DFR_F-UBL_B",
       "type": "corner",
       "notation": "[D R' U2: [U', R' D' R]]",
       "stickerMappings": [
@@ -16179,7 +16179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFL_F",
+      "id": "DFL_F-UBL_B",
       "type": "corner",
       "notation": "[D R': [D, R' U R]]",
       "stickerMappings": [
@@ -16204,7 +16204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UFL_L",
+      "id": "UFL_L-UBL_B",
       "type": "corner",
       "notation": "[x': [R U' R', D]]",
       "stickerMappings": [
@@ -16229,7 +16229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFL_L",
+      "id": "DFL_L-UBL_B",
       "type": "corner",
       "notation": "[U' R' D: [U', R' D' R]]",
       "stickerMappings": [
@@ -16254,7 +16254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DBL_L",
+      "id": "DBL_L-UBL_B",
       "type": "corner",
       "notation": "[U2 R: [R D' R', U]]",
       "stickerMappings": [
@@ -16279,7 +16279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DBL_B",
+      "id": "DBL_B-UBL_B",
       "type": "corner",
       "notation": "[U' R' U2: [R D' R', U]]",
       "stickerMappings": [
@@ -16304,7 +16304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DBR_B",
+      "id": "DBR_B-UBL_B",
       "type": "corner",
       "notation": "[D' R': [D, R' U R]]",
       "stickerMappings": [
@@ -16329,7 +16329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UBR_B",
+      "id": "UBR_B-UBL_B",
       "type": "corner",
       "notation": "[R, U' L' U]",
       "stickerMappings": [
@@ -16354,7 +16354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-UBR_R",
+      "id": "UBR_R-UBL_B",
       "type": "corner",
       "notation": "[U R: [U2, R D R']]",
       "stickerMappings": [
@@ -16379,7 +16379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DBR_R",
+      "id": "DBR_R-UBL_B",
       "type": "corner",
       "notation": "[R' U: [R' D' R, U]]",
       "stickerMappings": [
@@ -16404,7 +16404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFR_R",
+      "id": "DFR_R-UBL_B",
       "type": "corner",
       "notation": "[R': [D, R' U R]]",
       "stickerMappings": [
@@ -16429,7 +16429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFL_D",
+      "id": "DFL_D-UBL_B",
       "type": "corner",
       "notation": "[U' R': [U', R' D R]]",
       "stickerMappings": [
@@ -16454,7 +16454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DFR_D",
+      "id": "DFR_D-UBL_B",
       "type": "corner",
       "notation": "[U' D' R': [U', R' D R]]",
       "stickerMappings": [
@@ -16479,7 +16479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBL_B-DBR_D",
+      "id": "DBR_D-UBL_B",
       "type": "corner",
       "notation": "[U R: [R U' R', D']]",
       "stickerMappings": [
@@ -16504,7 +16504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UBL_U",
+      "id": "UBL_U-UBR_R",
       "type": "corner",
       "notation": "[R' U' D' R': [U', R' D R]]",
       "stickerMappings": [
@@ -16529,7 +16529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UFL_U",
+      "id": "UFL_U-UBR_R",
       "type": "corner",
       "notation": "[U' R': [U2, R' D' R]]",
       "stickerMappings": [
@@ -16554,7 +16554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UFL_F",
+      "id": "UFL_F-UBR_R",
       "type": "corner",
       "notation": "[R': [U', R2 D' R2 D R2]]",
       "stickerMappings": [
@@ -16579,7 +16579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFR_F",
+      "id": "DFR_F-UBR_R",
       "type": "corner",
       "notation": "[U' R' U: [R D R', U2]]",
       "stickerMappings": [
@@ -16604,7 +16604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFL_F",
+      "id": "DFL_F-UBR_R",
       "type": "corner",
       "notation": "[U R U D: [R' D' R, U2]]",
       "stickerMappings": [
@@ -16629,7 +16629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UBL_L",
+      "id": "UBL_L-UBR_R",
       "type": "corner",
       "notation": "[R: [R2 D R2 D' R2, U]]",
       "stickerMappings": [
@@ -16654,7 +16654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UFL_L",
+      "id": "UFL_L-UBR_R",
       "type": "corner",
       "notation": "[R U' D' R': [D, R' U R]]",
       "stickerMappings": [
@@ -16679,7 +16679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFL_L",
+      "id": "DFL_L-UBR_R",
       "type": "corner",
       "notation": "[U R U: [R' D R, U2]]",
       "stickerMappings": [
@@ -16704,7 +16704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DBL_L",
+      "id": "DBL_L-UBR_R",
       "type": "corner",
       "notation": "[U R: [R D' R', U2]]",
       "stickerMappings": [
@@ -16729,7 +16729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DBL_B",
+      "id": "DBL_B-UBR_R",
       "type": "corner",
       "notation": "[U' R' U: [R D' R', U2]]",
       "stickerMappings": [
@@ -16754,7 +16754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DBR_B",
+      "id": "DBR_B-UBR_R",
       "type": "corner",
       "notation": "[U D R: [R D' R', U2]]",
       "stickerMappings": [
@@ -16779,7 +16779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-UBL_B",
+      "id": "UBL_B-UBR_R",
       "type": "corner",
       "notation": "[U R: [R D R', U2]]",
       "stickerMappings": [
@@ -16804,7 +16804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DBR_R",
+      "id": "DBR_R-UBR_R",
       "type": "corner",
       "notation": "[U R U: [R' D' R, U2]]",
       "stickerMappings": [
@@ -16829,7 +16829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFR_R",
+      "id": "DFR_R-UBR_R",
       "type": "corner",
       "notation": "[U' R' U' D: [U2, R D' R']]",
       "stickerMappings": [
@@ -16854,7 +16854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFL_D",
+      "id": "DFL_D-UBR_R",
       "type": "corner",
       "notation": "[U' R': [U2, R' D R]]",
       "stickerMappings": [
@@ -16879,7 +16879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DFR_D",
+      "id": "DFR_D-UBR_R",
       "type": "corner",
       "notation": "[U' D' R': [U2, R' D R]]",
       "stickerMappings": [
@@ -16904,7 +16904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "UBR_R-DBR_D",
+      "id": "DBR_D-UBR_R",
       "type": "corner",
       "notation": "[U R U D': [R' D R, U2]]",
       "stickerMappings": [
@@ -16929,7 +16929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBL_U",
+      "id": "UBL_U-DBR_R",
       "type": "corner",
       "notation": "[U': [R D R', U2]]",
       "stickerMappings": [
@@ -16954,7 +16954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBR_U",
+      "id": "UBR_U-DBR_R",
       "type": "corner",
       "notation": "[U', R D R']",
       "stickerMappings": [
@@ -16979,7 +16979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UFL_U",
+      "id": "UFL_U-DBR_R",
       "type": "corner",
       "notation": "[U': [R D R', U']]",
       "stickerMappings": [
@@ -17004,7 +17004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UFL_F",
+      "id": "UFL_F-DBR_R",
       "type": "corner",
       "notation": "[R D' U': [U2, R' D R]]",
       "stickerMappings": [
@@ -17029,7 +17029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFR_F",
+      "id": "DFR_F-DBR_R",
       "type": "corner",
       "notation": "[U: [R U' R', D']]",
       "stickerMappings": [
@@ -17054,7 +17054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFL_F",
+      "id": "DFL_F-DBR_R",
       "type": "corner",
       "notation": "[R D: [D, R' U' R]]",
       "stickerMappings": [
@@ -17079,7 +17079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBL_L",
+      "id": "UBL_L-DBR_R",
       "type": "corner",
       "notation": "[R D: [R D R', U]]",
       "stickerMappings": [
@@ -17104,7 +17104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UFL_L",
+      "id": "UFL_L-DBR_R",
       "type": "corner",
       "notation": "[R' U': [R' D' R, U2]]",
       "stickerMappings": [
@@ -17129,7 +17129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFL_L",
+      "id": "DFL_L-DBR_R",
       "type": "corner",
       "notation": "[U D: [R U' R', D2]]",
       "stickerMappings": [
@@ -17154,7 +17154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DBL_L",
+      "id": "DBL_L-DBR_R",
       "type": "corner",
       "notation": "[R D': [R' U' R, D2]]",
       "stickerMappings": [
@@ -17179,7 +17179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DBL_B",
+      "id": "DBL_B-DBR_R",
       "type": "corner",
       "notation": "[U': [D', R' U' R]]",
       "stickerMappings": [
@@ -17204,7 +17204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBR_B",
+      "id": "UBR_B-DBR_R",
       "type": "corner",
       "notation": "[U' R U: [D, R' U' R]]",
       "stickerMappings": [
@@ -17229,7 +17229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBL_B",
+      "id": "UBL_B-DBR_R",
       "type": "corner",
       "notation": "[R' U: [U, R' D' R]]",
       "stickerMappings": [
@@ -17254,7 +17254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-UBR_R",
+      "id": "UBR_R-DBR_R",
       "type": "corner",
       "notation": "[U R U': [R' D' R, U2]]",
       "stickerMappings": [
@@ -17279,7 +17279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFR_R",
+      "id": "DFR_R-DBR_R",
       "type": "corner",
       "notation": "[R D': [U, R' D R]]",
       "stickerMappings": [
@@ -17304,7 +17304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFL_D",
+      "id": "DFL_D-DBR_R",
       "type": "corner",
       "notation": "[U' R': [U, R' D R]]",
       "stickerMappings": [
@@ -17329,7 +17329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_R-DFR_D",
+      "id": "DFR_D-DBR_R",
       "type": "corner",
       "notation": "[R U' D' R': [U2, R' D R]]",
       "stickerMappings": [
@@ -17354,7 +17354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBL_U",
+      "id": "UBL_U-DFR_R",
       "type": "corner",
       "notation": "[R' D' R, U2]",
       "stickerMappings": [
@@ -17379,7 +17379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBR_U",
+      "id": "UBR_U-DFR_R",
       "type": "corner",
       "notation": "[R' D' R, U]",
       "stickerMappings": [
@@ -17404,7 +17404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UFL_U",
+      "id": "UFL_U-DFR_R",
       "type": "corner",
       "notation": "[R' D' R, U']",
       "stickerMappings": [
@@ -17429,7 +17429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UFL_F",
+      "id": "UFL_F-DFR_R",
       "type": "corner",
       "notation": "[D R U: [R' D' R, U2]]",
       "stickerMappings": [
@@ -17454,7 +17454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DFL_F",
+      "id": "DFL_F-DFR_R",
       "type": "corner",
       "notation": "[D, R U R']",
       "stickerMappings": [
@@ -17479,7 +17479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBL_L",
+      "id": "UBL_L-DFR_R",
       "type": "corner",
       "notation": "[U R' U2: [R D R', U]]",
       "stickerMappings": [
@@ -17504,7 +17504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UFL_L",
+      "id": "UFL_L-DFR_R",
       "type": "corner",
       "notation": "[R' U': [D', R U R']]",
       "stickerMappings": [
@@ -17529,7 +17529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DFL_L",
+      "id": "DFL_L-DFR_R",
       "type": "corner",
       "notation": "[U R' D: [R U' R', D2]]",
       "stickerMappings": [
@@ -17554,7 +17554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DBL_L",
+      "id": "DBL_L-DFR_R",
       "type": "corner",
       "notation": "[D2, R U R']",
       "stickerMappings": [
@@ -17579,7 +17579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DBL_B",
+      "id": "DBL_B-DFR_R",
       "type": "corner",
       "notation": "[U R' D2: [R U' R', D]]",
       "stickerMappings": [
@@ -17604,7 +17604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DBR_B",
+      "id": "DBR_B-DFR_R",
       "type": "corner",
       "notation": "[D', R U R']",
       "stickerMappings": [
@@ -17629,7 +17629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBR_B",
+      "id": "UBR_B-DFR_R",
       "type": "corner",
       "notation": "[R' U: [D', R U' R']]",
       "stickerMappings": [
@@ -17654,7 +17654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBL_B",
+      "id": "UBL_B-DFR_R",
       "type": "corner",
       "notation": "[R': [R' U R, D]]",
       "stickerMappings": [
@@ -17679,7 +17679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-UBR_R",
+      "id": "UBR_R-DFR_R",
       "type": "corner",
       "notation": "[U' R' U' D: [R D' R', U2]]",
       "stickerMappings": [
@@ -17704,7 +17704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DBR_R",
+      "id": "DBR_R-DFR_R",
       "type": "corner",
       "notation": "[R D': [R' D R, U]]",
       "stickerMappings": [
@@ -17729,7 +17729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DFL_D",
+      "id": "DFL_D-DFR_R",
       "type": "corner",
       "notation": "[R D: [R' D' R, U]]",
       "stickerMappings": [
@@ -17754,7 +17754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_R-DBR_D",
+      "id": "DBR_D-DFR_R",
       "type": "corner",
       "notation": "[R: [R' D R U' R D' R', U]]",
       "stickerMappings": [
@@ -17779,7 +17779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBL_U",
+      "id": "UBL_U-DFL_D",
       "type": "corner",
       "notation": "[R F' R' U': [R D R', U2]]",
       "stickerMappings": [
@@ -17804,7 +17804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBR_U",
+      "id": "UBR_U-DFL_D",
       "type": "corner",
       "notation": "[R F': [R' U' R, D]]",
       "stickerMappings": [
@@ -17829,7 +17829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UFL_U",
+      "id": "UFL_U-DFL_D",
       "type": "corner",
       "notation": "[U' x': [R U R', D2]]",
       "stickerMappings": [
@@ -17854,7 +17854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UFL_F",
+      "id": "UFL_F-DFL_D",
       "type": "corner",
       "notation": "[R U D: [R' D' R, U2]]",
       "stickerMappings": [
@@ -17879,7 +17879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DFR_F",
+      "id": "DFR_F-DFL_D",
       "type": "corner",
       "notation": "[R: [R' U R U', F2]]",
       "stickerMappings": [
@@ -17904,7 +17904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBL_L",
+      "id": "UBL_L-DFL_D",
       "type": "corner",
       "notation": "[D' R: [R D' R', U]]",
       "stickerMappings": [
@@ -17929,7 +17929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UFL_L",
+      "id": "UFL_L-DFL_D",
       "type": "corner",
       "notation": "[U' R' U: [R U' R', D]]",
       "stickerMappings": [
@@ -17954,7 +17954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DBL_L",
+      "id": "DBL_L-DFL_D",
       "type": "corner",
       "notation": "[R D R' D: [R U R', D2]]",
       "stickerMappings": [
@@ -17979,7 +17979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DBL_B",
+      "id": "DBL_B-DFL_D",
       "type": "corner",
       "notation": "[U' D' R': [R' D2 R, U]]",
       "stickerMappings": [
@@ -18004,7 +18004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DBR_B",
+      "id": "DBR_B-DFL_D",
       "type": "corner",
       "notation": "[D' R: [R D' R', U']]",
       "stickerMappings": [
@@ -18029,7 +18029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBR_B",
+      "id": "UBR_B-DFL_D",
       "type": "corner",
       "notation": "[D' R U': [R' U R, D']]",
       "stickerMappings": [
@@ -18054,7 +18054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBL_B",
+      "id": "UBL_B-DFL_D",
       "type": "corner",
       "notation": "[U' R': [R' D R, U']]",
       "stickerMappings": [
@@ -18079,7 +18079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-UBR_R",
+      "id": "UBR_R-DFL_D",
       "type": "corner",
       "notation": "[U' R': [R' D R, U2]]",
       "stickerMappings": [
@@ -18104,7 +18104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DBR_R",
+      "id": "DBR_R-DFL_D",
       "type": "corner",
       "notation": "[U' R': [R' D R, U]]",
       "stickerMappings": [
@@ -18129,7 +18129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DFR_R",
+      "id": "DFR_R-DFL_D",
       "type": "corner",
       "notation": "[R D: [U, R' D' R]]",
       "stickerMappings": [
@@ -18154,7 +18154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DFR_D",
+      "id": "DFR_D-DFL_D",
       "type": "corner",
       "notation": "[U' R' F': [D', R U' R']]",
       "stickerMappings": [
@@ -18179,7 +18179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFL_D-DBR_D",
+      "id": "DBR_D-DFL_D",
       "type": "corner",
       "notation": "[U' R2: [D, R2 U R2 U' R2]]",
       "stickerMappings": [
@@ -18204,7 +18204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBL_U",
+      "id": "UBL_U-DFR_D",
       "type": "corner",
       "notation": "[R2: [U, R2 D R2 D' R2]]",
       "stickerMappings": [
@@ -18229,7 +18229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBR_U",
+      "id": "UBR_U-DFR_D",
       "type": "corner",
       "notation": "[R' D R U' R D' R', U]",
       "stickerMappings": [
@@ -18254,7 +18254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UFL_U",
+      "id": "UFL_U-DFR_D",
       "type": "corner",
       "notation": "[R' D R U' R D' R', U']",
       "stickerMappings": [
@@ -18279,7 +18279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UFL_F",
+      "id": "UFL_F-DFR_D",
       "type": "corner",
       "notation": "[D' R U D: [R' D' R, U2]]",
       "stickerMappings": [
@@ -18304,7 +18304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DFL_F",
+      "id": "DFL_F-DFR_D",
       "type": "corner",
       "notation": "[R U' R': [R' D R, U2]]",
       "stickerMappings": [
@@ -18329,7 +18329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBL_L",
+      "id": "UBL_L-DFR_D",
       "type": "corner",
       "notation": "[U R' D': [U', R' D' R]]",
       "stickerMappings": [
@@ -18354,7 +18354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UFL_L",
+      "id": "UFL_L-DFR_D",
       "type": "corner",
       "notation": "[R U' R': [R' D' R, U2]]",
       "stickerMappings": [
@@ -18379,7 +18379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DFL_L",
+      "id": "DFL_L-DFR_D",
       "type": "corner",
       "notation": "[U D R D': [U', R' D R]]",
       "stickerMappings": [
@@ -18404,7 +18404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DBL_L",
+      "id": "DBL_L-DFR_D",
       "type": "corner",
       "notation": "[D2 R: [R D' R', U']]",
       "stickerMappings": [
@@ -18429,7 +18429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DBL_B",
+      "id": "DBL_B-DFR_D",
       "type": "corner",
       "notation": "[U' D' R': [R' D R, U]]",
       "stickerMappings": [
@@ -18454,7 +18454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DBR_B",
+      "id": "DBR_B-DFR_D",
       "type": "corner",
       "notation": "[D' R D: [U, R' D' R]]",
       "stickerMappings": [
@@ -18479,7 +18479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBR_B",
+      "id": "UBR_B-DFR_D",
       "type": "corner",
       "notation": "[U R' U': [R U R', D']]",
       "stickerMappings": [
@@ -18504,7 +18504,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBL_B",
+      "id": "UBL_B-DFR_D",
       "type": "corner",
       "notation": "[U' D' R': [R' D R, U']]",
       "stickerMappings": [
@@ -18529,7 +18529,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-UBR_R",
+      "id": "UBR_R-DFR_D",
       "type": "corner",
       "notation": "[U' D' R': [R' D R, U2]]",
       "stickerMappings": [
@@ -18554,7 +18554,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DBR_R",
+      "id": "DBR_R-DFR_D",
       "type": "corner",
       "notation": "[R U' D' R': [R' D R, U2]]",
       "stickerMappings": [
@@ -18579,7 +18579,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DFL_D",
+      "id": "DFL_D-DFR_D",
       "type": "corner",
       "notation": "[U' R' F': [R U' R', D']]",
       "stickerMappings": [
@@ -18604,7 +18604,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DFR_D-DBR_D",
+      "id": "DBR_D-DFR_D",
       "type": "corner",
       "notation": "[D', R2 U R2 U' R2]",
       "stickerMappings": [
@@ -18629,7 +18629,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBL_U",
+      "id": "UBL_U-DBR_D",
       "type": "corner",
       "notation": "[D' R2: [U, R2 D R2 D' R2]]",
       "stickerMappings": [
@@ -18654,7 +18654,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBR_U",
+      "id": "UBR_U-DBR_D",
       "type": "corner",
       "notation": "[U', R D' R' U R' D R]",
       "stickerMappings": [
@@ -18679,7 +18679,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UFL_U",
+      "id": "UFL_U-DBR_D",
       "type": "corner",
       "notation": "[R D' R': [R' D R, U']]",
       "stickerMappings": [
@@ -18704,7 +18704,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UFL_F",
+      "id": "UFL_F-DBR_D",
       "type": "corner",
       "notation": "[D R: [R D' R', U2]]",
       "stickerMappings": [
@@ -18729,7 +18729,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFR_F",
+      "id": "DFR_F-DBR_D",
       "type": "corner",
       "notation": "[U R D': [U', R' D R]]",
       "stickerMappings": [
@@ -18754,7 +18754,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFL_F",
+      "id": "DFL_F-DBR_D",
       "type": "corner",
       "notation": "[D R: [R D' R', U']]",
       "stickerMappings": [
@@ -18779,7 +18779,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBL_L",
+      "id": "UBL_L-DBR_D",
       "type": "corner",
       "notation": "[D R: [R D' R', U]]",
       "stickerMappings": [
@@ -18804,7 +18804,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UFL_L",
+      "id": "UFL_L-DBR_D",
       "type": "corner",
       "notation": "[R U' R': [D, R' U R]]",
       "stickerMappings": [
@@ -18829,7 +18829,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFL_L",
+      "id": "DFL_L-DBR_D",
       "type": "corner",
       "notation": "[U R: [D, R U' R']]",
       "stickerMappings": [
@@ -18854,7 +18854,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DBL_L",
+      "id": "DBL_L-DBR_D",
       "type": "corner",
       "notation": "[R D' R': [R' D R, U]]",
       "stickerMappings": [
@@ -18879,7 +18879,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DBL_B",
+      "id": "DBL_B-DBR_D",
       "type": "corner",
       "notation": "[U R: [D2, R U' R']]",
       "stickerMappings": [
@@ -18904,7 +18904,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBR_B",
+      "id": "UBR_B-DBR_D",
       "type": "corner",
       "notation": "[D R U': [R' U R, D']]",
       "stickerMappings": [
@@ -18929,7 +18929,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBL_B",
+      "id": "UBL_B-DBR_D",
       "type": "corner",
       "notation": "[U R: [D', R U' R']]",
       "stickerMappings": [
@@ -18954,7 +18954,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-UBR_R",
+      "id": "UBR_R-DBR_D",
       "type": "corner",
       "notation": "[U R U' D': [R' D R, U2]]",
       "stickerMappings": [
@@ -18979,7 +18979,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFR_R",
+      "id": "DFR_R-DBR_D",
       "type": "corner",
       "notation": "[R: [U, R' D R U' R D' R']]",
       "stickerMappings": [
@@ -19004,7 +19004,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFL_D",
+      "id": "DFL_D-DBR_D",
       "type": "corner",
       "notation": "[R2 U' R2: [D, R2 U R2 U' R2]]",
       "stickerMappings": [
@@ -19029,7 +19029,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBR_D-DFR_D",
+      "id": "DFR_D-DBR_D",
       "type": "corner",
       "notation": "[R2 U R2 U' R2, D']",
       "stickerMappings": [
@@ -19054,7 +19054,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBL_U",
+      "id": "UBL_U-DBL_D",
       "type": "corner",
       "notation": "[R' U D R': [U, R' D R]]",
       "stickerMappings": [
@@ -19079,7 +19079,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBR_U",
+      "id": "UBR_U-DBL_D",
       "type": "corner",
       "notation": "[R' B: [D', R U R']]",
       "stickerMappings": [
@@ -19104,7 +19104,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UFL_U",
+      "id": "UFL_U-DBL_D",
       "type": "corner",
       "notation": "[R' D' R: [R U' R', D]]",
       "stickerMappings": [
@@ -19129,7 +19129,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UFL_F",
+      "id": "UFL_F-DBL_D",
       "type": "corner",
       "notation": "[R: [R D' R', U2]]",
       "stickerMappings": [
@@ -19154,7 +19154,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFR_F",
+      "id": "DFR_F-DBL_D",
       "type": "corner",
       "notation": "[U' D R': [R' D R, U]]",
       "stickerMappings": [
@@ -19179,7 +19179,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFL_F",
+      "id": "DFL_F-DBL_D",
       "type": "corner",
       "notation": "[D R D: [U, R' D' R]]",
       "stickerMappings": [
@@ -19204,7 +19204,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBL_L",
+      "id": "UBL_L-DBL_D",
       "type": "corner",
       "notation": "[R: [R D' R', U]]",
       "stickerMappings": [
@@ -19229,7 +19229,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UFL_L",
+      "id": "UFL_L-DBL_D",
       "type": "corner",
       "notation": "[U' D R' U: [R U' R', D]]",
       "stickerMappings": [
@@ -19254,7 +19254,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFL_L",
+      "id": "DFL_L-DBL_D",
       "type": "corner",
       "notation": "[D R: [R' U R U', F2]]",
       "stickerMappings": [
@@ -19279,7 +19279,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DBR_B",
+      "id": "DBR_B-DBL_D",
       "type": "corner",
       "notation": "[R U' D: [R' U R, D2]]",
       "stickerMappings": [
@@ -19304,7 +19304,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBR_B",
+      "id": "UBR_B-DBL_D",
       "type": "corner",
       "notation": "[R U': [R' U R, D']]",
       "stickerMappings": [
@@ -19329,7 +19329,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBL_B",
+      "id": "UBL_B-DBL_D",
       "type": "corner",
       "notation": "[U' D R': [R' D R, U']]",
       "stickerMappings": [
@@ -19354,7 +19354,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-UBR_R",
+      "id": "UBR_R-DBL_D",
       "type": "corner",
       "notation": "[U' D R': [R' D R, U2]]",
       "stickerMappings": [
@@ -19379,7 +19379,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DBR_R",
+      "id": "DBR_R-DBL_D",
       "type": "corner",
       "notation": "[R2 D2: [R U R', D]]",
       "stickerMappings": [
@@ -19404,7 +19404,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFR_R",
+      "id": "DFR_R-DBL_D",
       "type": "corner",
       "notation": "[R: [R D' R', U']]",
       "stickerMappings": [
@@ -19429,7 +19429,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFL_D",
+      "id": "DFL_D-DBL_D",
       "type": "corner",
       "notation": "[R U' D2: [R' U R, D]]",
       "stickerMappings": [
@@ -19454,7 +19454,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DFR_D",
+      "id": "DFR_D-DBL_D",
       "type": "corner",
       "notation": "[R U' R' U: [R D' R', U2]]",
       "stickerMappings": [
@@ -19479,7 +19479,7 @@ export const ALGORITHM_DATA = {
       ]
     },
     {
-      "id": "DBL_D-DBR_D",
+      "id": "DBR_D-DBL_D",
       "type": "corner",
       "notation": "[R U' R': [R' U R, D']]",
       "stickerMappings": [
