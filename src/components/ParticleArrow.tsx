@@ -62,14 +62,14 @@ export function ParticleArrow({
     return { geometry: geo, initialPositions: initialPos };
   }, [startPosition, endPosition, particleCount]);
 
-  // Create material
+  // Create material with enhanced visibility
   const material = useMemo(() => {
     return new PointsMaterial({
       color: new Color(color),
-      size: particleSize,
+      size: particleSize * 2.0, // Double the particle size for better visibility
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.95 // Increase opacity for better visibility
     });
   }, [color, particleSize]);
 
@@ -90,14 +90,14 @@ export function ParticleArrow({
       arrowHelperHeadWidth
     );
 
-    // Make arrow slightly transparent
+    // Make arrow more visible with higher opacity
     if (arrow.line.material) {
       (arrow.line.material as any).transparent = true;
-      (arrow.line.material as any).opacity = 0.7;
+      (arrow.line.material as any).opacity = 0.9; // Increased opacity for better visibility
     }
     if (arrow.cone.material) {
       (arrow.cone.material as any).transparent = true;
-      (arrow.cone.material as any).opacity = 0.7;
+      (arrow.cone.material as any).opacity = 0.9; // Increased opacity for better visibility
     }
 
     return arrow;

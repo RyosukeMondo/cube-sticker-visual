@@ -16,9 +16,11 @@ export function OptimizedCubelet({ positions }: OptimizedCubeletProps) {
   // Shared geometry and material (created once, reused for all instances)
   const geometry = useMemo(() => new BoxGeometry(0.95, 0.95, 0.95), []);
   const material = useMemo(() => new MeshStandardMaterial({ 
-    color: '#1a1a1a',
-    // Enable frustum culling for better performance
-    transparent: false,
+    color: '#000000',
+    // Make cubelets completely invisible - no black plastic visible
+    transparent: true,
+    opacity: 0.0,
+    visible: false,
     alphaTest: 0.1
   }), []);
   

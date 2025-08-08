@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react';
-import { InstancedMesh, Object3D, PlaneGeometry, MeshStandardMaterial, Color } from 'three';
+import { InstancedMesh, Object3D, BoxGeometry, MeshStandardMaterial, Color } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { type StickerState } from '../types/CubeColors';
 import { isBufferSticker } from '../utils/bufferHighlighting';
@@ -22,8 +22,9 @@ export function OptimizedSticker({ stickers }: OptimizedStickerProps) {
   const bufferBorderMeshRef = useRef<InstancedMesh>(null);
   
   // Shared geometries (created once, reused for all instances)
-  const mainGeometry = useMemo(() => new PlaneGeometry(0.3, 0.3), []);
-  const borderGeometry = useMemo(() => new PlaneGeometry(0.35, 0.35), []);
+  // Made stickers as thin 3D cubes (rectangular prisms) for better realism
+  const mainGeometry = useMemo(() => new BoxGeometry(0.45, 0.45, 0.05), []); // Thin cube: width, height, depth
+  const borderGeometry = useMemo(() => new BoxGeometry(0.5, 0.5, 0.04), []); // Slightly thinner border
   
   // Shared materials for different sticker types
   const materials = useMemo(() => ({

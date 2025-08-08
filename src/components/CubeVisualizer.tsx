@@ -114,8 +114,8 @@ export function CubeVisualizer({
     isAnimationPlaying = false,
     animationSpeed = 1.0,
     arrowColor = '#ffff00',
-    particleCount = 20,
-    particleSize = 0.05,
+    particleCount = 30, // Increased particle count for better visibility
+    particleSize = 0.08, // Increased particle size for better visibility
     autoTriggerAnimation = true,
     showMultipleArrows = true,
     cycleTiming = 'simultaneous',
