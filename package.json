@@ -10,7 +10,12 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "generate-data": "node scripts/generate-algorithm-data.js",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "test:build": "vitest --run --config vitest.node.config.ts src/test/build-verification.test.ts",
+    "test:algorithms": "vitest --run --config vitest.node.config.ts src/test/algorithm-data-verification.test.ts",
+    "test:cross-browser": "node scripts/test-cross-browser.js",
+    "verify-build": "node scripts/verify-build.js",
+    "build:verify": "npm run build && npm run verify-build"
   },
   "dependencies": {
     "@react-three/drei": "^10.6.1",

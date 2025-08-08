@@ -26,5 +26,6 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/test/build-verification.test.ts", "src/test/algorithm-data-verification.test.ts"]
 }

@@ -1,12 +1,14 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react-swc'
 import { viteSingleFile } from 'vite-plugin-singlefile'
+import { inlineAllAssetsPlugin } from './vite-plugins/inline-all-assets'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    viteSingleFile()
+    viteSingleFile(),
+    inlineAllAssetsPlugin()
   ],
   build: {
     target: 'esnext',
@@ -20,6 +22,7 @@ export default defineConfig({
       }
     }
   },
+  publicDir: false, // Don't copy public directory files
   test: {
     environment: 'jsdom',
     globals: true,

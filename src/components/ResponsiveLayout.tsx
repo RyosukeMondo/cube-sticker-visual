@@ -172,11 +172,14 @@ export function ResponsiveLayout({
         }}>
           {/* Tablet sidebar */}
           <div style={{
-            width: '320px',
+            width: '300px',
+            minWidth: '300px',
+            maxWidth: '300px',
             borderRight: '1px solid #e0e0e0',
             overflowY: 'auto',
             padding: '20px',
-            backgroundColor: '#fafafa'
+            backgroundColor: '#fafafa',
+            flexShrink: 0
           }}>
             {sidebarContent}
           </div>
@@ -187,9 +190,20 @@ export function ResponsiveLayout({
             padding: '20px',
             overflowY: 'auto',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            minWidth: 0
           }}>
-            {mainContent}
+            <div style={{
+              width: '100%',
+              maxWidth: '800px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px'
+            }}>
+              {mainContent}
+            </div>
           </div>
         </div>
       </div>
@@ -206,11 +220,14 @@ export function ResponsiveLayout({
     }}>
       {/* Desktop sidebar */}
       <div style={{
-        width: '400px',
+        width: '320px',
+        minWidth: '320px',
+        maxWidth: '320px',
         borderRight: '1px solid #e0e0e0',
         overflowY: 'auto',
         padding: '20px',
-        backgroundColor: '#fafafa'
+        backgroundColor: '#fafafa',
+        flexShrink: 0
       }}>
         {sidebarContent}
       </div>
@@ -220,12 +237,14 @@ export function ResponsiveLayout({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        minWidth: 0 // Prevents flex item from overflowing
       }}>
         {headerContent && (
           <div style={{
             padding: '20px',
-            borderBottom: '1px solid #e0e0e0'
+            borderBottom: '1px solid #e0e0e0',
+            flexShrink: 0
           }}>
             {headerContent}
           </div>
@@ -236,9 +255,20 @@ export function ResponsiveLayout({
           padding: '20px',
           overflowY: 'auto',
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          minHeight: 0 // Allows proper scrolling
         }}>
-          {mainContent}
+          <div style={{
+            width: '100%',
+            maxWidth: '1200px', // Constrain max width for better readability
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px'
+          }}>
+            {mainContent}
+          </div>
         </div>
       </div>
     </div>

@@ -203,13 +203,17 @@ function App() {
 
   // Main content for responsive layout
   const mainContent = (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: viewport.isMobile ? '15px' : '20px' }}>
-      <div>
+    <>
+      {/* Top controls section */}
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: viewport.isMobile ? '15px' : '20px',
+        marginBottom: viewport.isMobile ? '20px' : '30px'
+      }}>
         <AlgorithmDisplay {...(selectedAlgorithm && { algorithm: selectedAlgorithm })} />
-      </div>
-      
-      {selectedAlgorithm && (
-        <div>
+        
+        {selectedAlgorithm && (
           <AnimationControls
             animationSpeed={animationSpeed}
             showArrows={showArrows}
@@ -219,19 +223,35 @@ function App() {
             onReplay={handleReplay}
             disabled={!selectedAlgorithm}
           />
-        </div>
-      )}
+        )}
+        
+        {!viewport.isMobile && (
+          <div style={{ 
+            fontSize: '14px', 
+            color: '#666',
+            textAlign: 'left',
+            padding: '10px',
+            backgroundColor: '#f9f9f9',
+            borderRadius: '6px',
+            border: '1px solid #e0e0e0'
+          }}>
+            <div style={{ marginBottom: '4px' }}>🔵 <strong>UF</strong> - Edge Buffer (cyan)</div>
+            <div style={{ marginBottom: '4px' }}>🟣 <strong>UFR_U</strong> - Corner Buffer (magenta)</div>
+            <div>🟡 <strong>F, R</strong> - Regular highlights (yellow)</div>
+          </div>
+        )}
+      </div>
       
-      {!viewport.isMobile && (
-        <div style={{ fontSize: '14px', color: '#666' }}>
-          <div>🔵 <strong>UF</strong> - Edge Buffer (cyan)</div>
-          <div>🟣 <strong>UFR_U</strong> - Corner Buffer (magenta)</div>
-          <div>🟡 <strong>F, R</strong> - Regular highlights (yellow)</div>
-        </div>
-      )}
-      
+      {/* Cube visualizer section */}
       {initialized && (
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ 
+          flex: 1,
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          minHeight: viewport.isMobile ? '400px' : '500px',
+          width: '100%'
+        }}>
           <CubeVisualizer 
             key={animationKey} // Force re-render when animationKey changes (for replay)
             cubeColors={cubeColors}
@@ -251,7 +271,7 @@ function App() {
           />
         </div>
       )}
-    </div>
+    </>
   );
 
   return (
