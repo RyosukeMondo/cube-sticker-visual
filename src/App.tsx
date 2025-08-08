@@ -20,7 +20,7 @@ function App() {
   // Application state
   const [initialized] = useState(true)
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm | undefined>()
-  const [highlightedStickers] = useState(['F', 'R']) // Demo highlighting (non-buffer stickers)
+  const [highlightedStickers] = useState<string[]>([]) // Demo highlighting (non-buffer stickers)
   const [error, setError] = useState<string | null>(null)
   
   // Animation control state
