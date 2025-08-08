@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useEffect, useCallback } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Mesh } from 'three';
@@ -107,6 +107,7 @@ interface CubeVisualizerProps {
     onAnimationComplete?: (() => void) | undefined;
     onAnimationStart?: (() => void) | undefined;
     onArrowComplete?: ((arrowId: string) => void) | undefined;
+    onRegisterCleanup?: ((cleanupFn: () => void) => void) | undefined;
 }
 
 export function CubeVisualizer({
@@ -133,9 +134,42 @@ export function CubeVisualizer({
     arrowHelperHeadWidth = 0.1,
     onAnimationComplete,
     onAnimationStart,
-    onArrowComplete
+    onArrowComplete,
+    onRegisterCleanup
 }: CubeVisualizerProps) {
     const cubeletPositions = generateCubeletPositions();
+    const cleanupFunctionsRef = useRef<(() => void)[]>([]);
+    
+    // Register cleanup function with parent component
+    const registerCleanup = useCallback((cleanupFn: () => void) => {
+        cleanupFunctionsRef.current.push(cleanupFn);
+    }, []);
+    
+    // Execute all cleanup functions
+    const executeCleanup = useCallback(() => {
+        cleanupFunctionsRef.current.forEach(fn => {
+            try {
+                fn();
+            } catch (error) {
+                console.error('Error during cleanup:', error);
+            }
+        });
+        cleanupFunctionsRef.current = [];
+    }, []);
+    
+    // Register the cleanup executor with parent component
+    useEffect(() => {
+        if (onRegisterCleanup) {
+            onRegisterCleanup(executeCleanup);
+        }
+    }, [onRegisterCleanup, executeCleanup]);
+    
+    // Cleanup on unmount
+    useEffect(() => {
+        return () => {
+            executeCleanup();
+        };
+    }, [executeCleanup]);
 
     // Generate sticker states from the cube colors and highlighting
     const stickerStates = useMemo((): StickerState[] => {
@@ -215,6 +249,7 @@ export function CubeVisualizer({
                         onAnimationComplete={onAnimationComplete}
                         onAnimationStart={onAnimationStart}
                         onArrowComplete={onArrowComplete}
+                        onRegisterCleanup={registerCleanup}
                     />
                 )}
 

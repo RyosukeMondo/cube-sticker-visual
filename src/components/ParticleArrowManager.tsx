@@ -71,6 +71,7 @@ export interface ParticleArrowManagerProps {
   onAnimationComplete?: (() => void) | undefined;
   onAnimationStart?: (() => void) | undefined;
   onArrowComplete?: ((arrowId: string) => void) | undefined;
+  onRegisterCleanup?: ((cleanupFn: () => void) => void) | undefined;
 }
 
 export function ParticleArrowManager({
@@ -90,12 +91,28 @@ export function ParticleArrowManager({
   showCycleConnections = true,
   onAnimationComplete,
   onAnimationStart,
-  onArrowComplete
+  onArrowComplete,
+  onRegisterCleanup
 }: ParticleArrowManagerProps) {
   const [arrows, setArrows] = useState<ArrowAnimation[]>([]);
   const [, setCompletedArrows] = useState<Set<string>>(new Set());
   const [, setIsAnimating] = useState(false);
   const animationTimeoutRef = useRef<number | null>(null);
+
+  // Register cleanup function with parent component
+  useEffect(() => {
+    if (onRegisterCleanup) {
+      const cleanupFn = () => {
+        if (animationTimeoutRef.current) {
+          clearTimeout(animationTimeoutRef.current);
+          animationTimeoutRef.current = null;
+        }
+        setIsAnimating(false);
+        setCompletedArrows(new Set());
+      };
+      onRegisterCleanup(cleanupFn);
+    }
+  }, [onRegisterCleanup]);
 
   // Generate arrows from algorithm sticker mappings with 3-cycle grouping
   const generateArrows = useCallback((algo: Algorithm): ArrowAnimation[] => {
@@ -264,7 +281,7 @@ export function ParticleArrowManager({
       };
       showNextArrow();
     }
-  }, [arrows, showMultipleArrows, animationSpeed, onAnimationStart, cleanup]);
+  }, [arrows, showMultipleArrows, animationSpeed, cycleTiming, onAnimationStart, cleanup]);
 
   // Update arrows when algorithm changes
   useEffect(() => {
