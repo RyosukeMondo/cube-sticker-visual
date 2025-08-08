@@ -207,9 +207,14 @@ export function ParticleArrowManager({
 
   // Start animation function
   const startAnimation = useCallback(() => {
-    if (arrows.length === 0) return;
+    // Access current arrows through state callback to avoid dependency
+    setArrows(currentArrows => {
+      if (currentArrows.length === 0) return currentArrows;
+      return currentArrows;
+    });
 
-    cleanup(); // Clean up any existing animation
+    // Clean up any existing animation first
+    cleanup();
     setIsAnimating(true);
     setCompletedArrows(new Set());
 
@@ -217,71 +222,82 @@ export function ParticleArrowManager({
       onAnimationStart();
     }
 
-    if (showMultipleArrows) {
-      // Enhanced 3-cycle visualization based on timing mode
-      if (cycleTiming === 'simultaneous') {
-        // Show all arrows simultaneously for 3-cycle visualization
-        setArrows(prev => prev.map(arrow => ({ ...arrow, visible: true })));
-      } else if (cycleTiming === 'sequential') {
-        // Show arrows sequentially by cycle group, then by position within cycle
-        let currentArrowIndex = 0;
-        const showNextArrow = () => {
-          if (currentArrowIndex < arrows.length) {
-            setArrows(prev => prev.map((arrow, index) => ({
-              ...arrow,
-              visible: index === currentArrowIndex
-            })));
-            currentArrowIndex++;
+    // Use a small delay to ensure state updates are processed
+    setTimeout(() => {
+      setArrows(currentArrows => {
+        if (showMultipleArrows) {
+          // Enhanced 3-cycle visualization based on timing mode
+          if (cycleTiming === 'simultaneous') {
+            // Show all arrows simultaneously for 3-cycle visualization
+            return currentArrows.map(arrow => ({ ...arrow, visible: true }));
+          } else if (cycleTiming === 'sequential') {
+            // Show arrows sequentially by cycle group, then by position within cycle
+            let currentArrowIndex = 0;
+            const showNextArrow = () => {
+              if (currentArrowIndex < currentArrows.length) {
+                setArrows(prev => prev.map((arrow, index) => ({
+                  ...arrow,
+                  visible: index === currentArrowIndex
+                })));
+                currentArrowIndex++;
+                
+                const animationDuration = Math.max(500, 2000 / animationSpeed);
+                animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
+              }
+            };
+            showNextArrow();
+            return currentArrows;
+          } else if (cycleTiming === 'staggered') {
+            // Show arrows with staggered timing based on cycle groups
+            const cycleGroups = new Map<number, number[]>();
+            currentArrows.forEach((arrow, index) => {
+              const group = arrow.cycleGroup || 0;
+              if (!cycleGroups.has(group)) {
+                cycleGroups.set(group, []);
+              }
+              cycleGroups.get(group)!.push(index);
+            });
+
+            let currentGroupIndex = 0;
+            const groupArray = Array.from(cycleGroups.entries());
             
-            const animationDuration = Math.max(500, 2000 / animationSpeed);
-            animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
+            const showNextGroup = () => {
+              if (currentGroupIndex < groupArray.length) {
+                const [, arrowIndices] = groupArray[currentGroupIndex];
+                setArrows(prev => prev.map((arrow, index) => ({
+                  ...arrow,
+                  visible: arrowIndices.includes(index)
+                })));
+                currentGroupIndex++;
+                
+                const staggerDelay = Math.max(300, 1000 / animationSpeed);
+                animationTimeoutRef.current = setTimeout(showNextGroup, staggerDelay);
+              }
+            };
+            showNextGroup();
+            return currentArrows;
           }
-        };
-        showNextArrow();
-      } else if (cycleTiming === 'staggered') {
-        // Show arrows with staggered timing within each cycle group
-        const cycleGroups = new Map<number, ArrowAnimation[]>();
-        arrows.forEach(arrow => {
-          const group = arrow.cycleGroup || 0;
-          if (!cycleGroups.has(group)) {
-            cycleGroups.set(group, []);
-          }
-          cycleGroups.get(group)!.push(arrow);
-        });
-
-        // Start each cycle group with internal staggering
-        cycleGroups.forEach((groupArrows, groupIndex) => {
-          groupArrows.forEach((arrow, arrowIndex) => {
-            const groupDelay = groupIndex * 1000; // 1 second between cycle groups
-            const arrowDelay = arrowIndex * 300; // 300ms stagger within group
-            const totalDelay = groupDelay + arrowDelay;
-
-            animationTimeoutRef.current = setTimeout(() => {
-              setArrows(prev => prev.map(a => 
-                a.id === arrow.id ? { ...a, visible: true } : a
-              ));
-            }, totalDelay);
-          });
-        });
-      }
-    } else {
-      // Show arrows sequentially (original behavior)
-      let currentArrowIndex = 0;
-      const showNextArrow = () => {
-        if (currentArrowIndex < arrows.length) {
-          setArrows(prev => prev.map((arrow, index) => ({
-            ...arrow,
-            visible: index === currentArrowIndex
-          })));
-          currentArrowIndex++;
-          
-          const animationDuration = Math.max(500, 2000 / animationSpeed);
-          animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
+        } else {
+          // Single arrow mode - show arrows one by one
+          let currentArrowIndex = 0;
+          const showNextArrow = () => {
+            if (currentArrowIndex < currentArrows.length) {
+              setArrows(prev => prev.map((arrow, index) => ({
+                ...arrow,
+                visible: index <= currentArrowIndex
+              })));
+              currentArrowIndex++;
+              
+              const animationDuration = Math.max(500, 2000 / animationSpeed);
+              animationTimeoutRef.current = setTimeout(showNextArrow, animationDuration + 200);
+            }
+          };
+          showNextArrow();
         }
-      };
-      showNextArrow();
-    }
-  }, [arrows, showMultipleArrows, animationSpeed, cycleTiming, onAnimationStart, cleanup]);
+        return currentArrows;
+      });
+    }, 10);
+  }, [showMultipleArrows, animationSpeed, cycleTiming, onAnimationStart, cleanup]);
 
   // Update arrows when algorithm changes
   useEffect(() => {
@@ -298,18 +314,18 @@ export function ParticleArrowManager({
       return () => clearTimeout(timer);
     }
     return () => {};
-  }, [algorithm, generateArrows, autoTrigger, startAnimation, cleanup]);
+  }, [algorithm, autoTrigger, generateArrows, startAnimation]);
 
   // Handle play/pause state changes (manual control)
   useEffect(() => {
     if (!autoTrigger) {
-      if (isPlaying && arrows.length > 0) {
+      if (isPlaying) {
         startAnimation();
       } else {
         cleanup();
       }
     }
-  }, [isPlaying, arrows.length, autoTrigger, startAnimation, cleanup]);
+  }, [isPlaying, autoTrigger, startAnimation, cleanup]);
 
   // Handle individual arrow completion
   const handleArrowComplete = useCallback((arrowId: string) => {

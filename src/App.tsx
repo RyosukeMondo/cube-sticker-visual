@@ -235,19 +235,17 @@ function App() {
       <CollapsibleSection 
         title="Cube Colors" 
         defaultExpanded={false}
-        disabled={isAnimating}
       >
         <ColorSettings
           colors={cubeColors}
           onColorChange={handleColorChange}
-          disabled={isAnimating}
+          disabled={false}
         />
       </CollapsibleSection>
       
       <CollapsibleSection 
         title="Sticker Size" 
         defaultExpanded={false}
-        disabled={isAnimating}
       >
         <StickerSettings
           stickerSize={stickerSize}
@@ -260,7 +258,7 @@ function App() {
           onStickerThicknessChange={handleStickerThicknessChange}
           onStickerTransparencyChange={handleStickerTransparencyChange}
           onStickerChamferChange={handleStickerChamferChange}
-          disabled={isAnimating}
+          disabled={false}
         />
       </CollapsibleSection>
     </div>
