@@ -1,25 +1,17 @@
 import { useRef, useMemo, useEffect, useCallback } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Mesh } from 'three';
-import { Sticker } from './Sticker';
+import { OptimizedCubelet } from './OptimizedCubelet';
+import { OptimizedSticker } from './OptimizedSticker';
 import { ParticleArrowManager } from './ParticleArrowManager';
 import { ALL_STICKERS, type StickerPosition } from '../types/CubeStickers';
 import { type CubeColors, DEFAULT_CUBE_COLORS, type StickerState } from '../types/CubeColors';
 import { type BufferHighlightConfig, DEFAULT_BUFFER_CONFIG, getBufferStickers } from '../utils/bufferHighlighting';
 import { type Algorithm } from '../types/Algorithm';
+import { useViewport } from '../hooks/useViewport';
 
-// Individual cubelet component (now just the black frame)
-function Cubelet({ position }: { position: [number, number, number] }) {
-    const meshRef = useRef<Mesh>(null);
-
-    return (
-        <mesh ref={meshRef} position={position}>
-            <boxGeometry args={[0.95, 0.95, 0.95]} />
-            <meshStandardMaterial color="#1a1a1a" />
-        </mesh>
-    );
-}
+// Legacy individual cubelet component (replaced by OptimizedCubelet)
+// Kept for backward compatibility but not used in optimized rendering
 
 // Generate positions for all 27 cubelets (3x3x3 cube)
 function generateCubeletPositions(): [number, number, number][] {
@@ -137,6 +129,7 @@ export function CubeVisualizer({
     onArrowComplete,
     onRegisterCleanup
 }: CubeVisualizerProps) {
+    const viewport = useViewport();
     const cubeletPositions = generateCubeletPositions();
     const cleanupFunctionsRef = useRef<(() => void)[]>([]);
     
@@ -171,8 +164,8 @@ export function CubeVisualizer({
         };
     }, [executeCleanup]);
 
-    // Generate sticker states from the cube colors and highlighting
-    const stickerStates = useMemo((): StickerState[] => {
+    // Generate optimized sticker data for instanced rendering
+    const optimizedStickerData = useMemo(() => {
         const bufferInfo = getBufferStickers(bufferConfig);
 
         return Object.values(ALL_STICKERS).map((stickerPos) => {
@@ -185,63 +178,114 @@ export function CubeVisualizer({
                 ? bufferInfo.colorMap.get(stickerPos.id) || highlightColor
                 : highlightColor;
 
-            return {
+            const stickerState: StickerState = {
                 id: stickerPos.id,
                 color: cubeColors[stickerPos.face],
                 highlighted: highlighted,
                 highlightColor: finalHighlightColor
             };
+
+            const transform = getStickerTransform(stickerPos);
+            
+            return {
+                sticker: stickerState,
+                position: transform.position,
+                rotation: transform.rotation,
+                size: 0.3
+            };
         });
     }, [cubeColors, highlightedStickers, highlightColor, bufferConfig]);
 
+    // Responsive canvas sizing
+    const canvasStyle = useMemo(() => {
+        const baseStyle = {
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            ...style
+        };
+
+        if (viewport.isMobile) {
+            return {
+                ...baseStyle,
+                width: '100%',
+                height: '300px',
+                maxHeight: '50vh'
+            };
+        } else if (viewport.isTablet) {
+            return {
+                ...baseStyle,
+                width: '100%',
+                height: '400px'
+            };
+        } else {
+            return {
+                ...baseStyle,
+                width: '600px',
+                height: '600px'
+            };
+        }
+    }, [viewport, style]);
+
+    // Adaptive particle count for performance
+    const adaptiveParticleCount = useMemo(() => {
+        if (viewport.isMobile) {
+            return Math.max(5, Math.floor(particleCount * 0.3)); // Reduce particles on mobile
+        } else if (viewport.isTablet) {
+            return Math.max(10, Math.floor(particleCount * 0.6));
+        }
+        return particleCount;
+    }, [viewport, particleCount]);
+
+    // Adaptive animation speed for mobile performance
+    const adaptiveAnimationSpeed = useMemo(() => {
+        if (viewport.isMobile) {
+            return Math.min(animationSpeed * 1.5, 3.0); // Faster animations on mobile
+        }
+        return animationSpeed;
+    }, [viewport, animationSpeed]);
+
     return (
-        <div className={className} style={style}>
-            <Canvas camera={{ position: [4, 4, 4], fov: 50 }}>
-                {/* Lighting setup */}
+        <div className={className} style={canvasStyle}>
+            <Canvas 
+                camera={{ 
+                    position: viewport.isMobile ? [3, 3, 3] : [4, 4, 4], 
+                    fov: viewport.isMobile ? 60 : 50 
+                }}
+                performance={{ min: 0.5 }} // Adaptive performance
+                dpr={viewport.isMobile ? [1, 1.5] : [1, 2]} // Adaptive pixel ratio
+            >
+                {/* Optimized lighting setup */}
                 <ambientLight intensity={0.4} />
                 <directionalLight
                     position={[5, 5, 5]}
                     intensity={0.8}
-                    castShadow
-                    shadow-mapSize-width={1024}
-                    shadow-mapSize-height={1024}
+                    castShadow={!viewport.isMobile} // Disable shadows on mobile
+                    shadow-mapSize-width={viewport.isMobile ? 512 : 1024}
+                    shadow-mapSize-height={viewport.isMobile ? 512 : 1024}
                 />
-                <pointLight position={[-5, -5, -5]} intensity={0.3} />
+                {!viewport.isMobile && (
+                    <pointLight position={[-5, -5, -5]} intensity={0.3} />
+                )}
 
-                {/* Render all 27 cubelets (black frames) */}
-                {cubeletPositions.map((position, index) => (
-                    <Cubelet key={`cubelet-${index}`} position={position} />
-                ))}
+                {/* Optimized cubelets using instancing */}
+                <OptimizedCubelet positions={cubeletPositions} />
 
-                {/* Render all 54 stickers */}
-                {stickerStates.map((stickerState) => {
-                    const stickerPos = ALL_STICKERS[stickerState.id];
-                    const transform = getStickerTransform(stickerPos);
-
-                    return (
-                        <Sticker
-                            key={stickerState.id}
-                            sticker={stickerState}
-                            position={transform.position}
-                            rotation={transform.rotation}
-                            size={0.3}
-                        />
-                    );
-                })}
+                {/* Optimized stickers using instancing */}
+                <OptimizedSticker stickers={optimizedStickerData} />
 
                 {/* Particle Arrow Animation System */}
                 {algorithm && (
                     <ParticleArrowManager
                         algorithm={algorithm}
                         isPlaying={isAnimationPlaying}
-                        animationSpeed={animationSpeed}
+                        animationSpeed={adaptiveAnimationSpeed}
                         arrowColor={arrowColor}
-                        particleCount={particleCount}
+                        particleCount={adaptiveParticleCount}
                         particleSize={particleSize}
                         autoTrigger={autoTriggerAnimation}
                         showMultipleArrows={showMultipleArrows}
                         cycleTiming={cycleTiming}
-                        showArrowHelper={showArrowHelper}
+                        showArrowHelper={showArrowHelper && !viewport.isMobile} // Hide arrow helpers on mobile
                         showCycleConnections={showCycleConnections}
                         arrowHelperLength={arrowHelperLength}
                         arrowHelperHeadLength={arrowHelperHeadLength}
@@ -253,13 +297,17 @@ export function CubeVisualizer({
                     />
                 )}
 
-                {/* Camera controls */}
+                {/* Responsive camera controls */}
                 <OrbitControls
-                    enablePan={true}
+                    enablePan={!viewport.isMobile} // Disable pan on mobile to prevent conflicts
                     enableZoom={true}
                     enableRotate={true}
-                    minDistance={3}
-                    maxDistance={10}
+                    minDistance={viewport.isMobile ? 2 : 3}
+                    maxDistance={viewport.isMobile ? 8 : 10}
+                    touches={{
+                        ONE: 2, // TOUCH.ROTATE
+                        TWO: 1  // TOUCH.DOLLY_PAN
+                    }}
                 />
             </Canvas>
         </div>

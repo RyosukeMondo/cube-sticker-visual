@@ -4,6 +4,8 @@ import { AlgorithmSelector } from './components/AlgorithmSelector'
 import { AlgorithmDisplay } from './components/AlgorithmDisplay'
 import { AnimationControls } from './components/AnimationControls'
 import { ColorSettings } from './components/ColorSettings'
+import { ResponsiveLayout } from './components/ResponsiveLayout'
+import { useViewport } from './hooks/useViewport'
 import type { Algorithm } from './types/Algorithm'
 import type { CubeColors } from './types/CubeColors'
 import { DEFAULT_CUBE_COLORS } from './types/CubeColors'
@@ -11,6 +13,8 @@ import { DEFAULT_BUFFER_CONFIG } from './utils/bufferHighlighting'
 import './App.css'
 
 function App() {
+  const viewport = useViewport();
+  
   // Application state
   const [initialized] = useState(true)
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm | undefined>()
@@ -155,72 +159,81 @@ function App() {
     animationCleanupRef.current = cleanupFn;
   }, []);
 
-  return (
-    <div style={{ width: '100vw', height: '100vh', padding: '20px', display: 'flex', gap: '20px' }}>
-      <div style={{ flex: '0 0 400px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <AlgorithmSelector 
-          onAlgorithmSelect={handleAlgorithmSelect}
-          selectedAlgorithm={selectedAlgorithm}
-        />
-        
-        <ColorSettings
-          colors={cubeColors}
-          onColorChange={handleColorChange}
-          disabled={isAnimating}
-        />
+  // Sidebar content for responsive layout
+  const sidebarContent = (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: viewport.isMobile ? '15px' : '20px' }}>
+      <AlgorithmSelector 
+        onAlgorithmSelect={handleAlgorithmSelect}
+        selectedAlgorithm={selectedAlgorithm}
+      />
+      
+      <ColorSettings
+        colors={cubeColors}
+        onColorChange={handleColorChange}
+        disabled={isAnimating}
+      />
+    </div>
+  );
+
+  // Header content for responsive layout
+  const headerContent = (
+    <div>
+      <h1 style={{ 
+        margin: 0, 
+        fontSize: viewport.isMobile ? '20px' : '24px',
+        fontWeight: 'bold'
+      }}>
+        Rubik's Cube Algorithm Visualizer
+      </h1>
+      {error && (
+        <div style={{ 
+          color: '#d32f2f', 
+          backgroundColor: '#ffebee', 
+          padding: '8px 12px', 
+          borderRadius: '4px', 
+          marginTop: '10px',
+          fontSize: viewport.isMobile ? '12px' : '14px',
+          border: '1px solid #ffcdd2'
+        }}>
+          ⚠️ {error}
+        </div>
+      )}
+    </div>
+  );
+
+  // Main content for responsive layout
+  const mainContent = (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: viewport.isMobile ? '15px' : '20px' }}>
+      <div>
+        <AlgorithmDisplay {...(selectedAlgorithm && { algorithm: selectedAlgorithm })} />
       </div>
       
-      <div style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <h1>Rubik's Cube Algorithm Visualizer</h1>
-          {error && (
-            <div style={{ 
-              color: '#d32f2f', 
-              backgroundColor: '#ffebee', 
-              padding: '8px 12px', 
-              borderRadius: '4px', 
-              marginTop: '10px',
-              fontSize: '14px',
-              border: '1px solid #ffcdd2'
-            }}>
-              ⚠️ {error}
-            </div>
-          )}
+      {selectedAlgorithm && (
+        <div>
+          <AnimationControls
+            animationSpeed={animationSpeed}
+            showArrows={showArrows}
+            isAnimating={isAnimating}
+            onSpeedChange={handleSpeedChange}
+            onToggleArrows={handleToggleArrows}
+            onReplay={handleReplay}
+            disabled={!selectedAlgorithm}
+          />
         </div>
-        
-        <div style={{ marginBottom: '20px' }}>
-          <AlgorithmDisplay {...(selectedAlgorithm && { algorithm: selectedAlgorithm })} />
-        </div>
-        
-        {selectedAlgorithm && (
-          <div style={{ marginBottom: '20px' }}>
-            <AnimationControls
-              animationSpeed={animationSpeed}
-              showArrows={showArrows}
-              isAnimating={isAnimating}
-              onSpeedChange={handleSpeedChange}
-              onToggleArrows={handleToggleArrows}
-              onReplay={handleReplay}
-              disabled={!selectedAlgorithm}
-            />
-          </div>
-        )}
-        
-        <div style={{ marginBottom: '10px', fontSize: '14px', color: '#666' }}>
+      )}
+      
+      {!viewport.isMobile && (
+        <div style={{ fontSize: '14px', color: '#666' }}>
           <div>🔵 <strong>UF</strong> - Edge Buffer (cyan)</div>
           <div>🟣 <strong>UFR_U</strong> - Corner Buffer (magenta)</div>
           <div>🟡 <strong>F, R</strong> - Regular highlights (yellow)</div>
         </div>
-        
-        {initialized && (
+      )}
+      
+      {initialized && (
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <CubeVisualizer 
             key={animationKey} // Force re-render when animationKey changes (for replay)
-            style={{ 
-              width: '600px', 
-              height: '600px', 
-              border: '1px solid #ccc',
-              borderRadius: '8px'
-            }}
             cubeColors={cubeColors}
             highlightedStickers={highlightedStickers}
             highlightColor="#ffff00"
@@ -236,9 +249,17 @@ function App() {
               onRegisterCleanup: registerAnimationCleanup
             })}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
+  );
+
+  return (
+    <ResponsiveLayout
+      sidebarContent={sidebarContent}
+      mainContent={mainContent}
+      headerContent={headerContent}
+    />
   )
 }
 
