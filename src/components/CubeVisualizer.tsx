@@ -81,7 +81,11 @@ interface CubeVisualizerProps {
     highlightedStickers?: string[];
     highlightColor?: string;
     bufferConfig?: BufferHighlightConfig;
-    stickerSize?: number; // Dynamic sticker size
+    // New structured sticker controls
+    stickerSize?: number;        // Sticker size (0.1 - 0.8)
+    stickerSpacing?: number;     // Distance between stickers (0.0 - 3.0)
+    stickerThickness?: number;   // Sticker thickness (0.01 - 0.1)
+    stickerTransparency?: number; // Transparency level (0.0 - 1.0)
     // Particle arrow animation props
     algorithm?: Algorithm;
     isAnimationPlaying?: boolean;
@@ -110,7 +114,11 @@ export function CubeVisualizer({
     highlightedStickers = [],
     highlightColor = '#ffff00',
     bufferConfig = DEFAULT_BUFFER_CONFIG,
-    stickerSize = 0.45, // Default sticker size
+    // New structured sticker controls with defaults
+    stickerSize = 0.45,          // Default sticker size
+    stickerSpacing = 0.0,        // Default spacing (no gap)
+    stickerThickness = 0.05,     // Default thickness
+    stickerTransparency = 1.0,   // Default fully opaque
     // Particle arrow animation props
     algorithm,
     isAnimationPlaying = false,
@@ -273,7 +281,15 @@ export function CubeVisualizer({
                 <OptimizedCubelet positions={cubeletPositions} />
 
                 {/* Optimized stickers using instancing */}
-                <OptimizedSticker stickers={optimizedStickerData} stickerSize={stickerSize} />
+                <OptimizedSticker 
+                    stickers={optimizedStickerData} 
+                    controls={{
+                        size: stickerSize,
+                        spacing: stickerSpacing,
+                        thickness: stickerThickness,
+                        transparency: stickerTransparency
+                    }}
+                />
 
                 {/* Particle Arrow Animation System */}
                 {algorithm && (

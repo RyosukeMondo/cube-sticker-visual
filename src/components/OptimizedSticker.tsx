@@ -4,6 +4,13 @@ import { useFrame } from '@react-three/fiber';
 import { type StickerState } from '../types/CubeColors';
 import { isBufferSticker } from '../utils/bufferHighlighting';
 
+interface StickerControlSettings {
+  size: number;           // Sticker size (0.1 - 0.8)
+  spacing: number;        // Distance between stickers (0.0 - 0.3)
+  thickness: number;      // Sticker thickness (0.01 - 0.1)
+  transparency: number;   // Transparency level (0.0 - 1.0)
+}
+
 interface OptimizedStickerProps {
   stickers: Array<{
     sticker: StickerState;
@@ -11,44 +18,122 @@ interface OptimizedStickerProps {
     rotation: [number, number, number];
     size: number;
   }>;
-  stickerSize?: number; // Dynamic sticker size
+  controls: StickerControlSettings;
 }
 
 /**
- * Optimized sticker component using geometry instancing and material sharing
- * Groups stickers by material properties to minimize draw calls
+ * Rebuilt OptimizedSticker component with structured controls
+ * Supports dynamic adjustment of size, spacing, thickness, and transparency
  */
-export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStickerProps) {
+export function OptimizedSticker({ stickers, controls }: OptimizedStickerProps) {
   const mainMeshRef = useRef<InstancedMesh>(null);
   const bufferBorderMeshRef = useRef<InstancedMesh>(null);
   
-  // Shared geometries (created once, reused for all instances)
-  // Made stickers as thin 3D cubes (rectangular prisms) for better realism
-  const mainGeometry = useMemo(() => new BoxGeometry(stickerSize, stickerSize, 0.05), [stickerSize]); // Thin cube: width, height, depth
-  const borderGeometry = useMemo(() => new BoxGeometry(stickerSize + 0.05, stickerSize + 0.05, 0.04), [stickerSize]); // Slightly larger border
+  // Calculate derived values from controls
+  const stickerDimensions = useMemo(() => ({
+    size: controls.size,
+    thickness: controls.thickness,
+    borderSize: controls.size + 0.02, // Slightly larger for border
+    borderThickness: controls.thickness * 0.8 // Slightly thinner border
+  }), [controls.size, controls.thickness]);
   
-  // Shared materials for different sticker types
+  // Create geometries based on control settings
+  const geometries = useMemo(() => ({
+    main: new BoxGeometry(
+      stickerDimensions.size, 
+      stickerDimensions.size, 
+      stickerDimensions.thickness
+    ),
+    border: new BoxGeometry(
+      stickerDimensions.borderSize,
+      stickerDimensions.borderSize,
+      stickerDimensions.borderThickness
+    )
+  }), [stickerDimensions]);
+  
+  // Create materials with transparency support
   const materials = useMemo(() => ({
-    standard: new MeshStandardMaterial({ transparent: true }),
-    highlighted: new MeshStandardMaterial({ transparent: true }),
-    buffer: new MeshStandardMaterial({ transparent: true }),
+    standard: new MeshStandardMaterial({ 
+      transparent: controls.transparency < 1.0,
+      opacity: controls.transparency
+    }),
+    highlighted: new MeshStandardMaterial({ 
+      transparent: controls.transparency < 1.0,
+      opacity: controls.transparency
+    }),
+    buffer: new MeshStandardMaterial({ 
+      transparent: controls.transparency < 1.0,
+      opacity: controls.transparency
+    }),
     bufferBorder: new MeshStandardMaterial({ 
-      color: '#000000', 
-      transparent: true, 
-      opacity: 0.3 
+      color: '#000000',
+      transparent: true,
+      opacity: Math.min(0.4, controls.transparency * 0.6)
     })
-  }), []);
+  }), [controls.transparency]);
   
-  // Group stickers by material type for efficient rendering
+  // Calculate adjusted positions based on spacing
+  const adjustedStickers = useMemo(() => {
+    return stickers.map(item => {
+      const { position } = item;
+      
+      if (controls.spacing === 0) {
+        // No spacing adjustment needed
+        return {
+          ...item,
+          adjustedPosition: position
+        };
+      }
+      
+      // Determine which face this sticker belongs to based on position
+      const [x, y, z] = position;
+      const absX = Math.abs(x);
+      const absY = Math.abs(y);
+      const absZ = Math.abs(z);
+      
+      let adjustedPosition: [number, number, number] = [x, y, z];
+      
+      // Apply spacing based on face orientation
+      if (absZ > absX && absZ > absY) {
+        // Front/Back face (Z is dominant) - adjust X and Y relative to face center
+        adjustedPosition = [
+          x * (1 + controls.spacing * 0.5), // Scale X away from face center
+          y * (1 + controls.spacing * 0.5), // Scale Y away from face center
+          z // Keep Z position (distance from cube center)
+        ];
+      } else if (absX > absY) {
+        // Left/Right face (X is dominant) - adjust Y and Z relative to face center
+        adjustedPosition = [
+          x, // Keep X position (distance from cube center)
+          y * (1 + controls.spacing * 0.5), // Scale Y away from face center
+          z * (1 + controls.spacing * 0.5)  // Scale Z away from face center
+        ];
+      } else {
+        // Top/Bottom face (Y is dominant) - adjust X and Z relative to face center
+        adjustedPosition = [
+          x * (1 + controls.spacing * 0.5), // Scale X away from face center
+          y, // Keep Y position (distance from cube center)
+          z * (1 + controls.spacing * 0.5)  // Scale Z away from face center
+        ];
+      }
+      
+      return {
+        ...item,
+        adjustedPosition
+      };
+    });
+  }, [stickers, controls.spacing]);
+  
+  // Group stickers by type for efficient rendering
   const stickerGroups = useMemo(() => {
     const groups = {
-      standard: [] as typeof stickers,
-      highlighted: [] as typeof stickers,
-      buffer: [] as typeof stickers,
-      bufferBorders: [] as typeof stickers
+      standard: [] as typeof adjustedStickers,
+      highlighted: [] as typeof adjustedStickers,
+      buffer: [] as typeof adjustedStickers,
+      bufferBorders: [] as typeof adjustedStickers
     };
     
-    stickers.forEach(item => {
+    adjustedStickers.forEach(item => {
       const bufferInfo = isBufferSticker(item.sticker.id);
       
       if (bufferInfo.isBuffer) {
@@ -62,8 +147,9 @@ export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStic
     });
     
     return groups;
-  }, [stickers]);
+  }, [adjustedStickers]);
   
+  // Reusable objects for performance
   const dummy = useMemo(() => new Object3D(), []);
   const tempColor = useMemo(() => new Color(), []);
   
@@ -73,20 +159,20 @@ export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStic
     if (mainMeshRef.current) {
       let instanceIndex = 0;
       
-      // Process each group
-      Object.entries(stickerGroups).forEach(([groupType, groupStickers]) => {
-        if (groupType === 'bufferBorders') return; // Skip buffer borders for main mesh
+      // Process non-border groups
+      ['standard', 'highlighted', 'buffer'].forEach(groupType => {
+        const groupStickers = stickerGroups[groupType as keyof typeof stickerGroups];
         
         groupStickers.forEach((item) => {
-          const { sticker, position, rotation } = item;
+          const { sticker, rotation, adjustedPosition } = item;
           
           // Set position and rotation
-          dummy.position.set(...position);
+          dummy.position.set(...adjustedPosition);
           dummy.rotation.set(...rotation);
           dummy.updateMatrix();
           mainMeshRef.current!.setMatrixAt(instanceIndex, dummy.matrix);
           
-          // Set color
+          // Set color with transparency
           const displayColor = sticker.highlighted && sticker.highlightColor 
             ? sticker.highlightColor 
             : sticker.color;
@@ -106,9 +192,16 @@ export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStic
     // Update buffer borders
     if (bufferBorderMeshRef.current && stickerGroups.bufferBorders.length > 0) {
       stickerGroups.bufferBorders.forEach((item, index) => {
-        const { position, rotation } = item;
+        const { rotation, adjustedPosition } = item;
         
-        dummy.position.set(position[0], position[1], position[2] + 0.001);
+        // Position border slightly forward for layering
+        const borderPosition: [number, number, number] = [
+          adjustedPosition[0],
+          adjustedPosition[1],
+          adjustedPosition[2] + (adjustedPosition[2] > 0 ? 0.001 : -0.001)
+        ];
+        
+        dummy.position.set(...borderPosition);
         dummy.rotation.set(...rotation);
         dummy.updateMatrix();
         bufferBorderMeshRef.current!.setMatrixAt(index, dummy.matrix);
@@ -123,11 +216,11 @@ export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStic
   
   return (
     <group>
-      {/* Main stickers (all non-buffer-border stickers) */}
+      {/* Main stickers */}
       {totalMainStickers > 0 && (
         <instancedMesh
           ref={mainMeshRef}
-          args={[mainGeometry, materials.standard, totalMainStickers]}
+          args={[geometries.main, materials.standard, totalMainStickers]}
           frustumCulled={true}
         />
       )}
@@ -136,7 +229,7 @@ export function OptimizedSticker({ stickers, stickerSize = 0.45 }: OptimizedStic
       {totalBufferBorders > 0 && (
         <instancedMesh
           ref={bufferBorderMeshRef}
-          args={[borderGeometry, materials.bufferBorder, totalBufferBorders]}
+          args={[geometries.border, materials.bufferBorder, totalBufferBorders]}
           frustumCulled={true}
         />
       )}

@@ -6,6 +6,7 @@ import { AnimationControls } from './components/AnimationControls'
 import { ColorSettings } from './components/ColorSettings'
 import { StickerSettings } from './components/StickerSettings'
 import { ResponsiveLayout } from './components/ResponsiveLayout'
+import { CollapsibleSection } from './components/CollapsibleSection'
 import { useViewport } from './hooks/useViewport'
 import type { Algorithm } from './types/Algorithm'
 import type { CubeColors } from './types/CubeColors'
@@ -31,8 +32,11 @@ function App() {
   // Color configuration state
   const [cubeColors, setCubeColors] = useState<CubeColors>(DEFAULT_CUBE_COLORS)
   
-  // Sticker size configuration state
+  // Sticker configuration state
   const [stickerSize, setStickerSize] = useState(0.45)
+  const [stickerSpacing, setStickerSpacing] = useState(0.0)
+  const [stickerThickness, setStickerThickness] = useState(0.05)
+  const [stickerTransparency, setStickerTransparency] = useState(1.0)
   
   // Refs for cleanup and coordination
   const animationCleanupRef = useRef<(() => void) | null>(null)
@@ -143,14 +147,44 @@ function App() {
     }
   }, []);
 
-  // Sticker size change handler
+  // Sticker control change handlers
   const handleStickerSizeChange = useCallback((size: number) => {
     try {
       setStickerSize(size);
-      setError(null); // Clear any previous errors when size change succeeds
+      setError(null);
     } catch (err) {
       console.error('Error changing sticker size:', err);
       setError('Failed to change sticker size. Please try again.');
+    }
+  }, []);
+
+  const handleStickerSpacingChange = useCallback((spacing: number) => {
+    try {
+      setStickerSpacing(spacing);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing sticker spacing:', err);
+      setError('Failed to change sticker spacing. Please try again.');
+    }
+  }, []);
+
+  const handleStickerThicknessChange = useCallback((thickness: number) => {
+    try {
+      setStickerThickness(thickness);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing sticker thickness:', err);
+      setError('Failed to change sticker thickness. Please try again.');
+    }
+  }, []);
+
+  const handleStickerTransparencyChange = useCallback((transparency: number) => {
+    try {
+      setStickerTransparency(transparency);
+      setError(null);
+    } catch (err) {
+      console.error('Error changing sticker transparency:', err);
+      setError('Failed to change sticker transparency. Please try again.');
     }
   }, []);
   
@@ -177,22 +211,45 @@ function App() {
   // Sidebar content for responsive layout
   const sidebarContent = (
     <div style={{ display: 'flex', flexDirection: 'column', gap: viewport.isMobile ? '15px' : '20px' }}>
-      <AlgorithmSelector 
-        onAlgorithmSelect={handleAlgorithmSelect}
-        selectedAlgorithm={selectedAlgorithm}
-      />
+      <CollapsibleSection 
+        title="Algorithm Browser" 
+        defaultExpanded={true}
+      >
+        <AlgorithmSelector 
+          onAlgorithmSelect={handleAlgorithmSelect}
+          selectedAlgorithm={selectedAlgorithm}
+        />
+      </CollapsibleSection>
       
-      <ColorSettings
-        colors={cubeColors}
-        onColorChange={handleColorChange}
+      <CollapsibleSection 
+        title="Cube Colors" 
+        defaultExpanded={false}
         disabled={isAnimating}
-      />
+      >
+        <ColorSettings
+          colors={cubeColors}
+          onColorChange={handleColorChange}
+          disabled={isAnimating}
+        />
+      </CollapsibleSection>
       
-      <StickerSettings
-        stickerSize={stickerSize}
-        onStickerSizeChange={handleStickerSizeChange}
+      <CollapsibleSection 
+        title="Sticker Size" 
+        defaultExpanded={false}
         disabled={isAnimating}
-      />
+      >
+        <StickerSettings
+          stickerSize={stickerSize}
+          stickerSpacing={stickerSpacing}
+          stickerThickness={stickerThickness}
+          stickerTransparency={stickerTransparency}
+          onStickerSizeChange={handleStickerSizeChange}
+          onStickerSpacingChange={handleStickerSpacingChange}
+          onStickerThicknessChange={handleStickerThicknessChange}
+          onStickerTransparencyChange={handleStickerTransparencyChange}
+          disabled={isAnimating}
+        />
+      </CollapsibleSection>
     </div>
   );
 
@@ -280,6 +337,9 @@ function App() {
             highlightColor="#ffff00"
             bufferConfig={DEFAULT_BUFFER_CONFIG}
             stickerSize={stickerSize}
+            stickerSpacing={stickerSpacing}
+            stickerThickness={stickerThickness}
+            stickerTransparency={stickerTransparency}
             {...(selectedAlgorithm && {
               algorithm: selectedAlgorithm,
               animationSpeed: animationSpeed,

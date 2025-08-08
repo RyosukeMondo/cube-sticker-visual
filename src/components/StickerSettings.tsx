@@ -2,43 +2,78 @@ import React from 'react';
 import './StickerSettings.css';
 
 interface StickerSettingsProps {
-  stickerSize: number;
+  stickerSize: number;        // Sticker size (0.1 - 0.8)
+  stickerSpacing: number;     // Distance between stickers (0.0 - 3.0)
+  stickerThickness: number;   // Sticker thickness (0.01 - 0.1)
+  stickerTransparency: number; // Transparency level (0.0 - 1.0)
   onStickerSizeChange: (size: number) => void;
+  onStickerSpacingChange: (spacing: number) => void;
+  onStickerThicknessChange: (thickness: number) => void;
+  onStickerTransparencyChange: (transparency: number) => void;
   disabled?: boolean;
 }
 
 export const StickerSettings: React.FC<StickerSettingsProps> = ({
   stickerSize,
+  stickerSpacing,
+  stickerThickness,
+  stickerTransparency,
   onStickerSizeChange,
+  onStickerSpacingChange,
+  onStickerThicknessChange,
+  onStickerTransparencyChange,
   disabled = false
 }) => {
+  // Event handlers for each control
   const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSize = parseFloat(event.target.value);
     onStickerSizeChange(newSize);
   };
 
-  const resetToDefault = () => {
-    onStickerSizeChange(0.45); // Default sticker size
+  const handleSpacingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newSpacing = parseFloat(event.target.value);
+    onStickerSpacingChange(newSpacing);
   };
 
-  // Convert size to percentage for display (0.3 = 30%, 0.6 = 60%, etc.)
+  const handleThicknessChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newThickness = parseFloat(event.target.value);
+    onStickerThicknessChange(newThickness);
+  };
+
+  const handleTransparencyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newTransparency = parseFloat(event.target.value);
+    onStickerTransparencyChange(newTransparency);
+  };
+
+  const resetToDefaults = () => {
+    onStickerSizeChange(0.45);        // Default size
+    onStickerSpacingChange(0.0);      // Default spacing (no gap)
+    onStickerThicknessChange(0.05);   // Default thickness
+    onStickerTransparencyChange(1.0); // Default fully opaque
+  };
+
+  // Convert values to percentages for display
   const sizePercentage = Math.round(stickerSize * 100);
+  const spacingPercentage = Math.round(stickerSpacing * 100);
+  const thicknessPercentage = Math.round(stickerThickness * 100);
+  const transparencyPercentage = Math.round(stickerTransparency * 100);
 
   return (
     <div className="sticker-settings">
       <div className="sticker-settings__header">
-        <h3 className="sticker-settings__title">Sticker Size</h3>
+        <h3 className="sticker-settings__title">Sticker Controls</h3>
         <button
           className="sticker-settings__reset-btn"
-          onClick={resetToDefault}
+          onClick={resetToDefaults}
           disabled={disabled}
-          title="Reset to default size"
+          title="Reset all settings to defaults"
         >
-          Reset
+          Reset All
         </button>
       </div>
       
-      <div className="sticker-settings__control">
+      <div className="sticker-settings__controls">
+        {/* Size Control */}
         <div className="sticker-setting">
           <label className="sticker-setting__label" htmlFor="sticker-size-slider">
             Size: {sizePercentage}%
@@ -59,25 +94,82 @@ export const StickerSettings: React.FC<StickerSettingsProps> = ({
             />
             <span className="sticker-setting__max-label">Large</span>
           </div>
-          <div className="sticker-setting__value">
+        </div>
+
+        {/* Spacing Control */}
+        <div className="sticker-setting">
+          <label className="sticker-setting__label" htmlFor="sticker-spacing-slider">
+            Spacing: {spacingPercentage}%
+          </label>
+          <div className="sticker-setting__slider-group">
+            <span className="sticker-setting__min-label">None</span>
             <input
-              type="number"
-              min="0.2"
-              max="0.8"
+              id="sticker-spacing-slider"
+              type="range"
+              min="0.0"
+              max="3.0"
               step="0.05"
-              value={stickerSize}
-              onChange={handleSizeChange}
+              value={stickerSpacing}
+              onChange={handleSpacingChange}
               disabled={disabled}
-              className="sticker-setting__number"
-              title="Exact size value"
+              className="sticker-setting__slider"
+              title={`Sticker spacing: ${spacingPercentage}%`}
             />
+            <span className="sticker-setting__max-label">Extreme</span>
+          </div>
+        </div>
+
+        {/* Thickness Control */}
+        <div className="sticker-setting">
+          <label className="sticker-setting__label" htmlFor="sticker-thickness-slider">
+            Thickness: {thicknessPercentage}%
+          </label>
+          <div className="sticker-setting__slider-group">
+            <span className="sticker-setting__min-label">Thin</span>
+            <input
+              id="sticker-thickness-slider"
+              type="range"
+              min="0.01"
+              max="0.1"
+              step="0.005"
+              value={stickerThickness}
+              onChange={handleThicknessChange}
+              disabled={disabled}
+              className="sticker-setting__slider"
+              title={`Sticker thickness: ${thicknessPercentage}%`}
+            />
+            <span className="sticker-setting__max-label">Thick</span>
+          </div>
+        </div>
+
+        {/* Transparency Control */}
+        <div className="sticker-setting">
+          <label className="sticker-setting__label" htmlFor="sticker-transparency-slider">
+            Opacity: {transparencyPercentage}%
+          </label>
+          <div className="sticker-setting__slider-group">
+            <span className="sticker-setting__min-label">Clear</span>
+            <input
+              id="sticker-transparency-slider"
+              type="range"
+              min="0.1"
+              max="1.0"
+              step="0.05"
+              value={stickerTransparency}
+              onChange={handleTransparencyChange}
+              disabled={disabled}
+              className="sticker-setting__slider"
+              title={`Sticker opacity: ${transparencyPercentage}%`}
+            />
+            <span className="sticker-setting__max-label">Solid</span>
           </div>
         </div>
       </div>
       
       <div className="sticker-settings__info">
         <p className="sticker-settings__description">
-          Adjust the size of the 3D sticker cubes. Changes apply immediately to the visualization.
+          Adjust sticker appearance: size, spacing between stickers, thickness, and transparency. 
+          Changes apply immediately to the visualization.
         </p>
       </div>
     </div>
